@@ -20,27 +20,27 @@ include_once ('../../modelo/mdl_rol.php');
     </div>
 
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-6">
             <div class="tile">
                 <div class="tile-body">
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
-                            <th>ID</th>
-                            <th>NOMBRE</th>
-                            <th>OPCIONES</th>
+                            <th>Num</th>
+                            <th>Nombre</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
+                        $num=1;
                         while($row=mysqli_fetch_assoc($resp)){
                             $id_rol=$row["id_rol"];
                             $nombre=$row["nombrerol"];
                             echo "<tr>";
-                            echo "<td>".$row["id_rol"]."</td>";
+                            echo "<td>$num</td>";
+                            echo "<td hidden>".$row["id_rol"]."</td>";
                             echo "<td>".$row["nombrerol"]."</td>";
-                            echo "<td > <a href='../../enrutador/enr_rol.php?id_rol=".$id_rol."' class='btn btn-danger'><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></a>
-                                <a href='modal-modificar-rol.php?id_rol=".$id_rol."&nombre=".$nombre."'  class='btn btn-success'><i class=\"fa fa-cog\" aria-hidden=\"true\"></i></a></td>";
+                            $num+=1;
                             echo "</tr>";
                         }
                         ?>
