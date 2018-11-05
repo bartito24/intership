@@ -11,9 +11,12 @@ class ctrl_pasantia{
 
     public function insertar($p){
         print_r($p);
-        $this->obj_mod->set("nombre" ,$p['nombre']);
-        $this->obj_mod->set("direccion" ,$p['direccion']);
-        $this->obj_mod->set("telefono" ,$p['telefono']);
+        $this->obj_mod->set("empresa" ,$p['empresa']);
+        $this->obj_mod->set("area" ,$p['area']);
+        $this->obj_mod->set("asignatura" ,$p['asignatura']);
+        $this->obj_mod->set("estudiante" ,$p['estudiante']);
+        $this->obj_mod->set("fechainicio" ,$p['fechainicio']);
+        $this->obj_mod->set("gestion" ,$p['gestion']);
         $this->obj_mod->insertar();
     }
     public function modificar($p){

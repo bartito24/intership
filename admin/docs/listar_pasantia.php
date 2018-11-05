@@ -21,13 +21,12 @@ $datos=$objeto->listar();
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <center><a class="btn btn-secondary" href="crear_pasantia.php">Crear Pasantía</a></center>
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
                             <th>Num</th>
-                            <th>Pasantía</th>
                             <th>Fecha Inicio</th>
+                            <th>Estudiante</th>
                             <th>Tutor</th>
                             <th>Empresa</th>
                             <th>Opciones</th>
@@ -40,8 +39,8 @@ $datos=$objeto->listar();
                             echo "<tr>";
                             echo "<td>$num</td>";
                             echo "<td hidden>".$row['id_pasantia']."</td>";
-                            echo "<td>".$row['numpasantia']."</td>";
                             echo "<td>".$row['fechainicio']."</td>";
+                            echo "<td>".$row['estudiante_id_estudiante']."</td>";
                             echo "<td>".$row['empleado_persona_id_persona']."</td>";
                             echo "<td>".$row['empresa_id_empresa']."</td>";
                             $id_pasantia=$row['id_pasantia'];
