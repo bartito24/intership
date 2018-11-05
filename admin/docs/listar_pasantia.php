@@ -21,7 +21,7 @@ $datos=$objeto->listar();
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <center><a class="btn btn-secondary" href="pasantia.php">Crear Pasantía</a></center>
+                    <center><a class="btn btn-secondary" href="crear_pasantia.php">Crear Pasantía</a></center>
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>

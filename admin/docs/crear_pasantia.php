@@ -34,9 +34,24 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="tile">
-                    <center><h3 class="tile-title">Nueva Pasantía</h3></center>
+                    <center><h3 class="tile-title">Crear Nueva Pasantía</h3></center>
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_pasantia.php" method="post" autocomplete="off" required>
+                            <div class="form-group row"><label for="empresa" class="col-md-4 col-form-label text-md-right">Empresa:</label>
+                                <div class="col-md-6">
+                                    <select class="custom-select">
+                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
+                                        <?php
+                                        while ($row2=mysqli_fetch_assoc($datos_empresa)){
+                                            echo "<option value='$row2[id_empresa]'>".$row2['nombreempresa']."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row"><label for="area" class="col-md-4 col-form-label text-md-right">Area:</label><div class="col-md-6"><input type="text" name="area" id="area" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                            <div class="form-group row"><label for="area" class="col-md-4 col-form-label text-md-right">Descripción:</label><div class="col-md-6">
+                                    <textarea name="funciones" id="funciones" cols="30" rows="4"></textarea></div></div>
                             <div class="form-group row"><label for="numpasantia" class="col-md-4 col-form-label text-md-right">Numero de Pasantía:</label>
                                 <div class="col-md-6">
                                     <select class="custom-select">
@@ -59,18 +74,6 @@
                                         <?php
                                         while ($row=mysqli_fetch_assoc($datos_empleado)){
                                             echo "<option value='$row[id_empleado]'>".$row['cargo']."</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row"><label for="empresa" class="col-md-4 col-form-label text-md-right">Empresa:</label>
-                                <div class="col-md-6">
-                                    <select class="custom-select">
-                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
-                                        <?php
-                                        while ($row2=mysqli_fetch_assoc($datos_empresa)){
-                                            echo "<option value='$row2[id_empresa]'>".$row2['nombreempresa']."</option>";
                                         }
                                         ?>
                                     </select>
