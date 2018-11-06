@@ -13,6 +13,7 @@ class ctrl_pasantia{
         print_r($p);
         $this->obj_mod->set("empresa" ,$p['empresa']);
         $this->obj_mod->set("area" ,$p['area']);
+        $this->obj_mod->set("descripcion" ,$p['descripcion']);
         $this->obj_mod->set("asignatura" ,$p['asignatura']);
         $this->obj_mod->set("estudiante" ,$p['estudiante']);
         $this->obj_mod->set("fechainicio" ,$p['fechainicio']);
@@ -20,10 +21,14 @@ class ctrl_pasantia{
         $this->obj_mod->insertar();
     }
     public function modificar($p){
-        $this->obj_mod->set("nombre" ,$p['nombre']);
-        $this->obj_mod->set("direccion" ,$p['direccion']);
-        $this->obj_mod->set("telefono" ,$p['telefono']);
-        $this->obj_mod->set("id_empresa" ,$p['id_empresa']);
+        $this->obj_mod->set("empresa" ,$p['empresa']);
+        $this->obj_mod->set("area" ,$p['area']);
+        $this->obj_mod->set("descripcion" ,$p['descripcion']);
+        $this->obj_mod->set("asignatura" ,$p['asignatura']);
+        $this->obj_mod->set("estudiante" ,$p['estudiante']);
+        $this->obj_mod->set("fechainicio" ,$p['fechainicio']);
+        $this->obj_mod->set("gestion" ,$p['gestion']);
+        $this->obj_mod->set("id_pasantia" ,$p['id_pasantia']);
         $this->obj_mod->modificar();
     }
 public function eliminar($id){

@@ -1,4 +1,10 @@
+<?php 
+include_once ('../../modelo/conexion.php');
+$con=new conexion();
+$sql="select * from carrera where activocarrera=1";
+$datos=$con->con_retorno($sql);
 
+ ?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -27,7 +33,8 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="form-group row">
+            <div class="col-md-7">
                 <div class="tile">
                     <center><h3 class="tile-title">Nueva Carrera</h3></center>
                     <div class="tile-body">
@@ -63,7 +70,7 @@
                                 <div class ="col-md-4"><button type="reset" class="btn btn-dark">
                                         <span class="glyphicon glyphicon-pencil"></span>Limpiar
                                     </button></div>
-                                <div class ="col-md-4"><a class="btn btn-danger" href="index.php">Cancelar
+                                <div class ="col-md-4"><a class="btn btn-danger" href="listar_carrera.php">Cancelar
                                     </a></div>
                             </div>
                         </form>
@@ -71,6 +78,31 @@
 
                 </div>
             </div>
+
+
+
+            <div class="col-md-6">
+                <div class="tile">
+                    <center><h3 class="tile-title">Carreras Disponibles</h3></center>
+                    <div class="tile-body">
+                        <?php 
+                        while ($row=mysqli_fetch_assoc($datos)) {
+                            echo "<div class='form-group row'>
+                            <div class='col-md-12'>
+                                <button class='btn btn-danger col-md-12'>$row[nombrecarrera]</button>
+                            </div>
+                                
+                            </div>";
+                        }
+
+
+                         ?>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
         </div>
     </div>
 

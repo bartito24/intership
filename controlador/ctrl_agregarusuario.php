@@ -88,7 +88,7 @@ public function eliminar ($v){
 	$this->obj_mod->set("direccion", $p["direccion"]);
 	$this->obj_mod->set("rol", $p["rol"]);
 	return $this->obj_mod->modificar();
-	        echo "<script> window.location.href='../vista/vst_roles_usuarios.php;</script>";
+	        echo "<script> window.location.href='../admin/docs/index.php';</script>";
 
 	}
 }

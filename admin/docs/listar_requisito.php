@@ -1,55 +1,50 @@
 <?php
-include_once('menu.php');
-include_once ('../../modelo/mdl_estudio.php');
-$objeto=new mdl_estudio();
-$datos=$objeto->listar();
+include_once ('menu.php');
+include_once ('../../modelo/mdl_requisitos.php');
+$objeto=new mdl_requisitos();
+$datos=$objeto->listar_requisitos();
 ?>
 
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-th-list"></i> Carreras</h1>
-            <p>Listado de Carreras registrados en el sistema</p>
+            <h1><i class="fa fa-th-list"></i>Requisitos</h1>
+            <p>Listado de Requisitos registrados en el sistema</p>
         </div>
         <ul class="app-breadcrumb breadcrumb side">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item">Carreras</li>
-            <li class="breadcrumb-item active"><a href="#">Tabla Carreras</a></li>
+            <li class="breadcrumb-item">Requisitos</li>
+            <li class="breadcrumb-item active"><a href="#">Tabla Requisitos</a></li>
         </ul>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    
+                    <a class="btn btn-secondary" href="requisitos.php">Crear Carrera</a>
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
                             <th>Num</th>
                             <th>Nombre</th>
-                            <th>Modalidad</th>
-                            <th>version</th>
-                            <th>Opciones</th>
+                            <th>descripcion</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
-                        $num=1;
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
-                            echo "<td>$num</td>";
-                            echo "<td hidden>".$row['id_carrera']."</td>";
-                            echo "<td>".$row['nombrecarrera']."</td>";
-                            echo "<td>".$row['modalidad']."</td>";
-                            echo "<td>".$row['version']."</td>";
-                            $id_carrera=$row['id_carrera'];
-                            $nombre=$row['nombrecarrera'];
-                            $modalidad=$row['modalidad'];
-                            $version=$row['version'];
-                            echo "<td><a class='btn btn-danger col-md-5' href='../../enrutador/enr_estudio.php?id_carrera=".$id_carrera."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
-                            <a class=' btn btn-success col-md-5' href='modificar_carrera.php?id_carrera=".$id_carrera."&nombre=".$nombre."&modalidad=".$modalidad."&version=".$version."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
+                            echo "<type='hidden'"."<td>".$row['id_requisitos']."</td>";
+                            echo "<td>".$row['numpasantia']."</td>";
+                            echo "<td>".$row['nombrerequisito']."</td>";
+                            echo "<td>".$row['descripcionre']."</td>";
+                            $id_requisitos=$row['id_requisitos'];
+                            $numpasantia=$row['numpasantia'];
+                            $nombrerequisito=$row['nombrerequisito'];
+                            $descripcionre=$row['descripcionre'];
+                            
                             echo "</tr>";
-                            $num+=1;
+                            echo "</tr>";
                         }?>
                         </tbody>
                     </table>

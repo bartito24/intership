@@ -17,6 +17,7 @@ if($_SESSION['usuario']==""){
       <link rel="stylesheet" type="text/css" href="bootstrap4/font-awesome-4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="../../bootstrap4/css/bootstrap-select.css" />
       <script src="js/sweetalert2.all.min.js"></script>
+      <script src="js/jquery-3.2.1.min.js"></script>
   </head>
   <body class="app sidebar-mini rtl"  >
   <!-- Navbar-->
@@ -129,7 +130,7 @@ if($_SESSION['usuario']==""){
 
               </ul>
               <?php  }?>
-<!--    Tramites      -->
+<!--    Pasantias      -->
           <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-database"></i><span class="app-menu__label">Pasantías</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
                 <!--    Jefe de registros   -->
@@ -138,7 +139,8 @@ if($_SESSION['usuario']==""){
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Iniciar Pasantía</a></li>
                 <li><a class="treeview-item" href="listar_pasantia.php"><i class="icon fa fa-circle-o"></i>Listar Pasantía</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificación de Pasantía</a></li>
-                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificaion de Pasantia</a></li>
+                <li><a class="treeview-item" href="listar_documentacion.php"><i class="icon fa fa-circle-o"></i>Documentacion</a></li>
+                <li><a class="treeview-item" href="listar_asignatura.php"><i class="icon fa fa-circle-o"></i>Asignatura</a></li>
                 <!--  Jefe de carrera
                   <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
                 -->
@@ -146,22 +148,25 @@ if($_SESSION['usuario']==""){
                 <?php } ?>
                 <!--    Jefe de carrera   -->
                 <?php if( $_SESSION['cargo']=="Jefe de Carrera" || $_SESSION['rol']=="administrador"){ ?>
-                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
+                    <!--
+                      <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
+                      <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Registrar Visita</a></li>
+
+                      -->
+
                 <?php } ?>
                 <!--    tutor   -->
                 <?php if( $_SESSION['cargo']=="Tutor" || $_SESSION['rol']=="administrador"){ ?>
-                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Registrar Visita</a></li>
+
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Ver pasantes asignados</a></li>
                 <?php } ?>
                </ul>
           </li>
-<!--   fin tramites       -->
+<!--   fin pasantia       -->
             <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Informacion</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
           <li><a class="treeview-item" href="requisitos.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li>
           <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-circle-o"></i>listar Requisito</a></li>
-              <li><a class="treeview-item" href="pagina_informativa.php"><i class="icon fa fa-circle-o"></i>Requisitos Estudiante</a></li>
-              <li><a class="treeview-item" href="pagina_info.php"><i class="icon fa fa-circle-o"></i>Requisitos Tutor</a></li>
               <?php if ($_SESSION['rol']=='administrador') {?>
             
             <!--<li><a class="treeview-item" href="form-samples.html"><i class="icon fa fa-circle-o"></i> Form Samples</a></li>

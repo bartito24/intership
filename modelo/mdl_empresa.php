@@ -6,11 +6,9 @@ class mdl_empresa
     public $nombre;
     public $direccion;
     public $telefono;
-    public $area;
-    public $funciones;
-    public $nombresupervisor;
-    public $celsupervisor;
-    public $correosupervisor;
+    public $nombrerep;
+    public $apellidorep;
+    public $celular;
     public $obj_con;
 
     function __construct()
@@ -20,11 +18,9 @@ class mdl_empresa
         $this->nombre = "";
         $this->direccion = "";
         $this->telefono = 0;
-        $this->area = "";
-        $this->funciones = "";
-        $this->nombresupervisor = "";
-        $this->celsupervisor = 0;
-        $this->correosupervisor = "";
+        $this->nombrerep = "";
+        $this->apellidorep = "";
+        $this->celular = 0;
         $this->obj_con = new conexion();
     }
 
@@ -35,13 +31,13 @@ class mdl_empresa
 
     public function insertar()
     {
-        $sql = "INSERT INTO empresa (nombreempresa,direccionempresa,telefono,area,funciones,nombresupervisor,celsupervisor,correosupervisor,activoempresa) VALUE ('$this->nombre','$this->direccion','$this->telefono','$this->area','$this->funciones','$this->nombresupervisor','$this->celsupervisor','$this->correosupervisor',1);";
+        $sql = "INSERT INTO empresa (nombreempresa,direccionempresa,telefono,nombrerep,apellidorep,celular,activoempresa) VALUE ('$this->nombre','$this->direccion','$this->telefono','$this->nombrerep','$this->apellidorep','$this->celular',1);";
         $this->obj_con->sin_retorno($sql);
 
     }
     public function modificar()
     {
-        $sql="UPDATE empresa SET nombreempresa='$this->nombre', direccionempresa='$this->direccion', telefono='$this->telefono', area='$this->area', funciones='$this->funciones', nombresupervisor='$this->nombresupervisor', celsupervisor='$this->celsupervisor', correosupervisor='$this->correosupervisor' where id_empresa='$this->id_empresa';";
+        $sql="UPDATE empresa SET nombreempresa='$this->nombre', direccionempresa='$this->direccion', telefono='$this->telefono', nombrerep='$this->nombrerep', apellidorep='$this->apellidorep', celular='$this->celular' where id_empresa='$this->id_empresa';";
         $this->obj_con->sin_retorno($sql);
 
     }

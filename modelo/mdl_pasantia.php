@@ -9,13 +9,11 @@ class mdl_pasantia
     public $docs;
     public $estadopasantia;
     public $id_empleado;
-    public $id_persona;
-    public $id_empresa;
-    public $id_asignatura;
+    public $empresa;
+    public $asignatura;
     public $area;
-    public $funciones;
-    public $id_estudiante;
-    public $id_estudiante_persona;
+    public $descripcion;
+    public $estudiante;
     public $fechavisita;
     public $observacionvisita;
     public $latitud;
@@ -35,13 +33,11 @@ class mdl_pasantia
         $this->docs = "";
         $this->estadopasantia = 0;
         $this->id_empleado = 0;
-        $this->id_persona = 0;
-        $this->id_empresa = 0;
-        $this->id_asignatura = 0;
+        $this->empresa = 0;
+        $this->asignatura = 0;
         $this->area = "";
-        $this->funciones = "";
-        $this->id_estudiante = 0;
-        $this->id_estudiante_persona = 0;
+        $this->descripcion = "";
+        $this->estudiante = 0;
         $this->fechavisita = "";
         $this->observacionvisita = "";
         $this->latitud = 0;
@@ -60,7 +56,7 @@ class mdl_pasantia
 
     public function insertar()
     {
-        $sql = "INSERT INTO pasantia (fechainicio,fechafin,gestion,docs,estadopasantia, empleado_id_empleado, empleado_persona_id_persona, empresa_id_empresa, asignatura_id_asignatura, area, funciones, estudiante_id_estudiante, estudiante_persona_id_persona, fechavisita, observacionvisita,latitud, longitud, notasupervisor, notatutor, notafinal, observacionp, activopasantia) VALUE ('$this->fechainicio','$this->fechafin','$this->gestion','$this->docs',1,'$this->id_empleado','$this->id_persona','$this->id_empresa','$this->id_asignatura','$this->area','$this->funciones','$this->id_estudiante','$this->id_estudiante_persona','$this->fechavisita','$this->observacionvisita','$this->latitud','$this->longitud','$this->notasupervisor','$this->notatutor','$this->notafinal','$this->observacionp',1);";
+        $sql = "INSERT INTO pasantia (fechainicio,fechafin,gestion,docs,estadopasantia, empleado_id_empleado, empresa_id_empresa, asignatura_id_asignatura, area, funciones, estudiante_id_estudiante, fechavisita, observacionvisita,latitud, longitud, notasupervisor, notatutor, notafinal, observacionp, activopasantia) VALUE ('$this->fechainicio',(NULL),'$this->gestion','',1,1,'$this->empresa','$this->asignatura','$this->area','$this->descripcion','$this->estudiante',(NULL),'','0','0','0','0','0','',1)";
         $this->obj_con->sin_retorno($sql);
 
     }

@@ -70,7 +70,7 @@
                                             <option value="" disabled selected hidden>Nada Seleccionado</option>
                                             <?php
                                             while ($row=mysqli_fetch_assoc($datos_carrera)){
-                                                echo "<option value='$row[id_Carrera]'>".$row['nombrecarrera']."</option>";
+                                                echo "<option value='$row[id_carrera]'>".$row['nombrecarrera']."</option>";
                                             }
                                             ?>
                                         </select>

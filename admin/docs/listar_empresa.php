@@ -21,7 +21,6 @@ $datos=$objeto->listar();
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <center><a class="btn btn-secondary" href="crear_empresa.php">Crear Empresa</a></center>
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
@@ -29,11 +28,9 @@ $datos=$objeto->listar();
                             <th>Nombre</th>
                             <th>Direccion</th>
                             <th>Telefono</th>
-                            <th>Area</th>
-                            <th>Funciones</th>
-                            <th>Nombre Supervisor</th>
-                           
-                            <th>Correo Supervisor</th>
+                            <th>Nombre Sup</th>
+                            <th>Apellidos</th>
+                            <th>Celular</th>
                             <th>Opciones</th>
                         </tr>
                         </thead>
@@ -47,22 +44,21 @@ $datos=$objeto->listar();
                             echo "<td>".$row['nombreempresa']."</td>";
                             echo "<td>".$row['direccionempresa']."</td>";
                             echo "<td>".$row['telefono']."</td>";
-                            echo "<td>".$row['area']."</td>";
-                            echo "<td>".$row['funciones']."</td>";
-                            echo "<td>".$row['nombresupervisor']."</td>";
+                            echo "<td>".$row['nombrerep']."</td>";
+                            echo "<td>".$row['apellidorep']."</td>";
+                            echo "<td>".$row['celular']."</td>";
                             
-                            echo "<td>".$row['correosupervisor']."</td>";
+                            
                             $id_empresa=$row['id_empresa'];
                             $nombre=$row['nombreempresa'];
                             $direccion=$row['direccionempresa'];
                             $telefono=$row['telefono'];
-                            $area=$row['area'];
-                            $nombresupervisor=$row['nombresupervisor'];
-                            $celsupervisor=$row['celsupervisor'];
-                            $correosupervisor=$row['correosupervisor'];
+                            $nombrerep=$row['nombrerep'];
+                            $apellidorep=$row['apellidorep'];
+                            $celular=$row['celular'];
                             $num+=1;
                             echo "<td><a class='btn btn-danger col-md-5' href='../../enrutador/enr_empresa.php?id_carrera=".$id_empresa."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
-                            <a class=' btn btn-success col-md-5' href='modificar_empresa.php?id_empresa=".$id_empresa."&nombre=".$nombre."&direccion=".$direccion."&telefono=".$telefono."&area=".$area."&nombresupervisor=".$nombresupervisor."&celsupervisor=".$celsupervisor."&correosupervisor=".$correosupervisor."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
+                            <a class=' btn btn-success col-md-5' href='modificar_empresa.php?id_empresa=".$id_empresa."&nombre=".$nombre."&direccion=".$direccion."&telefono=".$telefono."&nombrerep=".$nombrerep."&apellidorep=".$apellidorep."&celular=".$celular."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }?>
                         </tbody>
