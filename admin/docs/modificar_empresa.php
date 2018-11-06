@@ -32,26 +32,23 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-2"><label class="col-form-label text-md-right" for="area">Area:</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="area" id="area" value="<?php echo $_GET['area'];?>"></div>
+                            <div class="col-md-2"><label class="col-form-label text-md-right" for="nombrerep">Nombre Responsable:</label></div>
+                            <div class="col-md-10"><input class="form-control" type="text" name="nombrerep" id="nombrerep" value="<?php echo $_GET['nombrerep'];?>"></div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-2"><label class="col-form-label text-md-right" for="funciones">Funciones:</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="funciones" id="funciones" value="<?php echo $_GET['funciones'];?>"></div>
+                            <div class="col-md-2"><label class="col-form-label text-md-right" for="apellidorep">Apellidos:</label></div>
+                            <div class="col-md-10"><input class="form-control" type="text" name="apellidorep" id="apellidorep" value="<?php echo $_GET['apellidorep'];?>"></div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-2"><label class="col-form-label text-md-right" for="nombresupervisor">Nombre Supervisor:</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="nombresupervisor" id="nombresupervisor" value="<?php echo $_GET['nombresupervisor'];?>"></div>
+                            <div class="col-md-2"><label class="col-form-label text-md-right" for="celular">Celular :</label></div>
+                            <div class="col-md-10"><input class="form-control" type="text" name="celular" id="celular" value="<?php echo $_GET['celular'];?>"></div>
                         </div>
 
                        
 
-                        <div class="form-group row">
-                            <div class="col-md-2"><label class="col-form-label text-md-right" for="correosupervisor">Correo Supervisor:</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="correosupervisor" id="correosupervisor" value="<?php echo $_GET['correosupervisor'];?>"></div>
-                        </div>
+                        
 
                         <div class="form-group row">
                             <div class="col-md-2"><label class="col-form-label text-md-right" hidden for="id_empresa">Id empresa:</label></div>

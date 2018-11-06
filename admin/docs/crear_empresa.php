@@ -1,7 +1,15 @@
+<?php 
+include_once ('../../modelo/conexion.php');
+$con=new conexion();
+$sql="select * from empresa where activoempresa=1";
+$datos=$con->con_retorno($sql);
+
+ ?>
+
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
+     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Empresa</title>
@@ -38,13 +46,16 @@
                             <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
                             <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion:</label><div class="col-md-6"><input type="text" name="direccion" id="direccion" class="form-control" value="" required></div></div>
                             <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono:</label><div class="col-md-6"><input type="text" name="telefono" id="telefono" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
+                            <div class="form-group row"><label for="nombrerep" class="col-md-4 col-form-label text-md-right">Nombre Responsable:</label><div class="col-md-6"><input type="text" name="nombrerep" id="nombrerep" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
 
-                            <div class="form-group row"><label for="nombresupervisor" class="col-md-4 col-form-label text-md-right">Nombre Supervisor:</label><div class="col-md-6"><input type="text" name="nombresupervisor" id="nombresupervisor" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                            <div class="form-group row"><label for="apellidorep" class="col-md-4 col-form-label text-md-right">Apellidos:</label><div class="col-md-6"><input type="text" name="apellidorep" id="apellidorep" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
 
-                              <div class="form-group row"><label for="celsupervisor" class="col-md-4 col-form-label text-md-right">Celular Supervisor:</label><div class="col-md-6"><input type="text" name="celsupervisor" id="celsupervisor" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
+                              <div class="form-group row"><label for="celular" class="col-md-4 col-form-label text-md-right">Celular:</label><div class="col-md-6"><input type="text" name="celular" id="celular" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
 
-                              <div class="form-group row"><label for="correosupervisor" class="col-md-4 col-form-label text-md-right">Correo Supervisor:</label><div class="col-md-6"><input type="text" name="correosupervisor" id="correosupervisor" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                              
 
+
+                           
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
                                         <span class="glyphicon glyphicon-log-in"></span> Registrar
@@ -59,10 +70,36 @@
                         </form>
                     </div>
 
+
+
                 </div>
             </div>
+
+                <div class="col-md-6">
+                <div class="tile">
+                    <center><h3 class="tile-title">Empresas Disponibles</h3></center>
+                    <div class="tile-body">
+                        <?php 
+                        while ($row=mysqli_fetch_assoc($datos)) {
+                            echo "<div class='form-group row'>
+                            <div class='col-md-12'>
+                                <button class='btn btn-danger col-md-12'>$row[nombreempresa]</button>
+                            </div>
+                                
+                            </div>";
+                        }
+
+
+                         ?>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
+
+       
 
 </main>
 </body>

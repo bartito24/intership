@@ -10,15 +10,20 @@ class ctrl_estudio{
     }
 
     public function insertar($p){
+        print_r($p);
         $this->obj_mod->set("nombre" ,$p['nombre']);
         $this->obj_mod->set("modalidad" ,$p['modalidad']);
+        $this->obj_mod->set("version" ,$p['version']);
         $this->obj_mod->insertar();
     }
-    public function modificar_carrera($p){
+    public function modificar($p){
         $this->obj_mod->set("nombre" ,$p['nombre']);
         $this->obj_mod->set("modalidad" ,$p['modalidad']);
+        $this->obj_mod->set("version" ,$p['version']);
         $this->obj_mod->set("id_Carrera" ,$p['id_carrera']);
-        $this->obj_mod->modificar_carrera();
+        $this->obj_mod->modificar();
     }
-
+    public function eliminar($id){
+        $this->obj_mod->eliminar($id);
+    }
 }
