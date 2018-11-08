@@ -44,7 +44,7 @@
                         <form name="f1" action="../../enrutador/enr_pasantia.php" method="post" autocomplete="off" required>
                             <div class="form-group row"><label for="empresa" class="col-md-4 col-form-label text-md-right">Empresa:</label>
                                 <div class="col-md-6">
-                                    <select class="custom-select" name="empresa">
+                                    <select class="custom-select" name="empresa" required>
                                         <option value="" disabled selected hidden>Nada Seleccionado</option>
                                         <?php
                                         while ($row=mysqli_fetch_assoc($datos_empresa)){
@@ -56,10 +56,10 @@
                             </div>
                             <div class="form-group row"><label for="areas" class="col-md-4 col-form-label text-md-right">Area:</label><div class="col-md-6"><input type="text" name="area" id="area" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
                             <div class="form-group row"><label for="funciones" class="col-md-4 col-form-label text-md-right">Descripción:</label><div class="col-md-6">
-                                    <textarea name="funciones" id="funciones" cols="36" rows="4" onkeypress="return sololetras(event)"></textarea></div></div>
+                                    <textarea name="funciones" id="funciones" cols="36" rows="4" required onkeypress="return sololetras(event)"></textarea></div></div>
                             <div class="form-group row"><label for="asignatura" class="col-md-4 col-form-label text-md-right">Asignatura:</label>
                                 <div class="col-md-6">
-                                    <select class="custom-select" name="asignatura">
+                                    <select class="custom-select" name="asignatura" required>
                                         <option value="" disabled selected hidden>Nada Seleccionado</option>
                                         <?php
                                         while ($row2=mysqli_fetch_assoc($datos_asignatura)){
@@ -71,7 +71,7 @@
                             </div>
                             <div class="form-group row"><label for="estudiante" class="col-md-4 col-form-label text-md-right">Estudiante:</label>
                                 <div class="col-md-6">
-                                    <select class="custom-select" name="estudiante">
+                                    <select class="custom-select" name="estudiante" required>
                                         <option value="" disabled selected hidden>Nada Seleccionado</option>
                                         <?php
                                         while ($row3=mysqli_fetch_assoc($datos_estudiante)){
@@ -83,7 +83,7 @@
                             </div>
                             <div class="form-group row"><label for="empleado" class="col-md-4 col-form-label text-md-right">Empleado:</label>
                                 <div class="col-md-6">
-                                    <select class="custom-select" name="empleado">
+                                    <select class="custom-select" name="empleado" required>
                                         <option value="" disabled selected hidden>Nada Seleccionado</option>
                                         <?php
                                         while ($row4=mysqli_fetch_assoc($datos_empleado)){
@@ -96,7 +96,7 @@
                             <div class="form-group row"><label for="fechainicio" class="col-md-4 col-form-label text-md-right">Fecha Inicio:</label><div class="col-md-6"><input type="date" name="fechainicio" id="fechainicio" class="form-control" value="" required autofocus></div></div>
                             <div class="form-group row"><label for="gestion" class="col-md-4 col-form-label text-md-right">Gestion:</label>
                                 <div class="col-md-6">
-                                    <select class="custom-select" name="gestion">
+                                    <select class="custom-select" name="gestion" required>
                                         <option value="" disabled selected hidden>Nada Seleccionado</option>
                                         <option VALUE="1">Gestion 1 de <?php echo $ao ?></option>
                                         <option VALUE="2">Gestion 2 de <?php echo $ao ?></option>
