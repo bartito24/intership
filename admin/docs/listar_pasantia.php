@@ -41,7 +41,7 @@ $datos=$objeto->listar();
                             echo "<td hidden>".$row['id_pasantia']."</td>";
                             echo "<td>".$row['fechainicio']."</td>";
                             echo "<td>".$row['estudiante_id_estudiante']."</td>";
-                            echo "<td>".$row['empleado_persona_id_persona']."</td>";
+                            echo "<td>".$row['empleado_id_empleado']."</td>";
                             echo "<td>".$row['empresa_id_empresa']."</td>";
                             $id_pasantia=$row['id_pasantia'];
                             $numpasantia=$row['id_pasantia'];

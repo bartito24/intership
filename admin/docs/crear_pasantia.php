@@ -52,9 +52,9 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group row"><label for="area" class="col-md-4 col-form-label text-md-right">Area:</label><div class="col-md-6"><input type="text" name="area" id="area" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
-                            <div class="form-group row"><label for="descripcion" class="col-md-4 col-form-label text-md-right">Descripción:</label><div class="col-md-6">
-                                    <textarea name="descripcion" id="descripcion" cols="36" rows="4" onkeypress="return sololetras(event)"></textarea></div></div>
+                            <div class="form-group row"><label for="areas" class="col-md-4 col-form-label text-md-right">Area:</label><div class="col-md-6"><input type="text" name="area" id="area" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                            <div class="form-group row"><label for="funciones" class="col-md-4 col-form-label text-md-right">Descripción:</label><div class="col-md-6">
+                                    <textarea name="funciones" id="funciones" cols="36" rows="4" onkeypress="return sololetras(event)"></textarea></div></div>
                             <div class="form-group row"><label for="asignatura" class="col-md-4 col-form-label text-md-right">Asignatura:</label>
                                 <div class="col-md-6">
                                     <select class="custom-select" name="asignatura">
@@ -84,8 +84,8 @@
                                 <div class="col-md-6">
                                     <select class="custom-select" name="gestion">
                                         <option value="" disabled selected hidden>Nada Seleccionado</option>
-                                        <option>Gestion 1 de <?php echo $ao ?></option>
-                                        <option>Gestion 2 de <?php echo $ao ?></option>
+                                        <option VALUE="1">Gestion 1 de <?php echo $ao ?></option>
+                                        <option VALUE="2">Gestion 2 de <?php echo $ao ?></option>
                                     </select>
                                 </div>
                             </div>

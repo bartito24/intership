@@ -57,7 +57,7 @@ $datos=$objeto->listar();
                             $apellidorep=$row['apellidorep'];
                             $celular=$row['celular'];
                             $num+=1;
-                            echo "<td><a class='btn btn-danger col-md-5' href='../../enrutador/enr_empresa.php?id_carrera=".$id_empresa."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                            echo "<td><a class='btn btn-danger col-md-5' href='../../enrutador/enr_empresa.php?id_empresa=".$id_empresa."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
                             <a class=' btn btn-success col-md-5' href='modificar_empresa.php?id_empresa=".$id_empresa."&nombre=".$nombre."&direccion=".$direccion."&telefono=".$telefono."&nombrerep=".$nombrerep."&apellidorep=".$apellidorep."&celular=".$celular."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }?>

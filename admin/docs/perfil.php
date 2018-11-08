@@ -20,9 +20,9 @@ include_once('menu.php');
     <div class="row user">
         <div class="col-md-12">
             <div class="profile">
-                <div class="info"><img class="user-img" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg">
-                    <h4>John Doe</h4>
-                    <p>FrontEnd Developer</p>
+                <div class="info"><img class="user-img" src="../../logo/apple-icon.png">
+                    <h4>Internship</h4>
+                    <p>Sistema de Control</p>
                 </div>
                 <div class="cover-image"></div>
             </div>

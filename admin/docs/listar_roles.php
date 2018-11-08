@@ -28,6 +28,7 @@ include_once ('../../modelo/mdl_rol.php');
                         <tr>
                             <th>Num</th>
                             <th>Nombre</th>
+                            <th>Descripción</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -40,6 +41,7 @@ include_once ('../../modelo/mdl_rol.php');
                             echo "<td>$num</td>";
                             echo "<td hidden>".$row["id_rol"]."</td>";
                             echo "<td>".$row["nombrerol"]."</td>";
+                            echo "<td></td>";
                             $num+=1;
                             echo "</tr>";
                         }

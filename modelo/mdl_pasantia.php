@@ -4,7 +4,7 @@ class mdl_pasantia
 {
     private $id_pasantia;
     public $fechainicio;
-    public $fechafin;
+    public $fecha;
     public $gestion;
     public $docs;
     public $estadopasantia;
@@ -12,7 +12,7 @@ class mdl_pasantia
     public $empresa;
     public $asignatura;
     public $area;
-    public $descripcion;
+    public $funciones;
     public $estudiante;
     public $fechavisita;
     public $observacionvisita;
@@ -28,7 +28,7 @@ class mdl_pasantia
     {
         $this->id_pasantia = 0;
         $this->fechainicio = "";
-        $this->fechafin = "";
+        $this->fecha = "";
         $this->gestion = "";
         $this->docs = "";
         $this->estadopasantia = 0;
@@ -36,7 +36,7 @@ class mdl_pasantia
         $this->empresa = 0;
         $this->asignatura = 0;
         $this->area = "";
-        $this->descripcion = "";
+        $this->funciones = "";
         $this->estudiante = 0;
         $this->fechavisita = "";
         $this->observacionvisita = "";
@@ -56,7 +56,11 @@ class mdl_pasantia
 
     public function insertar()
     {
-        $sql = "INSERT INTO pasantia (fechainicio,fechafin,gestion,docs,estadopasantia, empleado_id_empleado, empresa_id_empresa, asignatura_id_asignatura, area, funciones, estudiante_id_estudiante, fechavisita, observacionvisita,latitud, longitud, notasupervisor, notatutor, notafinal, observacionp, activopasantia) VALUE ('$this->fechainicio',(NULL),'$this->gestion','',1,1,'$this->empresa','$this->asignatura','$this->area','$this->descripcion','$this->estudiante',(NULL),'','0','0','0','0','0','',1)";
+        $fecha=$this->fechainicio;
+        $fecha("Y-m-d",strtotime($fecha."+ 1 week"));
+        print_r($fecha);
+        $sql = "INSERT INTO pasantia (fechainicio,fechafin,gestion,docs,estadopasantia, empleado_id_empleado, empresa_id_empresa, asignatura_id_asignatura, area, funciones, estudiante_id_estudiante, fechavisita, observacionvisita,latitud, longitud, notasupervisor, notatutor, notafinal, observacionp, activopasantia) VALUE ('$this->fechainicio','$this->fecha','$this->gestion','',1,1,'$this->empresa','$this->asignatura','$this->area','$this->funciones','$this->estudiante',(NULL),'','0','0','0','0','0','',1);";
+
         $this->obj_con->sin_retorno($sql);
 
     }

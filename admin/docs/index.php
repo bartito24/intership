@@ -49,6 +49,11 @@ toast({
                 <p>
                     Queremos agradecer a todos los Ingenieros por la enseñanza y el tiempo.
                 </p>
+                <?php
+                $fecha_actual = date("Y-m-d");
+                //sumo 1 semana
+                echo date("Y-m-d",strtotime($fecha_actual."+ 1 week"));
+                ?>
             </div>
         </center>
     </div>

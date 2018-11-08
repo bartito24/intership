@@ -115,7 +115,8 @@ if($_SESSION['usuario']==""){
               <ul class="treeview-menu">
                   <li><a class="treeview-item" href="crear_carrera.php"><i class="icon fa fa-plus-square"></i>Crear Carrera</a></li>
                   <li><a class="treeview-item" href="listar_carrera.php"><i class="icon fa fa-list"></i>Listar Carreras</a></li>
-
+                  <li><a class="treeview-item" href="crear_asignatura.php"><i class="icon fa fa-circle-o"></i>Crear Asignaturas</a></li>
+                  <li><a class="treeview-item" href="listar_asignatura.php"><i class="icon fa fa-circle-o"></i>Listar Asignaturas</a></li>
               </ul>
               <?php  }?>
               <!--    Empresas   -->
@@ -140,7 +141,6 @@ if($_SESSION['usuario']==""){
                 <li><a class="treeview-item" href="listar_pasantia.php"><i class="icon fa fa-circle-o"></i>Listar Pasantía</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificación de Pasantía</a></li>
                 <li><a class="treeview-item" href="listar_documentacion.php"><i class="icon fa fa-circle-o"></i>Documentacion</a></li>
-                <li><a class="treeview-item" href="listar_asignatura.php"><i class="icon fa fa-circle-o"></i>Asignatura</a></li>
                 <!--  Jefe de carrera
                   <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
                 -->

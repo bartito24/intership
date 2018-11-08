@@ -10,10 +10,10 @@ class ctrl_pasantia{
     }
 
     public function insertar($p){
-        print_r($p);
+        //print_r($p);
         $this->obj_mod->set("empresa" ,$p['empresa']);
         $this->obj_mod->set("area" ,$p['area']);
-        $this->obj_mod->set("descripcion" ,$p['descripcion']);
+        $this->obj_mod->set("funciones" ,$p['funciones']);
         $this->obj_mod->set("asignatura" ,$p['asignatura']);
         $this->obj_mod->set("estudiante" ,$p['estudiante']);
         $this->obj_mod->set("fechainicio" ,$p['fechainicio']);
@@ -23,7 +23,7 @@ class ctrl_pasantia{
     public function modificar($p){
         $this->obj_mod->set("empresa" ,$p['empresa']);
         $this->obj_mod->set("area" ,$p['area']);
-        $this->obj_mod->set("descripcion" ,$p['descripcion']);
+        $this->obj_mod->set("funciones" ,$p['funciones']);
         $this->obj_mod->set("asignatura" ,$p['asignatura']);
         $this->obj_mod->set("estudiante" ,$p['estudiante']);
         $this->obj_mod->set("fechainicio" ,$p['fechainicio']);

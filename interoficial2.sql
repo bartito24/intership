@@ -47,15 +47,16 @@ CREATE TABLE `carrera` (
   `version` int(11) DEFAULT NULL,
   `activocarrera` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_carrera`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `carrera` */
 
 insert  into `carrera`(`id_carrera`,`nombrecarrera`,`modalidad`,`version`,`activocarrera`) values 
-(1,'Sistemas','Anual',1,1),
-(2,'rer','Semestral',1,1),
+(1,'Sistemas Informaticos','Anual',2,1),
+(2,'rer','Semestral',1,0),
 (3,'Parvulario','Semestral',NULL,0),
-(4,'gases','Anual',1,0);
+(4,'gases','Anual',1,0),
+(5,'gastronomia','Anualizado',1,0);
 
 /*Table structure for table `cuadernillo` */
 
@@ -139,13 +140,14 @@ CREATE TABLE `empresa` (
   `celular` int(11) DEFAULT NULL,
   `activoempresa` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_empresa`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `empresa` */
 
 insert  into `empresa`(`id_empresa`,`nombreempresa`,`direccionempresa`,`telefono`,`nombrerep`,`apellidorep`,`celular`,`activoempresa`) values 
 (1,'Comteco','La Paz',2223,'Rosmeri','Santos',60434234,1),
-(2,'Entelito','Ayacucho',2222,'Victor','Mercado',454345,1);
+(2,'Entelito','Ayacucho',2222,'Victor','Mercado A',454345,1),
+(3,'kaplian','lanza',2353534,'Ramiro','Perez',7024234,0);
 
 /*Table structure for table `entrega` */
 
@@ -193,14 +195,15 @@ CREATE TABLE `estudiante` (
   PRIMARY KEY (`id_estudiante`,`persona_id_persona`),
   KEY `fk_estudiante_persona1_idx` (`persona_id_persona`),
   CONSTRAINT `fk_estudiante_persona1` FOREIGN KEY (`persona_id_persona`) REFERENCES `persona` (`id_persona`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `estudiante` */
 
 insert  into `estudiante`(`id_estudiante`,`activoestudiante`,`persona_id_persona`) values 
 (1,1,3),
 (2,1,4),
-(3,1,6);
+(3,1,6),
+(4,1,7);
 
 /*Table structure for table `funcionalidad` */
 
@@ -254,14 +257,15 @@ CREATE TABLE `pasantia` (
   CONSTRAINT `fk_pasantia_empleado1` FOREIGN KEY (`empleado_id_empleado`) REFERENCES `empleado` (`id_empleado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_pasantia_empresa1` FOREIGN KEY (`empresa_id_empresa`) REFERENCES `empresa` (`id_empresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_pasantia_estudiante1` FOREIGN KEY (`estudiante_id_estudiante`) REFERENCES `estudiante` (`id_estudiante`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `pasantia` */
 
 insert  into `pasantia`(`id_pasantia`,`fechainicio`,`fechafin`,`gestion`,`docs`,`estadopasantia`,`empleado_id_empleado`,`empresa_id_empresa`,`asignatura_id_asignatura`,`area`,`funciones`,`estudiante_id_estudiante`,`fechavisita`,`observacionvisita`,`latitud`,`longitud`,`notasupervisor`,`notatutor`,`notafinal`,`observacionp`,`activopasantia`) values 
 (1,'2018-11-04','2018-11-04','gestion 2018','docs',1,2,1,1,'area','funciones',1,'2018-11-04','nada',0.000000,0.000000,0,0,0,'aprobado',1),
 (5,'2018-11-06',NULL,'','',1,2,1,1,'','',1,'2018-11-04','',0.000000,0.000000,0,0,0,'',1),
-(6,'2018-11-07',NULL,'','',1,2,1,1,'','',1,'2018-11-04','',0.000000,0.000000,0,0,0,'',1);
+(6,'2018-11-07',NULL,'','',1,2,1,1,'','',1,'2018-11-04','',0.000000,0.000000,0,0,0,'',1),
+(7,'2018-11-07',NULL,'','',1,1,2,3,'','',3,NULL,'',0.000000,0.000000,0,0,0,'',1);
 
 /*Table structure for table `persona` */
 
@@ -283,7 +287,7 @@ CREATE TABLE `persona` (
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `fk_persona_rol1_idx` (`rol_id_rol`),
   CONSTRAINT `fk_persona_rol1` FOREIGN KEY (`rol_id_rol`) REFERENCES `rol` (`id_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `persona` */
 
@@ -293,7 +297,8 @@ insert  into `persona`(`id_persona`,`nombre`,`papellido`,`sapellido`,`ci`,`telef
 (3,'Roy Franco','BartolomÃ©','BartolomÃ©','Cochabamba',68141732,'00591','bartito24@gmail.com',1,3),
 (4,'jhona','amy','thamez','123233',494948,'Av. oquendo','jhonas12345@gmail.com',1,3),
 (5,'Alejandro','Wills','Mercado','867276',8484,'Av. 6 de Agosto','alentandome@gmail.com',1,2),
-(6,'Nicol','Cardenas','Choque','2454423',453353,'Simon Lopez','nicol14193435@gmail.com',1,3);
+(6,'Nicol','Cardenas','Choque','2454423',453353,'Simon Lopez','nicol14193435@gmail.com',1,3),
+(7,'belen','lopez','lopez','24232',45466767,'lanza','belen@gmail.com',1,3);
 
 /*Table structure for table `privilegios` */
 
@@ -376,7 +381,7 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`id_usuario`,`persona_id_persona`),
   KEY `fk_usuario_persona1_idx` (`persona_id_persona`),
   CONSTRAINT `fk_usuario_persona1` FOREIGN KEY (`persona_id_persona`) REFERENCES `persona` (`id_persona`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `usuario` */
 
@@ -385,7 +390,8 @@ insert  into `usuario`(`id_usuario`,`usuario`,`clave`,`activousuario`,`fechacrea
 (2,'jhonasemanuel1234@gmail.com','21232f297a57a5a743894a0e4a801fc3',1,'2018-11-03 15:57:51',2),
 (3,'bartito24@gmail.com','76873b5fd1e84dafae8224353df15525',1,'2018-11-05 03:29:47',3),
 (4,'jhonas12345@gmail.com','7761ba01556dc163258836a5b59664f2',1,'2018-11-05 15:14:42',4),
-(5,'alentandome@gmail.com','21232f297a57a5a743894a0e4a801fc3',1,'2018-11-06 08:17:57',5);
+(5,'alentandome@gmail.com','21232f297a57a5a743894a0e4a801fc3',1,'2018-11-06 08:17:57',5),
+(6,'belen@gmail.com','06a368f79d4968782c5815c9b1053feb',1,'2018-11-07 09:16:18',7);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
