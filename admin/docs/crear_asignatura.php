@@ -3,23 +3,10 @@ include_once ('../../modelo/conexion.php');
 $con=new conexion();
 $sql="select * from asignatura where activoasignatura=1";
 $datos=$con->con_retorno($sql);
-
- ?>
-
-
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Asignatura</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="../../js/validacion.js"></script>
-    <?php include_once('menu.php');
-    ?>
-</head>
-<body>
+$sql1="select * from requisitos where activorequisito=1";
+$requisito=$con->con_retorno($sql1);
+ include_once('menu.php');
+?>
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -62,12 +49,13 @@ $datos=$con->con_retorno($sql);
                             </div>
 
                             <div class="form-group row">
-                                <label for="requisito" class="col-md-4 col-form-label text-md-right">Requisitos:</label>
-                                <div class="col-md-6">
-                                    <select type="text" name="requisito" id="requisito" class="form-control" value=""  autofocus onkeypress="return numeros(event);">
-                                        <option value=""></option>
-                                    </select>
-                                </div>
+                                <label for="req" class="col-md-4 col-form-label text-md-right">Requisito:</label>
+                                <div class="col-md-6"><select id="req" class="selectpicker" required name="req[]" multiple data-live-search="true">
+                                        <?php
+                                        while($row2=mysqli_fetch_assoc($requisito)){
+                                            echo "<option>".$row2['nombrerequsito']."</option>";
+                                        }?>
+                                    </select></div>
                             </div>
 
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
@@ -110,8 +98,5 @@ $datos=$con->con_retorno($sql);
             </div>
 
         </div>
-    </div>
 
 </main>
-</body>
-</html>
