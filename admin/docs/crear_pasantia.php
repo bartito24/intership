@@ -13,11 +13,12 @@
     $sql= "select * from asignatura where activoasignatura=1";
     $sql2="select * from empresa where activoempresa=1";
     $sql3="select * from estudiante join persona p on estudiante.persona_id_persona = p.id_persona where activoestudiante=1";
-
+    $sql4="select * from empleado join persona p on empleado.persona_id_persona = p.id_persona where cargo='Tutor' and activoempleado=1 and activo=1";
     $datos_asignatura=$obj->con_retorno($sql);
     $datos_empresa=$obj->con_retorno($sql2);
     $datos_estudiante=$obj->con_retorno($sql3);
-    $ao= date("Y");
+    $datos_empleado=$obj->con_retorno($sql4);
+    $ao = date("Y" );
     ?>
 </head>
 <body>
@@ -75,6 +76,18 @@
                                         <?php
                                         while ($row3=mysqli_fetch_assoc($datos_estudiante)){
                                             echo "<option value='$row3[id_estudiante]'>".$row3['nombre']." ".$row3['papellido']." ".$row3['sapellido']."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row"><label for="empleado" class="col-md-4 col-form-label text-md-right">Empleado:</label>
+                                <div class="col-md-6">
+                                    <select class="custom-select" name="empleado">
+                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
+                                        <?php
+                                        while ($row4=mysqli_fetch_assoc($datos_empleado)){
+                                            echo "<option value='$row4[id_empleado]'>".$row4['nombre']." ".$row4['papellido']." ".$row4['sapellido']."</option>";
                                         }
                                         ?>
                                     </select>

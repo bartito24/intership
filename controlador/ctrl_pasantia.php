@@ -17,6 +17,7 @@ class ctrl_pasantia{
         $this->obj_mod->set("asignatura" ,$p['asignatura']);
         $this->obj_mod->set("estudiante" ,$p['estudiante']);
         $this->obj_mod->set("fechainicio" ,$p['fechainicio']);
+        $this->obj_mod->set("empleado",$p['empleado']);
         $this->obj_mod->set("gestion" ,$p['gestion']);
         $this->obj_mod->insertar();
     }
