@@ -397,3 +397,24 @@ DEFAULT CHARACTER SET = latin1;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+INSERT INTO `funcionalidad` (`id_funcionalidad`, `nombrefuncionalidad`) VALUES
+	(1, 'visualizar'),
+	(2, 'crear/editar'),
+	(3, 'todo');
+
+INSERT INTO `rol` (`id_rol`, `nombrerol`, `activorol`) VALUES
+	(1, 'administrador', 1),
+	(2, 'personal', 1),
+	(3, 'estudiante', 1);
+	
+INSERT INTO `privilegios` (`rol_id_rol`, `funcionalidad_id_funcionalidad`) VALUES
+	(1, 3),
+	(2, 2),
+	(3, 1);	
+	
+	INSERT INTO `persona` (`id_persona`, `nombre`, `papellido`, `sapellido`, `ci`, `telefono`, `direccion`, `email`, `activo`, `rol_id_rol`) VALUES
+	(1, 'pasantia', 'pasantia', 'pasantia', 'pasantia', 0, 'pasantia', 'pasantia@pasantia.com', 1, 1);
+	
+	INSERT INTO `usuario` (`id_usuario`, `usuario`, `clave`, `activousuario`, `fechacreacion`, `persona_id_persona`) VALUES
+	(1, 'pasantia@pasantia.com', '21232f297a57a5a743894a0e4a801fc3', 1, '2018-11-08 17:48:39', 1);
