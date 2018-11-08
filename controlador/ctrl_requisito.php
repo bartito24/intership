@@ -11,11 +11,11 @@ class ctrl_requisito
 
     public function insertar_requisito($n)
     {
-        $this->obj_mod->set("nombrerequisitoplatilla", $n["requisito"]);
+        $this->obj_mod->set("nombrerequisito", $n["nombrerequisito"]);
 
         $this->obj_mod->insertar_requisito();
 
-        echo "<script> window.location.href='../admin/docs/tramites.php';</script>";
+        echo "<script> window.location.href='../admin/docs/listar_requisito.php';</script>";
 
     }
     public function listar_requisito(){

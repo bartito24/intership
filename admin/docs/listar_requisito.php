@@ -1,8 +1,8 @@
 <?php
 include_once ('menu.php');
-include_once ('../../modelo/mdl_requisitos.php');
-$objeto=new mdl_requisitos();
-$datos=$objeto->listar_requisitos();
+include_once ('../../modelo/mdl_requisito.php');
+$objeto=new mdl_requisito();
+$datos=$objeto->listar_requisito();
 ?>
 
 <main class="app-content">
@@ -25,9 +25,10 @@ $datos=$objeto->listar_requisitos();
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
-                            <th>Num</th>
+
                             <th>Nombre</th>
-                            <th>descripcion</th>
+                            <th>Opciones</th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -35,14 +36,11 @@ $datos=$objeto->listar_requisitos();
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
                             echo "<type='hidden'"."<td>".$row['id_requisitos']."</td>";
-                            echo "<td>".$row['numpasantia']."</td>";
-                            echo "<td>".$row['nombrerequisito']."</td>";
-                            echo "<td>".$row['descripcionre']."</td>";
+                            echo "<td>".$row['nombrerequsito']."</td>";
                             $id_requisitos=$row['id_requisitos'];
-                            $numpasantia=$row['numpasantia'];
-                            $nombrerequisito=$row['nombrerequisito'];
-                            $descripcionre=$row['descripcionre'];
-                            
+                            $nombrerequisito=$row['nombrerequsito'];
+                            echo "<td><a class='btn btn-danger col-md-3' href='../../controlador/ctrl_agregarusuario.php?id_requisitos=".$id_requisitos."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                            <a class=' btn btn-success col-md-3'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                             echo "</tr>";
                         }?>

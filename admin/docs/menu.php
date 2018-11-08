@@ -118,6 +118,7 @@ if($_SESSION['usuario']==""){
                   <li><a class="treeview-item" href="crear_asignatura.php"><i class="icon fa fa-circle-o"></i>Crear Asignaturas</a></li>
                   <li><a class="treeview-item" href="listar_asignatura.php"><i class="icon fa fa-circle-o"></i>Listar Asignaturas</a></li>
                   <li><a class="treeview-item" href="crear_requisito.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li>
+                  <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-circle-o"></i>listar Requisito</a></li>
               </ul>
               <?php  }?>
               <!--    Empresas   -->
@@ -164,16 +165,15 @@ if($_SESSION['usuario']==""){
                </ul>
           </li>
 <!--   fin pasantia       -->
-            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Requsitos Pasantia</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <!--li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Requsitos Pasantia</span><i class="treeview-indicator fa fa-angle-right"></i></a-->
           <ul class="treeview-menu">
-          <li><a class="treeview-item" href="requisitos.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li>
-          <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-circle-o"></i>listar Requisito</a></li>
-              <?php if ($_SESSION['rol']=='administrador') {?>
+          <!--li><a class="treeview-item" href="requisitos.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li-->
+            <?php if ($_SESSION['rol']=='administrador') {?>
             
             <!--<li><a class="treeview-item" href="form-samples.html"><i class="icon fa fa-circle-o"></i> Form Samples</a></li>
             <li><a class="treeview-item" href="form-notifications.html"><i class="icon fa fa-circle-o"></i> Form Notifications</a></li>-->
           </ul>
-        </li>
+        <!--/li-->
         <!--<li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tables</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="table-basic.html"><i class="icon fa fa-circle-o"></i> Basic Tables</a></li>
