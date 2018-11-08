@@ -61,6 +61,7 @@ public function listar(){
             $_SESSION['direccion']=$da['direccion'];
             $_SESSION['privilegio']=$da['id_funcionalidad'];
             $_SESSION['id_persona']=$da['id_persona'];
+            $_SESSION['email']=$da['email'];
             $_SESSION['bienvenida']=0;
             $_SESSION['cargo']=$da['cargo'];
 
