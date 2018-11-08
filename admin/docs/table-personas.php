@@ -56,10 +56,7 @@ $datos=$objeto->listar();
                     $direccion=$row['direccion'];
                     $email=$row['email'];
                     echo "<td>
-                      <a class='btn btn-danger col-md-5' href='../../controlador/ctrl_agregarusuario.php?id_persona=".$id_persona."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
-
-                      <a class='btn btn-danger col-md-5' href='asignar_rol.php?id_persona=".$id_persona."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
-                            
+                      <a class='btn btn-danger col-md-5' href='../../controlador/ctrl_agregarusuario.php?id_persona=".$id_persona."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>                           
                       <a class=' btn btn-success col-md-5' href='modificar_persona.php?id_persona=".$id_persona."&nombre=".$nombre."&papellido=".$papellido."&sapellido=".$sapellido."&ci=".$ci."&telefono=".$telefono."&direccion=".$direccion."&email=".$email."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                 echo "</tr>";
                 }?>
