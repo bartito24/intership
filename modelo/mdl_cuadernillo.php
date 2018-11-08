@@ -28,6 +28,11 @@ class mdl_cuadernillo
 
         $sql = "INSERT INTO cuadernillo (fecha_registro,fecha,decripcion) VALUE ('$fecha','$this->fecha','$this->descripcion');";
         $this->obj_con->sin_retorno($sql);
+        $sql="select *from persona join estudiante e on persona.id_persona = e.persona_id_persona where id_persona=$_SESSION[id_persona]";
+        $datos=$this->obj_con->con_retorno($sql);
+        $row=mysqli_fetch_assoc($datos);
+        $sql="select * from pasantia where estudiante_id_estudiante=$row[id_estudiante]";
+        $datos1=$this->obj_con->con_retorno($sql);
 
         echo $sql;
     }
