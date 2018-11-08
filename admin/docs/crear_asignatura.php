@@ -83,7 +83,7 @@ $requisito=$con->con_retorno($sql1);
                         while ($row=mysqli_fetch_assoc($datos)) {
                             echo "<div class='form-group row'>
                             <div class='col-md-12'>
-                                <button class='btn btn-danger col-md-12'>$row[nombreasignatura]</button>
+                                <p class='form-control'>$row[nombreasignatura]</p>
                             </div>
                                 
                             </div>";
