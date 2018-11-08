@@ -85,7 +85,7 @@ if($_SESSION['usuario']==""){
       <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../../imagenes/userc.png" alt="User Image">
           <div>
               <p class="app-sidebar__user-name"><?php echo $_SESSION['nombre']?></p>
-              <p class="app-sidebar__user-designation"><?php echo $_SESSION['papellido']." ".$_SESSION['sapellido']?></p>
+              <p class="app-sidebar__user-designation"><?php echo $_SESSION['papellido']?></p>
           </div>
       </div>
       <ul class="app-menu">
@@ -98,16 +98,6 @@ if($_SESSION['usuario']==""){
                   <li ><a class="treeview-item" href = "listar_usuario.php" ><i class="icon fa fa-list" ></i > Listar Usuarios </a ></li >
               </ul >
 
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-address-book"></i><span class="app-menu__label">Roles</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-              <li><a class="treeview-item" href="listar_roles.php"><i class="icon fa fa-list"></i> Listar Roles</a></li>
-
-
-            <!--<li><a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i> Font Icons</a></li>
-            <li><a class="treeview-item" href="ui-cards.html"><i class="icon fa fa-circle-o"></i> Cards</a></li>
-            <li><a class="treeview-item" href="widgets.html"><i class="icon fa fa-circle-o"></i> Widgets</a></li>-->
-          </ul>
-        </li>
           <?php  }?>
           <!--    Carreras      -->
           <?php if ($_SESSION['rol']=='administrador') {?>
