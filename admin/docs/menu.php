@@ -133,6 +133,7 @@ if($_SESSION['usuario']==""){
                 <!-- <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificación de Pasantía</a></li> -->
                 <li><a class="treeview-item" href="crear_documentacion.php"><i class="icon fa fa-plus-square"></i>Crear Documentacion</a></li>
                 <li><a class="treeview-item" href="listar_documentacion.php"><i class="icon fa fa-list"></i>Listar Documentacion</a></li>
+
                 <!--  Jefe de carrera
                   <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
                 -->
@@ -150,6 +151,7 @@ if($_SESSION['usuario']==""){
                 <?php if( $_SESSION['cargo']=="Tutor" || $_SESSION['rol']=="administrador"){ ?>
 
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Ver pasantes asignados</a></li>
+                    <li><a class="treeview-item" href="llenar_cuadernillo.php"><i class="icon fa fa-list"></i>Llenar Cuadernillo</a></li>
                 <?php } ?>
                </ul>
           </li>
