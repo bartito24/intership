@@ -57,8 +57,8 @@
                                <div id="pru" class="form-group row" style="display: none"><label for="cargo" class="col-md-4 col-form-label text-md-right">Cargo</label><div class="col-md-6">
                                              <select class="custom-select" name="cargo"  id="cargo">
                                                  <option value="" disabled selected hidden>Nada Seleccionado</option>
-                                                <option>Tutor</option>
-                                                <option>Jefe de Carrera</option>
+                                                 <option>Tutor</option>
+                                                 <option>Jefe de Carrera</option>
                                                  <option>Jefe de Registros Inscripciones</option>
                                                  <option>Encargado Empresa</option>
                                              </select>
