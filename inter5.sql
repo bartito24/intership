@@ -449,28 +449,3 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-INSERT  INTO `funcionalidad`(`id_funcionalidad`,`nombrefuncionalidad`) VALUES 
-(1,'crear/editar'),
-(2,'visualizar'),
-(3,'todo');
-
-INSERT  INTO `rol`(`id_rol`,`nombrerol`,`activorol`) VALUES 
-(1,'administrador',1),
-(2,'personal',1),
-(3,'estudiante',1);
-
-INSERT  INTO `privilegios`(`rol_id_rol`,`funcionalidad_id_funcionalidad`) VALUES 
-(2,1),
-(3,2),
-(1,3);
-
-INSERT  INTO `persona`(`id_persona`,`nombre`,`papellido`,`sapellido`,`ci`,`telefono`,`direccion`,`email`,`rol`,`activo`) VALUES 
-(1,'admin','admin','admin','admin',0,'admin','admin@admin.com',1,1);
-
-INSERT  INTO `usuario`(`id_usuario`,`usuario`,`clave`,`persona_id_persona`,`activousuario`,`fechacreacion`) VALUES 
-(1,'admin@admin.com','21232f297a57a5a743894a0e4a801fc3',1,1,'2018-09-11 12:47:59');
-
-INSERT  INTO `cuenta`(`usuario_id_usuario`,`usuario_persona_id_persona`,`rol_id_rol`) VALUES 
-(1,1,1);
-INSERT INTO `empleado` (`persona_id_persona`, `cargo`, `activoempleado`) VALUES ('1', 'administrador', '1');
