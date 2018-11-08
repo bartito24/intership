@@ -15,7 +15,7 @@ if($_SESSION['usuario']==""){
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
       <link rel="stylesheet" type="text/css" href="bootstrap4/font-awesome-4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="../../bootstrap4/css/bootstrap-select.css" />
+      <link rel="stylesheet" href="../../bootstrap4/css/bootstrap-select.css"/>
       <script src="js/sweetalert2.all.min.js"></script>
       <script src="js/jquery-3.2.1.min.js"></script>
   </head>
