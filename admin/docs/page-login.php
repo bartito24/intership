@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css"
               href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/png" href="../../logo/apple-icon.png"/>
+        <script src="../../js/validacion.js"></script>
         <title>Ingreso</title>
     </head>
     <body>
@@ -31,12 +32,12 @@
                 <div class="form-group">
                     <label class="control-label" for="nick">NOMBRE DE USUARIO</label>
                     <input class="form-control" type="email" id="nick" name="nick" placeholder="Email" required
-                           autofocus autocomplete="off">
+                           autofocus autocomplete="off" onkeypress="return correo(event)" maxlength="25">
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="clave">CLAVE</label>
                     <input class="form-control" type="password" id="clave" name="clave" placeholder="Password" required
-                           autofocus onkeypress="return validar(event);">
+                           autofocus onkeypress="return sololetras(event);" maxlength="12">
                 </div>
                 <div class="form-group">
                     <div class="utility">
@@ -58,7 +59,7 @@
                 <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Olvido la clave ?</h3>
                 <div class="form-group">
                     <label class="control-label">CORREO</label>
-                    <input class="form-control" type="text" name="correo" placeholder="Email" required>
+                    <input class="form-control" type="text" name="correo" placeholder="Email" onkeypress="return correo(event);" required>
                 </div>
                 <div class="form-group btn-container">
                     <button class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>Enviar Correo
