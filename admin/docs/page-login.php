@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <label class="control-label" for="nick">NOMBRE DE USUARIO</label>
                     <input class="form-control" type="email" id="nick" name="nick" placeholder="Email" required
-                           autofocus autocomplete="off" onkeypress="return correo(event)" maxlength="25">
+                           autofocus autocomplete="off" onkeypress="return correo(event)" maxlength="45">
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="clave">CLAVE</label>
