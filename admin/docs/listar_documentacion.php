@@ -49,7 +49,7 @@ $datos=$objeto->listar();
                             $fechaentrega=$row['fechaentrega'];
                             $respaldo=$row['respaldo'];
                             $num+=1;
-                            echo "<td><a class='btn btn-danger col-md-5' href='../../enrutador/enr_documentacion.php?id_documentacion=".$id_documentacion."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                            echo "<td>
                             <a class=' btn btn-success col-md-5' href='modificar_documentacion.php?id_documentacion=".$id_documentacion."&nombredoc=".$nombredoc."&fechaentrega=".$fechaentrega."&respaldo=".$respaldo."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }?>

@@ -9,7 +9,8 @@ if (isset($_POST['registrar'])){
 elseif (isset($_POST['modificar'])){
     $obj->modificar($_POST);
     echo "<script> window.location.href='../admin/docs/listar_documentacion.php';</script>";
-} elseif (isset($_GET['id_documentacion'])){
+}
+elseif (isset($_GET['id_documentacion'])){
     $obj->eliminar($_GET['id_documentacion']);
     echo "<script> window.location.href='../admin/docs/listar_documentacion.php';</script>";
 }

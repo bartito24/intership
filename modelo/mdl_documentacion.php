@@ -31,7 +31,7 @@ class mdl_documentacion
     }
     public function modificar()
     {
-        $sql="UPDATE documentacion SET nombredoc='$this->nombredoc', fechaentrega='$this->fechaentrega', respaldo='$this->respaldo' where id_documentacion='$this->id_documentacion';";
+        $sql="UPDATE documentacion SET nombredoc='$this->nombredoc', respaldo='$this->respaldo' where id_documentacion='$this->id_documentacion';";
         $this->obj_con->sin_retorno($sql);
 
     }
@@ -43,7 +43,7 @@ class mdl_documentacion
     }
     public function Eliminar($id)
     {
-        $sql = "UPDATE documentacion  WHERE id_documentacion=$id_documentacion";
+        $sql = "UPDATE documentacion  WHERE id_documentacion=$id";
         $this->obj_con->sin_retorno($sql);
     }
 }
