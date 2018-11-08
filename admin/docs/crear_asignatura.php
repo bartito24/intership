@@ -26,11 +26,11 @@ $requisito=$con->con_retorno($sql1);
                 <div class="tile">
                     <center><h3 class="tile-title">Nueva Asignaturas</h3></center>
                     <div class="tile-body">
-                        <form name="f1" action="../../enrutador/enr_asignatura.php" method="post" autocomplete="off" required>
+                        <form name="f1" action="../../enrutador/agregar_asignatura.php" method="post" autocomplete="off" required>
                             <div class="form-group row">
                                 <label for="nombreasignatura" class="col-md-4 col-form-label text-md-right">Nombre:</label>
                                 <div class="col-md-6">
-                                    <input type="text" name="nombreasignatura" id="nombreasignatura" class="form-control" value="" required autofocus onkeypress="return letras(event);">
+                                    <input type="text" name="nombreasignatura" id="nombreasignatura" class="form-control" value="pasantia" readonly autofocus onkeypress="return letras(event);">
                                 </div>
                             </div>
 

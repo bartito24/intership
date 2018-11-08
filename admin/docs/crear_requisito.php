@@ -1,3 +1,11 @@
+<?php 
+include_once ('../../modelo/conexion.php');
+$con=new conexion();
+$sql="select * from requisitos where activorequisito=1";
+$datos=$con->con_retorno($sql);
+
+
+ ?>
 <?php include_once('menu.php');
 ?>
 <main class="app-content">
@@ -42,7 +50,37 @@
                     </div>
 
                 </div>
+
+             
+
+
+                 
             </div>
+
+            <div class="col-md-6">
+                <div class="tile">
+                    <center><h3 class="tile-title">Riquisitos Disponibles</h3></center>
+                    <div class="tile-body">
+                        <?php
+                        while ($row=mysqli_fetch_assoc($datos)) {
+                            echo "<div class='form-group row'>
+                            <div class='col-md-12'>
+                            
+                            <p class='form-control'>$row[nombrerequsito]</p>
+
+                                
+                            </div>
+                                
+                            </div>";
+                        }
+
+
+                        ?>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 
