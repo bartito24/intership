@@ -21,4 +21,14 @@ class ctrl_requisito
     public function listar_requisito(){
        return $this->obj_mod->listar_requisito();
     }
+
+    public function eliminar($id){
+        $this->obj_mod->eliminar($id);
+    }
+
+    public function modificar($p){
+        $this->obj_mod->set("nombrerequisito" ,$p['nombrerequisito']);
+        $this->obj_mod->set("id_requisitos" ,$p['id_requisitos']);
+        $this->obj_mod->modificar();
+    }
 }
