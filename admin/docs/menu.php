@@ -97,18 +97,18 @@ if($_SESSION['usuario']==""){
                   <li ><a class="treeview-item" href = "table-personas.php" ><i class="icon fa fa-list" ></i > Listar Personas</a ></li >
                   <li ><a class="treeview-item" href = "listar_usuario.php" ><i class="icon fa fa-list" ></i > Listar Usuarios </a ></li >
               </ul >
-
+          </li>
           <?php  }?>
           <!--    Carreras      -->
           <?php if ($_SESSION['rol']=='administrador') {?>
-          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-bed"></i><span class="app-menu__label">Carreras</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-window-maximize"></i><span class="app-menu__label">Carreras</span><i class="treeview-indicator fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                   <li><a class="treeview-item" href="crear_carrera.php"><i class="icon fa fa-plus-square"></i>Crear Carrera</a></li>
                   <li><a class="treeview-item" href="listar_carrera.php"><i class="icon fa fa-list"></i>Listar Carreras</a></li>
-                  <li><a class="treeview-item" href="crear_asignatura.php"><i class="icon fa fa-circle-o"></i>Crear Asignaturas</a></li>
-                  <li><a class="treeview-item" href="listar_asignatura.php"><i class="icon fa fa-circle-o"></i>Listar Asignaturas</a></li>
-                  <li><a class="treeview-item" href="crear_requisito.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li>
-                  <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-circle-o"></i>listar Requisito</a></li>
+                  <li><a class="treeview-item" href="crear_asignatura.php"><i class="icon fa fa-plus-square"></i>Crear Asignaturas</a></li>
+                  <li><a class="treeview-item" href="listar_asignatura.php"><i class="icon fa fa-list"></i>Listar Asignaturas</a></li>
+                  <li><a class="treeview-item" href="crear_requisito.php"><i class="icon fa fa-plus-square"></i>Crear Requisito</a></li>
+                  <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-list"></i>listar Requisito</a></li>
               </ul>
               <?php  }?>
               <!--    Empresas   -->
@@ -128,11 +128,11 @@ if($_SESSION['usuario']==""){
             <ul class="treeview-menu">
                 <!--    Jefe de registros   -->
                 <?php if( $_SESSION['cargo']=="Jefe de Registros Inscripciones" || $_SESSION['rol']=="administrador"){ ?>
-                <li><a class="treeview-item" href="crear_pasantia.php"><i class="icon fa fa-circle-o"></i>Crear Pasantía</a></li>
-                <li><a class="treeview-item" href="listar_pasantia.php"><i class="icon fa fa-circle-o"></i>Listar Pasantía</a></li>
+                <li><a class="treeview-item" href="crear_pasantia.php"><i class="icon fa fa-plus-square"></i>Crear Pasantía</a></li>
+                <li><a class="treeview-item" href="listar_pasantia.php"><i class="icon fa fa-list"></i>Listar Pasantía</a></li>
                 <!-- <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificación de Pasantía</a></li> -->
-                <li><a class="treeview-item" href="crear_documentacion.php"><i class="icon fa fa-circle-o"></i>Crear Documentacion</a></li>
-                <li><a class="treeview-item" href="listar_documentacion.php"><i class="icon fa fa-circle-o"></i>Listar Documentacion</a></li>
+                <li><a class="treeview-item" href="crear_documentacion.php"><i class="icon fa fa-plus-square"></i>Crear Documentacion</a></li>
+                <li><a class="treeview-item" href="listar_documentacion.php"><i class="icon fa fa-list"></i>Listar Documentacion</a></li>
                 <!--  Jefe de carrera
                   <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
                 -->
@@ -182,7 +182,12 @@ if($_SESSION['usuario']==""){
               <li><a class="treeview-item" href="visualizador.php"><i class="icon fa fa-circle-o"></i> visualizar</a></li>
           </ul>
         </li>-->
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-newspaper-o"></i><span class="app-menu__label">Reportes</span><i class="treeview-indicator fa fa-angle-right"></i></a>
 
+              <ul class="treeview-menu" >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Reportes</a ></li >
+              </ul >
+          </li>
       <?php  }?>
           
       </ul>
