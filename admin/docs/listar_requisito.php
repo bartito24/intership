@@ -21,7 +21,7 @@ $datos=$objeto->listar_requisito();
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <a class="btn btn-secondary" href="requisitos.php">Crear Carrera</a>
+                    <a class="btn btn-secondary" href="crear_requisito.php">Crear Requisito</a>
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
@@ -39,8 +39,8 @@ $datos=$objeto->listar_requisito();
                             echo "<td>".$row['nombrerequsito']."</td>";
                             $id_requisitos=$row['id_requisitos'];
                             $nombrerequisito=$row['nombrerequsito'];
-                            echo "<td><a class='btn btn-danger col-md-3' href='../../controlador/ctrl_agregarusuario.php?id_requisitos=".$id_requisitos."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
-                            <a class=' btn btn-success col-md-3'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
+                            echo "<td><a class='btn btn-danger col-md-3' href='../../enrutador/enr_requisito.php?id_requisitos=".$id_requisitos."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                              <a class=' btn btn-success col-md-5' href='modificar_requisitos.php?id_requisitos=".$id_requisitos."&nombrerequisito=".$nombrerequisito."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                             echo "</tr>";
                         }?>

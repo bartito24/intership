@@ -17,21 +17,19 @@
             <div class="tile">
                <center> <div class="tile-title" style=" font-family: Georgia, 'Times New Roman', serif;"><b>Modificacion de Requisitos</b></div></center>
                 <div class="tile-body">
-                    <form action="../../enrutador/enr_requisitos.php" method="post">
+                    <form action="../../enrutador/enr_requisito.php" method="post">
                         <div class="form-group row">
-                            <div class="col-md-2"><label class="col-form-label text-md-right" for="nombrerequisito">Nombre Requisito</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="nombrerequisito" id="nombrerequisito" value="<?php echo $_GET['nombrerequisito'];?>"></div>
+                            <div class="col-md-2"><label class="col-form-label text-md-right" for="nombrerequsito">Nombre Requisito</label></div>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" name="nombrerequisito" id="nombrerequsito" value="<?php echo $_GET['nombrerequisito'];?>">
+                            </div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-2"><label class="col-form-label text-md-right" for="numpasantia">Num Pasantia</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="numpasantia" id="numpasantia" value="<?php echo $_GET['numpasantia'];?>"></div>
+                            <div class="col-md-2"><label class="col-form-label text-md-right" hidden for="id_carrera">id carrera</label></div>
+                            <div class="col-md-10"><input class="form-control" type="text" hidden name="id_requisitos" id="id_carrera" value="<?php echo $_GET['id_requisitos'];?>"></div>
                         </div>
-                        
-                        <div class="form-group row">
-                            <div class="col-md-2"><label class="col-form-label text-md-right" for="descripcionre">Descripcion</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="descripcionre" id="descripcionre" value="<?php echo $_GET['descripcionre'];?>"></div>
-                        </div>
+
 
                         <div class="tile-footer row">
                             <div class="col-md-3">
