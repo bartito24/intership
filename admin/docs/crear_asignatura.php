@@ -1,3 +1,12 @@
+<?php 
+include_once ('../../modelo/conexion.php');
+$con=new conexion();
+$sql="select * from asignatura where activoasignatura=1";
+$datos=$con->con_retorno($sql);
+
+ ?>
+
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -32,16 +41,16 @@
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_asignatura.php" method="post" autocomplete="off" required>
                             <div class="form-group row">
-                                <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label>
+                                <label for="nombreasignatura" class="col-md-4 col-form-label text-md-right">Nombre:</label>
                                 <div class="col-md-6">
-                                    <input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return letras(event);">
+                                    <input type="text" name="nombreasignatura" id="nombreasignatura" class="form-control" value="" required autofocus onkeypress="return letras(event);">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="descripcion" class="col-md-4 col-form-label text-md-right">Descripcion:</label>
+                                <label for="descripcionasig" class="col-md-4 col-form-label text-md-right">Descripcion:</label>
                                 <div class="col-md-6">
-                                    <input type="text" name="descripcion" id="descripcion" class="form-control" value="" required>
+                                    <input type="text" name="descripcionasig" id="descripcionasig" class="form-control" value="" required>
                                 </div>
                             </div>
 
@@ -55,7 +64,7 @@
                             <div class="form-group row">
                                 <label for="requisito" class="col-md-4 col-form-label text-md-right">Requisitos:</label>
                                 <div class="col-md-6">
-                                    <select type="text" name="requisito" id="requisito" class="form-control" value="" required autofocus onkeypress="return numeros(event);">
+                                    <select type="text" name="requisito" id="requisito" class="form-control" value=""  autofocus onkeypress="return numeros(event);">
                                         <option value=""></option>
                                     </select>
                                 </div>
@@ -77,6 +86,31 @@
 
                 </div>
             </div>
+
+            <div class="col-md-6">
+                <div class="tile">
+                    <center><h3 class="tile-title">Carreras Disponibles</h3></center>
+                    <div class="tile-body">
+                        <?php 
+                        while ($row=mysqli_fetch_assoc($datos)) {
+                            echo "<div class='form-group row'>
+                            <div class='col-md-12'>
+                                <button class='btn btn-danger col-md-12'>$row[nombreasignatura]</button>
+                            </div>
+                                
+                            </div>";
+                        }
+
+
+                         ?>
+                    </div>
+
+                </div>
+            </div>
+
+
+            </div>
+
         </div>
     </div>
 
