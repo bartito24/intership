@@ -80,26 +80,29 @@ $datos=$con->con_retorno($sql);
 
 
 
-            <div class="col-md-6">
-                <div class="tile">
-                    <center><h3 class="tile-title">Carreras Disponibles</h3></center>
-                    <div class="tile-body">
-                        <?php 
-                        while ($row=mysqli_fetch_assoc($datos)) {
-                            echo "<div class='form-group row'>
+                <div class="col-md-6">
+                    <div class="tile">
+                        <center><h3 class="tile-title">Carrera Disponibles</h3></center>
+                        <div class="tile-body">
+                            <?php
+                            while ($row=mysqli_fetch_assoc($datos)) {
+                                echo "<div class='form-group row'>
                             <div class='col-md-12'>
-                                <button class='btn btn-danger col-md-12'>$row[nombrecarrera]</button>
+                            
+                            <p class='form-control'>$row[nombrecarrera]</p>
+
+                                
                             </div>
                                 
                             </div>";
-                        }
+                            }
 
 
-                         ?>
+                            ?>
+                        </div>
+
                     </div>
-
                 </div>
-            </div>
 
 
 

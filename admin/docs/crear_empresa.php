@@ -4,6 +4,7 @@ $con=new conexion();
 $sql="select * from empresa where activoempresa=1";
 $datos=$con->con_retorno($sql);
 
+
  ?>
 
 <html>
@@ -79,9 +80,9 @@ $datos=$con->con_retorno($sql);
                         while ($row=mysqli_fetch_assoc($datos)) {
                             echo "<div class='form-group row'>
                             <div class='col-md-12'>
-                            <ul>
-                            <li><p><b>$row[nombreempresa]</b></p></li>
-</ul>
+                            
+                            <p class='form-control'>$row[nombreempresa]</p>
+
                                 
                             </div>
                                 
