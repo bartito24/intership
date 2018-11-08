@@ -31,9 +31,35 @@
                     <center><h3 class="tile-title">Nueva Asignaturas</h3></center>
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_asignatura.php" method="post" autocomplete="off" required>
-                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return letras(event);"></div></div>
-                            <div class="form-group row"><label for="observaciones" class="col-md-4 col-form-label text-md-right">Observaciones:</label><div class="col-md-6"><input type="text" name="observaciones" id="observaciones" class="form-control" value="" required></div></div>
-                            <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono:</label><div class="col-md-6"><input type="text" name="telefono" id="telefono" class="form-control" value="" required autofocus onkeypress="return numeros(event);"></div></div>
+                            <div class="form-group row">
+                                <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label>
+                                <div class="col-md-6">
+                                    <input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return letras(event);">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="descripcion" class="col-md-4 col-form-label text-md-right">Descripcion:</label>
+                                <div class="col-md-6">
+                                    <input type="text" name="descripcion" id="descripcion" class="form-control" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="nivel" class="col-md-4 col-form-label text-md-right">Nivel:</label>
+                                <div class="col-md-6">
+                                    <input type="number" name="nivel" id="nivel" class="form-control" value="" required min="1">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="requisito" class="col-md-4 col-form-label text-md-right">Requisitos:</label>
+                                <div class="col-md-6">
+                                    <select type="text" name="requisito" id="requisito" class="form-control" value="" required autofocus onkeypress="return numeros(event);">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
 
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
