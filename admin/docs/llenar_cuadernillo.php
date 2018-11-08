@@ -36,7 +36,7 @@ include_once ('../../modelo/conexion.php');
                                 <div class="form-group row">
                                     <label for="descripcion" class="col-md-4 col-form-label text-md-right">Descripcion:</label>
                                     <div class="col-md-6">
-                                        <input type="text" name="descripcion" id="descripcion" class="form-control" value="" maxlength="12" required autofocus onkeypress="return sololetras(event);">
+                                        <input type="text" name="descripcion" id="descripcion" class="form-control" value=""  required autofocus onkeypress="return sololetras(event);">
                                     </div>
                                 </div>
 
