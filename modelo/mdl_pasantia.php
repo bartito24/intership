@@ -68,7 +68,6 @@ class mdl_pasantia
     {
         $sql="UPDATE empresa SET nombreempresa='$this->nombre', direccionempresa='$this->direccion', telefono='$this->telefono' where id_empresa='$this->id_empresa';";
         $this->obj_con->sin_retorno($sql);
-
     }
 
     public function listar()
