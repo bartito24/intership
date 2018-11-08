@@ -77,6 +77,17 @@
 
                 </div>
             </div>
+
+            <div class="col-md-6">
+                <div class="tile">
+                    <center><h3 class="tile-title">Asignaturas Creadas</h3></center>
+                    <div class="tile-body">
+                        
+                    </div>
+                </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
