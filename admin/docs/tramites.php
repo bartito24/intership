@@ -107,7 +107,7 @@ $pasos=$ob->listar_paso();
                     <div class="card-header">
                         <center><h3>Tramites</h3></center>
                     </div>
-                    <form action="../../enrutador/enr_tramite.php" method="post">
+                    <form action="../../enrutador/agregar_asignatura.php" method="post">
                     <div class="card-body">
 
                             <div class="form-group row">
