@@ -81,7 +81,7 @@ $datos=$con->con_retorno($sql);
                             echo "<div class='form-group row'>
                             <div class='col-md-12'>
                             
-                            <p class='form-control'>$row[nombreempresa]</p>
+                                <center><p class='form-control'>$row[nombreempresa]</p></center>
 
                                 
                             </div>

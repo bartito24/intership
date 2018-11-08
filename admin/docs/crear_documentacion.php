@@ -1,7 +1,7 @@
 <?php 
 include_once ('../../modelo/conexion.php');
 $con=new conexion();
-$sql="select * from documentacion ";
+$sql="select * from documentacion";
 $datos=$con->con_retorno($sql);
 
  ?>
@@ -71,22 +71,25 @@ $datos=$con->con_retorno($sql);
                 </div>
             </div>
 
-                <div class="col-md-6">
+            <div class="col-md-6">
                 <div class="tile">
-                    <center><h3 class="tile-title">Documentos Presentados</h3></center>
+                    <center><h3 class="tile-title">Documentacion Disponibles</h3></center>
                     <div class="tile-body">
-                        <?php 
+                        <?php
                         while ($row=mysqli_fetch_assoc($datos)) {
                             echo "<div class='form-group row'>
                             <div class='col-md-12'>
-                                <button class='btn btn-danger col-md-12'>$row[nombredoc]</button>
+                            
+                            <center> <p class='form-control'>$row[nombredoc]</p></center>
+
+                                
                             </div>
                                 
                             </div>";
                         }
 
 
-                         ?>
+                        ?>
                     </div>
 
                 </div>
