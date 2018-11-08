@@ -100,6 +100,7 @@
                                         <option value="" disabled selected hidden>Nada Seleccionado</option>
                                         <option VALUE="1">Gestion 1 de <?php echo $ao ?></option>
                                         <option VALUE="2">Gestion 2 de <?php echo $ao ?></option>
+                                        <option VALUE="3">Gestion Anualizado de <?php echo $ao ?></option>
                                     </select>
                                 </div>
                             </div>
