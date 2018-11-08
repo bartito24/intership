@@ -89,7 +89,7 @@ $datos=$con->con_retorno($sql);
 
             <div class="col-md-6">
                 <div class="tile">
-                    <center><h3 class="tile-title">Carreras Disponibles</h3></center>
+                    <center><h3 class="tile-title">Asiganturas Creadas</h3></center>
                     <div class="tile-body">
                         <?php 
                         while ($row=mysqli_fetch_assoc($datos)) {
@@ -100,8 +100,6 @@ $datos=$con->con_retorno($sql);
                                 
                             </div>";
                         }
-
-
                          ?>
                     </div>
 
