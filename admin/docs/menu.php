@@ -163,7 +163,7 @@ if($_SESSION['usuario']==""){
                </ul>
           </li>
 <!--   fin pasantia       -->
-            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Informacion</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Requsitos Pasantia</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
           <li><a class="treeview-item" href="requisitos.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li>
           <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-circle-o"></i>listar Requisito</a></li>

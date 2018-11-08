@@ -1,7 +1,6 @@
 <?php include_once "menu.php";
-
-?>
-<?php include_once "menu.php";
+include_once ('../../modelo/conexion.php');
+$ob=new conexion();
 
 ?>
 <main class="app-content">
@@ -20,22 +19,13 @@
             <div class="tile">
                 <center><div class="tile-title" style=" font-family: Georgia, 'Times New Roman', serif;"><B>Crear Requisitos</B></div></center>
                 <div class="tile-body">
-                    <form action="../../enrutador/enr_requisitos.php" method="post">
+                    <form action="<?php ?>" method="post">
                         
                         <div class="form-group row">
-                            <div class="col-md-2" style=" font-family: Georgia, 'Times New Roman', serif;"><label class="col-form-label text-md-right" for="nombrerequisito">Nombre Requisito</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="nombrerequisito" id="nombrerequisito" value=""></div>
+                            <div class="col-md-3" style=" font-family: Georgia, 'Times New Roman', serif;"><label class="col-form-label text-md-right" for="nombrerequisito">Nombre Requisito</label></div>
+                            <div class="col-md-9"><input class="form-control" type="text" name="nombrerequisito" id="nombrerequisito" value=""></div>
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-2" style=" font-family: Georgia, 'Times New Roman', serif;"><label class="col-form-label text-md-right" for="numpasantia">Num Pasantias</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="numpasantia" id="numpasantia" value=""></div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-2" style=" font-family: Georgia, 'Times New Roman', serif;"><label class="col-form-label text-md-right" for="descripcionre">Descripcion</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="descripcionre" id="descripcionre" value=""></div>
-                        </div>
 
                         <div class="tile-footer row">
                             <div class="col-md-3">
