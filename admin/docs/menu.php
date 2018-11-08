@@ -129,9 +129,8 @@ if($_SESSION['usuario']==""){
                 <!--    Jefe de registros   -->
                 <?php if( $_SESSION['cargo']=="Jefe de Registros Inscripciones" || $_SESSION['rol']=="administrador"){ ?>
                 <li><a class="treeview-item" href="crear_pasantia.php"><i class="icon fa fa-circle-o"></i>Crear Pasantía</a></li>
-                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Iniciar Pasantía</a></li>
                 <li><a class="treeview-item" href="listar_pasantia.php"><i class="icon fa fa-circle-o"></i>Listar Pasantía</a></li>
-                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificación de Pasantía</a></li>
+                <!-- <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificación de Pasantía</a></li> -->
                 <li><a class="treeview-item" href="crear_documentacion.php"><i class="icon fa fa-circle-o"></i>Crear Documentacion</a></li>
                 <li><a class="treeview-item" href="listar_documentacion.php"><i class="icon fa fa-circle-o"></i>Listar Documentacion</a></li>
                 <!--  Jefe de carrera
@@ -144,7 +143,6 @@ if($_SESSION['usuario']==""){
                     <!--
                       <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
                       <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Registrar Visita</a></li>
-
                       -->
 
                 <?php } ?>
