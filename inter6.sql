@@ -314,7 +314,7 @@ CREATE TABLE IF NOT EXISTS `rol` (
 DELETE FROM `rol`;
 /*!40000 ALTER TABLE `rol` DISABLE KEYS */;
 INSERT INTO `rol` (`id_rol`, `nombrerol`, `activorol`) VALUES
-	(1, 'admiistrador', 1),
+	(1, 'administrador', 1),
 	(2, 'personal', 1),
 	(3, 'estudiante', 1);
 /*!40000 ALTER TABLE `rol` ENABLE KEYS */;
