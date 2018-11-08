@@ -18,25 +18,25 @@ include_once ('../../modelo/conexion.php');
         </ul>
     </div>
     <div class="container">
-        <div class="row">
+
             <div class="form-group row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="tile">
                         <center><h3 class="tile-title">Cuadernillo</h3></center>
                         <div class="tile-body">
-                            <form name="f1" action="../../enrutador/enr_estudio.php" method="post" autocomplete="off" required>
+                            <form name="f1" action="../../enrutador/enr_cuadernillo.php" method="post" autocomplete="off" required>
                                 <div class="form-group row">
-                                    <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label>
+                                    <label for="fecha" class="col-md-4 col-form-label text-md-right">Fecha:</label>
                                     <div class="col-md-6">
-                                        <input type="text" name="nombre" id="nombre" class="form-control" value="" maxlength="12" required autofocus onkeypress="return sololetras(event);">
+                                        <input type="date" name="fecha" id="fecha" class="form-control" value="" maxlength="12" required>
                                     </div>
                                 </div>
 
 
                                 <div class="form-group row">
-                                    <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label>
+                                    <label for="descripcion" class="col-md-4 col-form-label text-md-right">Descripcion:</label>
                                     <div class="col-md-6">
-                                        <input type="text" name="nombre" id="nombre" class="form-control" value="" maxlength="12" required autofocus onkeypress="return sololetras(event);">
+                                        <input type="text" name="descripcion" id="descripcion" class="form-control" value="" maxlength="12" required autofocus onkeypress="return sololetras(event);">
                                     </div>
                                 </div>
 
@@ -60,7 +60,7 @@ include_once ('../../modelo/conexion.php');
                     </div>
                 </div>
             </div>
-        </div>
+
     </div>
 
 </main>
