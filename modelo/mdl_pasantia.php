@@ -55,14 +55,14 @@ class mdl_pasantia
     }
 
     public function insertar()
-    {
-        $fecha=$this->fechainicio;
-        $fecha("Y-m-d",strtotime($fecha."+ 1 week"));
-        print_r($fecha);
-        $sql = "INSERT INTO pasantia (fechainicio,fechafin,gestion,docs,estadopasantia, empleado_id_empleado, empresa_id_empresa, asignatura_id_asignatura, area, funciones, estudiante_id_estudiante, fechavisita, observacionvisita,latitud, longitud, notasupervisor, notatutor, notafinal, observacionp, activopasantia) VALUE ('$this->fechainicio','$this->fecha','$this->gestion','',1,1,'$this->empresa','$this->asignatura','$this->area','$this->funciones','$this->estudiante',(NULL),'','0','0','0','0','0','',1);";
+    { date_default_timezone_set('America/Boa_Vista');
+        $fecha= strftime("%Y-%m-%d");
+        $hora= strftime("%H:%M:%S");
 
-        $this->obj_con->sin_retorno($sql);
-
+        $sql = "INSERT INTO pasantia (empresa_id_empresa,area,funciones,asignatura_id_asignatura,estudiante_id_estudiante,fechainicio,gestion)
+   VALUE ($this->empresa,'$this->area','$this->funciones',$this->asignatura,$this->estudiante,'$fecha',$this->gestion)";
+    $this->obj_con->sin_retorno($sql);
+echo $sql;
     }
     public function modificar()
     {

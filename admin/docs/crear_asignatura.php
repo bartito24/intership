@@ -81,11 +81,10 @@ $requisito=$con->con_retorno($sql1);
                     <div class="tile-body">
                         <?php 
                         while ($row=mysqli_fetch_assoc($datos)) {
-                            echo "<div class='form-group row'>
+                            echo "<div class='form-group'>
                             <div class='col-md-12'>
-                                <button class='btn btn-danger col-md-12'>$row[nombreasignatura]</button>
+                                <center><p class='form-control'>$row[nombreasignatura]$row[nivel]</p><center>
                             </div>
-                                
                             </div>";
                         }
                          ?>

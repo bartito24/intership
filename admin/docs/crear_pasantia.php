@@ -13,6 +13,7 @@
     $sql= "select * from asignatura where activoasignatura=1";
     $sql2="select * from empresa where activoempresa=1";
     $sql3="select * from estudiante join persona p on estudiante.persona_id_persona = p.id_persona where activoestudiante=1";
+
     $datos_asignatura=$obj->con_retorno($sql);
     $datos_empresa=$obj->con_retorno($sql2);
     $datos_estudiante=$obj->con_retorno($sql3);
