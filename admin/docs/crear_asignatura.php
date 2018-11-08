@@ -1,3 +1,12 @@
+<?php 
+include_once ('../../modelo/conexion.php');
+$con=new conexion();
+$sql="select * from asignatura where activoasignatura=1";
+$datos=$con->con_retorno($sql);
+
+ ?>
+
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -80,12 +89,26 @@
 
             <div class="col-md-6">
                 <div class="tile">
-                    <center><h3 class="tile-title">Asignaturas Creadas</h3></center>
+                    <center><h3 class="tile-title">Carreras Disponibles</h3></center>
                     <div class="tile-body">
-                        
+                        <?php 
+                        while ($row=mysqli_fetch_assoc($datos)) {
+                            echo "<div class='form-group row'>
+                            <div class='col-md-12'>
+                                <button class='btn btn-danger col-md-12'>$row[nombreasignatura]</button>
+                            </div>
+                                
+                            </div>";
+                        }
+
+
+                         ?>
                     </div>
+
                 </div>
-                </div>
+            </div>
+
+
             </div>
 
         </div>
