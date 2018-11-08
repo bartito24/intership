@@ -88,9 +88,9 @@ class mdlusuario
                 $sql1 = "select * from persona where ci='$this->ci'";
                 $numeropersona = $this->obj_con->con_retorno($sql1);
                 $num = mysqli_fetch_assoc($numeropersona);
-                $sql2 = "insert into estudiante(activoestudiante,persona_id_persona) values('1','$num[id_persona]')";
+                $sql2 = "insert into estudiante (activoestudiante,persona_id_persona) values('1','$num[id_persona]')";
                 $this->obj_con->sin_retorno($sql2);
-                echo "<script> window.location.href='../admin/docs/imprimir_cuenta.php?c=$num[id_persona]';</script>";
+               echo "<script> window.location.href='../admin/docs/imprimir_cuenta.php?c=$num[id_persona]';</script>";
             }
         }
 	public function listar()
@@ -130,11 +130,16 @@ public function buscar_nombre_rol ()
     public function agregar_estudio($correo,$idcarrera)
     {
         $sql="select id_estudiante,id_persona from persona join estudiante e on persona.id_persona = e.persona_id_persona
-where email='$correo'";
+where email= '$correo' ";
         $iddatos=$this->obj_con->con_retorno($sql);
         $da=mysqli_fetch_assoc($iddatos);
-        $sql="insert into estudia values ($idcarrera,$da[id_estudiante],$da[id_persona])";
+        $sql="insert into estudia (carrera_id_carrera,estudiante_id_estudiante,estudiante_persona_id_persona) values ($idcarrera,$da[id_estudiante],$da[id_persona])";
         $this->obj_con->sin_retorno($sql);
+//        echo "'carrera'.$idcarrera";
+//        echo "'estduiante'.$da[id_estudiante]";
+//        echo "'persona'.$da[id_persona]";
+
+
     }
     public function buscar_persona($cor){
         $sql="select * from persona where activo=1 and id_persona=$cor";

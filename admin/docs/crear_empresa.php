@@ -43,10 +43,10 @@ $datos=$con->con_retorno($sql);
                     <center><h3 class="tile-title">Nueva Empresa</h3></center>
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_empresa.php" method="post" autocomplete="off" required>
-                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
-                            <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion:</label><div class="col-md-6"><input type="text" name="direccion" id="direccion" class="form-control" value="" required></div></div>
+                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return sololetras(event);" maxlength="16"></div></div>
+                            <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion:</label><div class="col-md-6"><input type="text" name="direccion" id="direccion" class="form-control" value="" required maxlength="30" onkeypress="return sololetras(event);"></div></div>
                             <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono:</label><div class="col-md-6"><input type="text" name="telefono" id="telefono" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
-                            <div class="form-group row"><label for="nombrerep" class="col-md-4 col-form-label text-md-right">Nombre Responsable:</label><div class="col-md-6"><input type="text" name="nombrerep" id="nombrerep" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                            <div class="form-group row"><label for="nombrerep" class="col-md-4 col-form-label text-md-right">Nombre Responsable:</label><div class="col-md-6"><input type="text" name="nombrerep" id="nombrerep" class="form-control" value="" maxlength="11" required autofocus onkeypress="return sololetras(event);"></div></div>
 
                             <div class="form-group row"><label for="apellidorep" class="col-md-4 col-form-label text-md-right">Apellidos:</label><div class="col-md-6"><input type="text" name="apellidorep" id="apellidorep" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
 
@@ -83,7 +83,10 @@ $datos=$con->con_retorno($sql);
                         while ($row=mysqli_fetch_assoc($datos)) {
                             echo "<div class='form-group row'>
                             <div class='col-md-12'>
-                                <button class='btn btn-danger col-md-12'>$row[nombreempresa]</button>
+                            <ul>
+                            <li><p><b>$row[nombreempresa]</b></p></li>
+</ul>
+                                
                             </div>
                                 
                             </div>";
