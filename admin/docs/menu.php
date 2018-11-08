@@ -117,6 +117,7 @@ if($_SESSION['usuario']==""){
                   <li><a class="treeview-item" href="listar_carrera.php"><i class="icon fa fa-list"></i>Listar Carreras</a></li>
                   <li><a class="treeview-item" href="crear_asignatura.php"><i class="icon fa fa-circle-o"></i>Crear Asignaturas</a></li>
                   <li><a class="treeview-item" href="listar_asignatura.php"><i class="icon fa fa-circle-o"></i>Listar Asignaturas</a></li>
+                  <li><a class="treeview-item" href="crear_requisito.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li>
               </ul>
               <?php  }?>
               <!--    Empresas   -->

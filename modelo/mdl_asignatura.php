@@ -25,7 +25,7 @@ class mdl_asignatura
 
     public function insertar()
     {
-        $sql = "INSERT INTO asignatura (nombreasignatura,nivel,descripcionasig,activoempresa) VALUE ('$this->nombreasignatura','$this->nivel','$this->descripcionasig',1);";
+        $sql = "INSERT INTO asignatura (nombreasignatura,nivel,descripcionasig,activoasignatura) VALUE ('$this->nombreasignatura','$this->nivel','$this->descripcionasig',1);";
         $this->obj_con->sin_retorno($sql);
 
     }
