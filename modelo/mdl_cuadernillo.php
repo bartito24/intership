@@ -23,6 +23,7 @@ class mdl_cuadernillo
 
     public function insertar()
     {
+
         date_default_timezone_set('America/Boa_Vista');
         $fecha= strftime("%Y-%m-%d");
         $sql="select * from persona join estudiante e on persona.id_persona = e.persona_id_persona where id_persona=$_SESSION[id_persona]";
@@ -34,5 +35,6 @@ class mdl_cuadernillo
         $sql = "INSERT INTO cuadernillo (fecha_registro,fecha,decripcion,pasantia_id_pasantia) VALUE ('$fecha','$this->fecha','$this->descripcion',$re[id_pasantia]);";
         $this->obj_con->sin_retorno($sql);
         echo $sql;
+        
     }
 }
