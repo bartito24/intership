@@ -18,13 +18,13 @@ include_once ('../../modelo/conexion.php');
         </ul>
     </div>
 
-
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <div class="tile">
-                        <center><h3 class="tile-title">Cuadernillo</h3></center>
-                        <div class="tile-body">
-
+        <div class="form-group row">
+            <div class="col-md-10">
+                <div class="tile">
+                    <center><h3 class="tile-title">CUADERNILLO</h3></center>
+                    <hr>
+                    <div class="tile-body">
+                        <div class="form-group row">
                             <form name="f1" action="../../enrutador/enr_cuadernillo.php" method="post" autocomplete="off" required>
                                 <div class="form-group row">
                                     <label for="fecha" class="col-md-4 col-form-label text-md-right">Fecha:</label>
@@ -33,16 +33,12 @@ include_once ('../../modelo/conexion.php');
                                     </div>
                                 </div>
 
-
                                 <div class="form-group row">
                                     <label for="descripcion" class="col-md-4 col-form-label text-md-right">Descripcion:</label>
                                     <div class="col-md-6">
                                         <textarea type="text" name="descripcion" id="descripcion" class="form-control"  required autofocus onkeypress="return sololetras(event);"></textarea>
                                     </div>
                                 </div>
-
-
-
 
                                 <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                         <button type="submit" class="btn btn-outline-primary" name="registrar">
@@ -55,11 +51,59 @@ include_once ('../../modelo/conexion.php');
                                     <div class ="col-md-4"><a class="btn btn-danger" href="index.php">Cancelar
                                         </a></div>
                                 </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <div id="calendar"></div>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-
+        </div>
 </main>
+
+<!-- Page specific javascripts-->
+<script type="text/javascript" src="js/plugins/moment.min.js"></script>
+<script type="text/javascript" src="js/plugins/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="js/plugins/fullcalendar.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#external-events .fc-event').each(function() {
+
+            // store data so the calendar knows to render an event upon drop
+            $(this).data('event', {
+                title: $.trim($(this).text()), // use the element's text as the event title
+                stick: true // maintain when user navigates (see docs on the renderEvent method)
+            });
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+
+        });
+
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            editable: true,
+            droppable: true, // this allows things to be dropped onto the calendar
+            drop: function() {
+                // is the "remove after drop" checkbox checked?
+                if ($('#drop-remove').is(':checked')) {
+                    // if so, remove the element from the "Draggable Events" list
+                    $(this).remove();
+                }
+            }
+        });
+    });
+</script>
