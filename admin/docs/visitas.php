@@ -1,8 +1,10 @@
-<head>
-    <title>Visitas</title>
-</head>
 <?php
-include_once("menu.php");
+include_once ("menu.php");
+include_once ('../../modelo/conexion.php');
+$ob=new conexion();
+$sql="select * from pasantia join estudiante e on pasantia.estudiante_id_estudiante = e.id_estudiante
+join persona p on e.persona_id_persona = p.id_persona where activopasantia=1";
+$datos=$ob->con_retorno($sql);
 
 ?>
 <main class="app-content">
@@ -31,14 +33,21 @@ include_once("menu.php");
                         <br>
                     </div>
                     <div class="form-group-lg">
-                        <div class="col-md-2"><div id="mapholder"></div></div>
+                        <div class="col-md-12"><div id="mapholder"></div></div>
                     </div>
                     <form action="../../enrutador/enr_visita.php" method="post">
                         <div class="card-body">
 
                             <div class="form-group row">
                                 <div class="col-md-2"><label class="col-form-label text-md-right" for="pasantia">Pasantia:</label></div>
-                                <div class="col-md-4"><input class="form-control" type="text" required name="pasantia" id="pasantia" placeholder="Escoge una pasantía"></div>
+                                <div class="col-md-4"><select id="pasantia" class="selectpicker" name="pasantia" data-show-subtext="true" data-live-search="true" required>
+                                        <option value="" style="display: none">Nada Seleccionado</option>
+                                        <?php
+                                        while ($row4=mysqli_fetch_assoc($datos)){
+                                            echo "<option value='$row4[id_estudiante]'>".$row4['nombre']." ".$row4['papellido']." ".$row4['sapellido']."</option>";
+                                        }
+                                        ?>
+                                    </select></div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-2"><label class="col-form-label text-md-right" for="fecha">Fecha Visita:</label></div>
@@ -96,8 +105,8 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
         var mapholder = document.getElementById('mapholder')
         var lat1 = document.getElementById('latitud')
         var lon1 = document.getElementById('longitud')
-        mapholder.style.height = '250px';
-        mapholder.style.width = '500px';
+        mapholder.style.height = '50%';
+        mapholder.style.width = '100%';
 
         lat1.setAttribute("value", lat);
         lon1.setAttribute("value", lon);

@@ -6,12 +6,14 @@ class mdl_documentacion
     public $nombredoc;
     public $fechaentrega;
     public $respaldo;
+    public $id_estudiante;
     public $obj_con;
 
     function __construct()
     {
 
         $this->id_documentacion = 0;
+        $this->id_estudiante = 0;
         $this->nombredoc = "";
         $this->fechaentrega = "";
         $this->respaldo = "";

@@ -14,6 +14,7 @@ class ctrl_documentacion{
         $this->obj_mod->set("nombredoc" ,$p['nombredoc']);
         $this->obj_mod->set("fechaentrega" ,$p['fechaentrega']);
         $this->obj_mod->set("respaldo" ,$p['respaldo']);
+        $this->obj_mod->set("id_estudiante" ,$p['id_estudiante']);
         $this->obj_mod->insertar();
     }
     public function modificar($p){

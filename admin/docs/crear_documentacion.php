@@ -3,26 +3,16 @@ include_once ('../../modelo/conexion.php');
 $con=new conexion();
 $sql="select * from documentacion";
 $datos=$con->con_retorno($sql);
-
- ?>
-
-<html>
-<head>
-    <meta charset="UTF-8">
-     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Documentacion</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="../../js/validacion.js"></script>
-    <?php include_once('menu.php');
+$sql="select * from estudiante
+  join persona p2 on estudiante.persona_id_persona = p2.id_persona
+join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante";
+$datos_estudiante=$con->con_retorno($sql);
+include_once('menu.php');
     include_once ('../../modelo/conexion.php');
     $obj=new conexion();
     $sql= "select * from documentacion ";
     $datos_documentacion=$obj->con_retorno($sql);
     ?>
-</head>
-<body>
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -46,12 +36,18 @@ $datos=$con->con_retorno($sql);
                             <div class="form-group row"><label for="nombredoc" class="col-md-4 col-form-label text-md-right">Nombre:</label><div class="col-md-6"><input type="text" name="nombredoc" id="nombredoc" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
                             <div class="form-group row"><label for="fechaentrega" class="col-md-4 col-form-label text-md-right">Fecha Entrega:</label><div class="col-md-6"><input type="date" name="fechaentrega" id="fechaentrega" class="form-control" value="" required></div></div>
                             <div class="form-group row"><label for="respaldo" class="col-md-4 col-form-label text-md-right">Respaldo:</label><div class="col-md-6"><input type="text" name="respaldo" id="respaldo" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
-                            
+                            <div class="form-group row"><label for="estudiante" class="col-md-4 col-form-label text-md-right">Estudiante:</label><div class="col-md-6">
+                                    <select class="selectpicker" name="estudiante" data-live-search="true" required>
+                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
+                                        <?php
+                                        while ($row5=mysqli_fetch_assoc($datos_estudiante)){
+                                            echo "<option value='$row5[id_estudiante]'>".$row5['nombre']." ".$row5['papellido']." ".$row5['sapellido']."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
 
-                              
-
-
-                           
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
                                         <span class="glyphicon glyphicon-log-in"></span> Registrar
@@ -65,9 +61,6 @@ $datos=$con->con_retorno($sql);
                             </div>
                         </form>
                     </div>
-
-
-
                 </div>
             </div>
 
@@ -101,5 +94,5 @@ $datos=$con->con_retorno($sql);
        
 
 </main>
-</body>
-</html>
+<script type="text/javascript" src="../../js/validacion.js"></script>
+
