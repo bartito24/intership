@@ -111,10 +111,13 @@ if(@$_SESSION['mensaje']==1) {
     session_destroy();
 }
 if(@$_SESSION['mensaje']==2) {
-    echo "<script>iziToast.error({
-    title: 'Error',
-    message: 'Illegal operation',
-    transitionOut: 'fadeOut',
+    echo "<script>iziToast.show({
+    theme: 'dark',
+    icon: 'icon-person',
+    title: 'Error de Reseteo',
+    message: 'No existe el correo en la base de datos!',
+    position: 'center', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter
+    progressBarColor: 'rgb(0, 255, 184)',
 });
 </script>";
     session_destroy();
