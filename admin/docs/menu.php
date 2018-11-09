@@ -150,6 +150,7 @@ if($_SESSION['usuario']==""){
 
                     <li><a class="treeview-item" href="llenar_cuadernillo.php"><i class="icon fa fa-list"></i>Llenar Cuadernillo</a></li>
                     <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-list"></i>Registrar Visita</a></li>
+                    <li><a class="treeview-item" href="subir_nota.php"><i class="icon fa fa-list"></i>Subir Nota</a></li>
                 <?php } ?>
                </ul>
           </li>
