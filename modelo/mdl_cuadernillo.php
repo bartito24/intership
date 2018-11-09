@@ -35,6 +35,6 @@ class mdl_cuadernillo
         $sql = "INSERT INTO cuadernillo (fecha_registro,fecha,decripcion,pasantia_id_pasantia) VALUE ('$fecha','$this->fecha','$this->descripcion',$re[id_pasantia]);";
         $this->obj_con->sin_retorno($sql);
         echo $sql;
-        
+
     }
 }
