@@ -60,11 +60,11 @@ $tra=$ob->con_retorno($sql);
                                 <div class="col-md-2"><label class="col-form-label text-md-right" for="observaciones">Observaciones:</label></div>
                                 <div class="col-md-4"><textarea class="form-control" name="observaciones" id="observaciones" rows="3"></textarea></div>
                             </div>
-                            <div class="form-group row">
+                            <div class="form-group row" hidden>
                                 <div class="col-md-2"><label class="col-form-label text-md-right" for="latitud">Latitud:</label></div>
                                 <div class="col-md-4"><input class="form-control" type="text" name="latitud" id="latitud"></div>
                             </div>
-                            <div class="form-group row">
+                            <div class="form-group row" hidden>
                                 <div class="col-md-2"><label class="col-form-label text-md-right" for="longitud">Longitud:</label></div>
                                 <div class="col-md-4"><input class="form-control" type="text" name="longitud" id="longitud"></div>
                             </div>
