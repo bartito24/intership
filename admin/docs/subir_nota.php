@@ -68,5 +68,4 @@ join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante where a
     </div>
 
 </main>
-</body>
-</html>
+

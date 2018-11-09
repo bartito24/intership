@@ -14,6 +14,7 @@ if($_SESSION['usuario']==""){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
+      <link rel="stylesheet" href="../../iziToast-master/dist/css/iziToast.min.css">
       <link rel="stylesheet" type="text/css" href="bootstrap4/font-awesome-4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="../../bootstrap4/css/bootstrap-select.css"/>
       <script src="js/sweetalert2.all.min.js"></script>
@@ -205,6 +206,7 @@ if($_SESSION['usuario']==""){
     <script src="js/plugins/pace.min.js"></script>
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="js/plugins/chart.js"></script>
+  <script src="../../iziToast-master/dist/js/iziToast.min.js" type="text/javascript"></script>
     <script type="text/javascript">
       var data = {
       	labels: ["January", "February", "March", "April", "May"],
