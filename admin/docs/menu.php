@@ -18,6 +18,7 @@ if($_SESSION['usuario']==""){
       <link rel="stylesheet" href="../../bootstrap4/css/bootstrap-select.css"/>
       <script src="js/sweetalert2.all.min.js"></script>
       <script src="js/jquery-3.2.1.min.js"></script>
+      <script src="../../js/validacion.js"></script>
   </head>
   <body class="app sidebar-mini rtl"  >
   <!-- Navbar-->

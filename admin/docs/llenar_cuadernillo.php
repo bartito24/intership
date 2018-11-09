@@ -2,8 +2,7 @@
 include_once('menu.php');
 include_once ('../../modelo/conexion.php');
 
-
-    ?>
+?>
 
 <main class="app-content">
     <div class="app-title">
