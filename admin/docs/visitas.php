@@ -1,9 +1,11 @@
-<head>
-    <title>Visitas</title>
-</head>
 <?php
+include_once ('../../modelo/conexion.php');
 include_once("menu.php");
-
+$ob=new conexion();
+$sql="select * from estudiante
+  join persona p2 on estudiante.persona_id_persona = p2.id_persona
+join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante where activopasantia =1";
+$tra=$ob->con_retorno($sql);
 ?>
 <main class="app-content">
     <div class="app-title">
@@ -30,15 +32,25 @@ include_once("menu.php");
                         <div class="col-md-2"><button class="btn btn-primary" onclick="getLocation()">Ubicar</button></div>
                         <br>
                     </div>
-                    <div class="form-group-lg">
-                        <div class="col-md-2"><div id="mapholder"></div></div>
+                    <div class="form-group">
+                        <div class="col-md-12"><div id="mapholder"></div></div>
                     </div>
                     <form action="../../enrutador/enr_visita.php" method="post">
                         <div class="card-body">
 
                             <div class="form-group row">
-                                <div class="col-md-2"><label class="col-form-label text-md-right" for="pasantia">Pasantia:</label></div>
-                                <div class="col-md-4"><input class="form-control" type="text" required name="pasantia" id="pasantia" placeholder="Escoge una pasantía"></div>
+                                <div class="col-md-2"><label class="col-form-label text-md-right" for="estudiante">Estudiante:</label></div>
+                                <div class="col-md-4">
+                                    <select id="estudiante" name="id_estudiante" class="selectpicker" data-show-subtext="true" data-live-search="true" required>
+                                        <option value="" style="display: none">Nada Seleccionado</option>
+                                        <?php
+                                        while ($datos=mysqli_fetch_assoc($tra))
+                                        {
+                                            echo "<option value='$datos[id_estudiante]'>$datos[nombre] $datos[papelldio] $datos[sapellido]</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-2"><label class="col-form-label text-md-right" for="fecha">Fecha Visita:</label></div>
@@ -96,8 +108,8 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
         var mapholder = document.getElementById('mapholder')
         var lat1 = document.getElementById('latitud')
         var lon1 = document.getElementById('longitud')
-        mapholder.style.height = '250px';
-        mapholder.style.width = '500px';
+        mapholder.style.height= '15em';
+        mapholder.style.width = '20em';
 
         lat1.setAttribute("value", lat);
         lon1.setAttribute("value", lon);
