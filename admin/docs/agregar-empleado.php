@@ -1,11 +1,3 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Usuario</title>
-    <link rel="stylesheet" href="css/main.css">
         <script type="text/javascript" src="../../js/validacion.js"></script>
     <?php include_once('menu.php');
     include_once('../../modelo/mdl_rol.php');
@@ -13,8 +5,6 @@
     $datos=$obj->listar();
     $datos_carrera=$obj->listar_carrera();
     ?>
-</head>
-<body>
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -99,8 +89,6 @@
         </div>
     </div>
 </main>
-</body>
-</html>
 
 <script>
     function labores()
@@ -122,12 +110,13 @@
 </script>
 <?php
 if(@$_SESSION['error']=="emailduplicado"){
-    echo "<script>swal({
-  type: 'error',
-  title: 'Lo Sentimos',
-  text: 'Error El Correo ya esta en uso',
-  footer: 'Verifique que el correo es valido'
-})</script>";
+    echo "<script>
+iziToast.error({
+    title: 'Error',
+    message: 'El correo ya esta en uso' +
+     'Utilize otro',
+});
+</script>";
     @$_SESSION['error']="";
 }
 

@@ -1,17 +1,14 @@
 
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Subir Nota</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="../../js/validacion.js"></script>
-    <?php include_once('menu.php');
+    <?php
+    include_once ('../../modelo/conexion.php');
+    include_once("menu.php");
+    $ob=new conexion();
+    $sql="select * from estudiante
+  join persona p2 on estudiante.persona_id_persona = p2.id_persona
+join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante where activopasantia =1";
+    $tra=$ob->con_retorno($sql);
     ?>
-</head>
-<body>
+
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -31,20 +28,25 @@
                 <div class="tile">
                     <center><h3 class="tile-title">Subir Nota</h3></center>
                     <div class="tile-body">
-                        <form name="f1" action="../../enrutador/enr_estudio.php" method="post" autocomplete="off" required>
-                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nota supervisor:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                        <form name="f1" action="../../enrutador/enr_nota.php" method="post" autocomplete="off" required>
+                            <div  class="form-group row"><label for="modalidad" class="col-md-4 col-form-label text-md-right">Estudiante:</label><div class="col-md-6">
+                                    <select id="estudiante" name="id_estudiante" class="selectpicker" data-show-subtext="true" data-live-search="true" required>
+                                        <option value="" style="display: none">Nada Seleccionado</option>
+                                        <?php
+                                        while ($datos=mysqli_fetch_assoc($tra))
+                                        {
+                                            echo "<option value='$datos[id_estudiante]'>$datos[nombre] $datos[papelldio] $datos[sapellido]</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
 
-                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nota Tutor:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                            <div class="form-group row"><label for="notasupervisor" class="col-md-4 col-form-label text-md-right">Nota supervisor:</label><div class="col-md-6"><input type="number" name="notasupervisor" id="notasupervisor" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
 
-                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nota Final:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                            <div class="form-group row"><label for="notatutor" class="col-md-4 col-form-label text-md-right">Nota Tutor:</label><div class="col-md-6"><input type="number" name="notatutor" id="notatutor" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
 
-                             <div  class="form-group row"><label for="modalidad" class="col-md-4 col-form-label text-md-right">Pasantia:</label><div class="col-md-6">
-                                             <select class="custom-select" name="modalidad"  id="modalidad">
-                                                <option>Semestral</option>
-                                                <option>Anualizado</option>
-                                             </select>
-                                         </div>
-                             </div>
+
 
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
@@ -66,5 +68,4 @@
     </div>
 
 </main>
-</body>
-</html>
+

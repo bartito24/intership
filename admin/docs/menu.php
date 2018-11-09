@@ -14,6 +14,7 @@ if($_SESSION['usuario']==""){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
+      <link rel="stylesheet" href="../../iziToast-master/dist/css/iziToast.min.css">
       <link rel="stylesheet" type="text/css" href="bootstrap4/font-awesome-4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="../../bootstrap4/css/bootstrap-select.css"/>
       <script src="js/sweetalert2.all.min.js"></script>
@@ -148,11 +149,13 @@ if($_SESSION['usuario']==""){
                 <?php } ?>
                 <!--    tutor   -->
                 <?php if( $_SESSION['cargo']=="Tutor" || $_SESSION['rol']=="administrador"){ ?>
-
-                    <li><a class="treeview-item" href="llenar_cuadernillo.php"><i class="icon fa fa-list"></i>Llenar Cuadernillo</a></li>
                     <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-list"></i>Registrar Visita</a></li>
+                    <li><a class="treeview-item" href="subir_nota.php"><i class="icon fa fa-list"></i>Subir Nota</a></li>
                 <?php } ?>
-               </ul>
+                <?php if( $_SESSION['rol']=="estudiante"){ ?>
+                <li><a class="treeview-item" href="llenar_cuadernillo.php"><i class="icon fa fa-list"></i>Llenar Cuadernillo</a></li>
+                <?php } ?>
+            </ul>
           </li>
 <!--   fin pasantia       -->
             <!--li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Requsitos Pasantia</span><i class="treeview-indicator fa fa-angle-right"></i></a-->
@@ -204,6 +207,7 @@ if($_SESSION['usuario']==""){
     <script src="js/plugins/pace.min.js"></script>
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="js/plugins/chart.js"></script>
+  <script src="../../iziToast-master/dist/js/iziToast.min.js" type="text/javascript"></script>
     <script type="text/javascript">
       var data = {
       	labels: ["January", "February", "March", "April", "May"],

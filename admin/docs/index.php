@@ -4,17 +4,13 @@ include_once ('menu.php');
 <main class="app-content">
     <?php
     if($_SESSION['bienvenida']==0){
-        echo "<script>const toast = swal.mixin({
-  toast: true,
-  position: 'top',
-  showConfirmButton: false,
-  timer: 3000
+        echo "<script>
+iziToast.success({
+ position: 'topRight',
+    title: 'Inicio:',
+    message: 'Bienvenido al Sistema',
 });
-
-toast({
-  type: 'success',
-  title: 'Bienvenido al Sistema'
-})</script>";
+</script>";
         $_SESSION['bienvenida']=1;
     }
     ?>
