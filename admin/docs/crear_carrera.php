@@ -39,7 +39,7 @@ $datos=$con->con_retorno($sql);
                     <center><h3 class="tile-title">Nueva Carrera</h3></center>
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_estudio.php" method="post" autocomplete="off" required>
-                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" maxlength="12" required autofocus onkeypress="return sololetras(event);"></div></div>
+                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" maxlength="25" required autofocus onkeypress="return sololetras(event);"></div></div>
 
                              <div  class="form-group row"><label for="modalidad" class="col-md-4 col-form-label text-md-right">Modalidad:</label>
                                  <div class="col-md-6">
