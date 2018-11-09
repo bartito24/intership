@@ -147,11 +147,12 @@ if($_SESSION['usuario']==""){
                 <?php } ?>
                 <!--    tutor   -->
                 <?php if( $_SESSION['cargo']=="Tutor" || $_SESSION['rol']=="administrador"){ ?>
-
-                    <li><a class="treeview-item" href="llenar_cuadernillo.php"><i class="icon fa fa-list"></i>Llenar Cuadernillo</a></li>
                     <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-list"></i>Registrar Visita</a></li>
                 <?php } ?>
-               </ul>
+                <?php if( $_SESSION['rol']=="estudiante"){ ?>
+                <li><a class="treeview-item" href="llenar_cuadernillo.php"><i class="icon fa fa-list"></i>Llenar Cuadernillo</a></li>
+                <?php } ?>
+            </ul>
           </li>
 <!--   fin pasantia       -->
             <!--li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Requsitos Pasantia</span><i class="treeview-indicator fa fa-angle-right"></i></a-->
