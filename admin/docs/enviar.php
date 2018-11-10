@@ -1,6 +1,6 @@
 <?php
 session_start();
-$nombre="Fundacion Infocal";
+$nombre="INTERNSHIP INFOCAL";
 $correo=$_POST["correo"];
 
 $conexion=mysqli_connect("localhost","root","","inter");
@@ -14,7 +14,8 @@ if ($filas>0)
 
     $codigo=mt_rand(2000,90000);
     $_SESSION['correo']=$correo;
-    $mensaje="codigo de verificacion";
+    $asunto="Código de verificación";
+    $mensaje="El codigo para restablecer su contraseña es:";
     $contenido="Nombre: ".$nombre."\nCodigo: ".$codigo."\nMensaje: ".$mensaje;
     $_SESSION['variable']=$codigo;
     mail($correo,"verificacion",$contenido);

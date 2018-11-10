@@ -60,8 +60,8 @@ class mdl_pasantia
         $fecha= strftime("%Y-%m-%d");
         $hora= strftime("%H:%M:%S");
 
-        $sql = "INSERT INTO pasantia (empresa_id_empresa,area,funciones,asignatura_id_asignatura,estudiante_id_estudiante,fechainicio,empleado_id_empleado,gestion, activopasantia)
-   VALUE ($this->empresa,'$this->area','$this->funciones',$this->asignatura,$this->estudiante,'$fecha',$this->empleado,$this->gestion,1)";
+        $sql = "INSERT INTO pasantia (empresa_id_empresa,area,funciones,asignatura_id_asignatura,estudiante_id_estudiante,fechainicio,empleado_id_empleado,gestion,estadopasantia, activopasantia)
+   VALUE ($this->empresa,'$this->area','$this->funciones',$this->asignatura,$this->estudiante,'$fecha',$this->empleado,$this->gestion,1,1)";
     $this->obj_con->sin_retorno($sql);
     }
     public function modificar()
