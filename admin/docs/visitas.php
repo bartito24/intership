@@ -4,7 +4,7 @@ include_once("menu.php");
 $ob=new conexion();
 $sql="select * from estudiante
   join persona p2 on estudiante.persona_id_persona = p2.id_persona
-join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante where activopasantia =1";
+join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante where activopasantia =1 and activo=1 and estadopasantia=1";
 $tra=$ob->con_retorno($sql);
 ?>
 <main class="app-content">
@@ -62,11 +62,11 @@ $tra=$ob->con_retorno($sql);
                             </div>
                             <div class="form-group row" hidden>
                                 <div class="col-md-2"><label class="col-form-label text-md-right" for="latitud">Latitud:</label></div>
-                                <div class="col-md-4"><input class="form-control" type="text" name="latitud" id="latitud"></div>
+                                <div class="col-md-4"><input class="form-control" type="text" name="latitud" id="latitud" required></div>
                             </div>
                             <div class="form-group row" hidden>
                                 <div class="col-md-2"><label class="col-form-label text-md-right" for="longitud">Longitud:</label></div>
-                                <div class="col-md-4"><input class="form-control" type="text" name="longitud" id="longitud"></div>
+                                <div class="col-md-4"><input class="form-control" type="text" name="longitud" id="longitud" required></div>
                             </div>
                         </div>
 

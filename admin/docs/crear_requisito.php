@@ -25,7 +25,8 @@ $datos=$con->con_retorno($sql);
         <div class="row">
             <div class="col-md-6">
                 <div class="tile">
-                    <center><h3 class="tile-title">Nueva Requisitos</h3></center>
+                    <center><h3 class="tile-title">Nuevo Requisito</h3></center>
+                    <hr>
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_requisito.php" method="post" autocomplete="off" required>
                             <div class="form-group row">
@@ -34,7 +35,7 @@ $datos=$con->con_retorno($sql);
                                     <input type="text" name="nombrerequisito" id="nombrerequisito" class="form-control" value="" required autofocus onkeypress="return letras(event);">
                                 </div>
                             </div>
-
+                            <hr>
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="insertar">
                                         <span class="glyphicon glyphicon-log-in"></span> Registrar
@@ -60,6 +61,7 @@ $datos=$con->con_retorno($sql);
             <div class="col-md-6">
                 <div class="tile">
                     <center><h3 class="tile-title">Riquisitos Disponibles</h3></center>
+                    <hr>
                     <div class="tile-body">
                         <?php
                         while ($row=mysqli_fetch_assoc($datos)) {

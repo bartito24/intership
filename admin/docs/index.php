@@ -31,26 +31,13 @@ iziToast.success({
             <b><h1 style="font-family:'Niconne'; font-size: 70px;">Bienvenido al Sistema Internship</h1> </b>
         </center>
         <p>
-            Es un sistema de gestión de pasantías para controlar y facilitar las pasantías que se llevan a cabo en el área de registros, de modo que el cliente pueda verificar el estado de las pasantías desde su móvil o pc.
+            Es un sistema de gestión de pasantías para controlar y facilitar las pasantías que se llevan a cabo en el área de registros, de modo que el personal pueda verificar el estado de las pasantías desde su móvil o pc.
         </p>
 
         <hr align="left" color="#962439" size="2" />
         <center>
-            <img src="../../imagenes/plane-loader-slower.gif" width="470" height="300">
+            <img src="../../imagenes/plane-loader-slower.gif" style="width: 50%; height: 20%;">
         </center>
         <hr color="#962439">
-        <center>
-            <div>
-                <h2 style="font-family:'Niconne';">Agradecimientos</h2>
-                <p>
-                    Queremos agradecer a todos los Ingenieros por la enseñanza y el tiempo.
-                </p>
-                <?php
-                $fecha_actual = date("Y-m-d");
-                //sumo 1 semana
-                echo date("Y-m-d",strtotime($fecha_actual."+ 1 week"));
-                ?>
-            </div>
-        </center>
     </div>
 </main>

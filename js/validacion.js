@@ -24,7 +24,7 @@ function dni(e)
 {
     var key=e.keyCode || e.which;
     var teclado= String.fromCharCode(key).toLowerCase();
-    var letras="abcdefghijklmnñopqrstuvwxyz123456789";
+    var letras="abcdefghijklmnñopqrstuvwxyz1234567890";
     var especiales = "8-37-38-46-164";
     var teclado_especiales=false;
     for (var i in especiales)

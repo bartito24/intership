@@ -40,6 +40,7 @@
             <div class="col-md-7">
                 <div class="tile">
                     <center><h3 class="tile-title">Crear Nueva Pasantía</h3></center>
+                    <hr>
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_pasantia.php" method="post" autocomplete="off" required>
                             <div class="form-group row"><label for="empresa" class="col-md-4 col-form-label text-md-right">Empresa:</label>
@@ -104,6 +105,7 @@
                                     </select>
                                 </div>
                             </div>
+                            <hr>
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
                                         <span class="glyphicon glyphicon-log-in"></span> Registrar

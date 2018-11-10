@@ -9,8 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Main CSS-->
         <link rel="stylesheet" type="text/css" href="css/main.css">
-         <link rel="stylesheet" href="../../iziToast-master/dist/css/iziToast.min.css">
-<!--        <script src="../../js/sweetalert.js"></script>-->
+        <link rel="stylesheet" href="../../iziToast-master/dist/css/iziToast.min.css">
+        <!-- <script src="../../js/sweetalert.js"></script>-->
         <!-- Font-icon css-->
         <link rel="stylesheet" type="text/css"
               href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,12 +32,12 @@
                 <div class="form-group">
                     <label class="control-label" for="nick">NOMBRE DE USUARIO</label>
                     <input class="form-control" type="email" id="nick" name="nick" placeholder="Email" required
-                           autofocus autocomplete="off" onkeypress="return correo(event)" maxlength="45">
+                           autofocus autocomplete="off" onkeypress="return correo(event)" maxlength="35">
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="clave">CLAVE</label>
                     <input class="form-control" type="password" id="clave" name="clave" placeholder="Password" required
-                           autofocus onkeypress="return sololetras(event);" maxlength="12">
+                           autofocus onkeypress="return dni(event);" maxlength="12">
                 </div>
                 <div class="form-group">
                     <div class="utility">
@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="form-group mt-3">
-                    <p class="semibold-text mb-0">Se enviará un codigo verificación para ingresar una nueva
+                    <p class="semibold-text mb-0">Se enviará un código verificación para ingresar una nueva
                         contraseña</p>
                 </div>
 

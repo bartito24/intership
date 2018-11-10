@@ -5,7 +5,7 @@
     $ob=new conexion();
     $sql="select * from estudiante
   join persona p2 on estudiante.persona_id_persona = p2.id_persona
-join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante where activopasantia =1";
+join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante where activopasantia =1 and activoestudiante=1 and  estadopasantia=2";
     $tra=$ob->con_retorno($sql);
     ?>
 
@@ -27,6 +27,7 @@ join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante where a
             <div class="col-md-6">
                 <div class="tile">
                     <center><h3 class="tile-title">Subir Nota</h3></center>
+                    <hr>
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_nota.php" method="post" autocomplete="off" required>
                             <div  class="form-group row"><label for="modalidad" class="col-md-4 col-form-label text-md-right">Estudiante:</label><div class="col-md-6">
@@ -42,12 +43,10 @@ join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante where a
                                 </div>
                             </div>
 
-                            <div class="form-group row"><label for="notasupervisor" class="col-md-4 col-form-label text-md-right">Nota supervisor:</label><div class="col-md-6"><input type="number" name="notasupervisor" id="notasupervisor" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                            <div class="form-group row"><label for="notasupervisor" class="col-md-4 col-form-label text-md-right">Nota supervisor:</label><div class="col-md-6"><input type="tel" name="notasupervisor" id="notasupervisor" class="form-control" value="" min="1" max="100" maxlength="2" required autofocus></div></div>
 
-                            <div class="form-group row"><label for="notatutor" class="col-md-4 col-form-label text-md-right">Nota Tutor:</label><div class="col-md-6"><input type="number" name="notatutor" id="notatutor" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
-
-
-
+                            <div class="form-group row"><label for="notatutor" class="col-md-4 col-form-label text-md-right">Nota Tutor:</label><div class="col-md-6"><input type="tel" name="notatutor" id="notatutor" class="form-control" value="" min="1" max="100" maxlength="2" required autofocus onkeypress="return solonumeros(event);"></div></div>
+                            <hr>
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
                                         <span class="glyphicon glyphicon-log-in"></span> Registrar
@@ -66,6 +65,5 @@ join pasantia p on estudiante.id_estudiante = p.estudiante_id_estudiante where a
             </div>
         </div>
     </div>
-
 </main>
 

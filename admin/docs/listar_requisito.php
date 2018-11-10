@@ -18,7 +18,7 @@ $datos=$objeto->listar_requisito();
         </ul>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-10">
             <div class="tile">
                 <div class="tile-body">
                     <a class="btn btn-secondary" href="crear_requisito.php">Crear Requisito</a>
@@ -35,7 +35,7 @@ $datos=$objeto->listar_requisito();
                         <?php
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
-                            echo "<type='hidden'"."<td>".$row['id_requisitos']."</td>";
+                            echo "<td hidden>".$row['id_requisitos']."</td>";
                             echo "<td>".$row['nombrerequsito']."</td>";
                             $id_requisitos=$row['id_requisitos'];
                             $nombrerequisito=$row['nombrerequsito'];

@@ -31,7 +31,7 @@
                             <div class="form-group row"><label for="sapellido" class="col-md-4 col-form-label text-md-right" >Segundo apellido:</label><div class="col-md-6"><input type="text" name="sapellido" id="sapellido" value="" class="form-control" onkeypress="return sololetras(event);" maxlength="15"></div></div>
                             <div class="form-group row"><label for="ci" class="col-md-4 col-form-label text-md-right">DNI - C.I - Pasaporte:</label><div class="col-md-6"><input type="text" name="ci" id="ci" value="" required class="form-control" onkeypress="return dni(event);" maxlength="12"></div></div>
                             <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono:</label><div class="col-md-6"><input value="" type="tel" name="telefono" id="telefono" class="form-control"  required onpaste="return false" onkeypress="return numeros(event);" maxlength="11"></div></div>
-                            <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion:</label><div class="col-md-6"><input type="text" name="direccion" id="direccion" value="" required class="form-control" onkeypress="return direction(event);" maxlength="150"></div></div>
+                            <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion:</label><div class="col-md-6"><input type="text" name="direccion" id="direccion" value="" required class="form-control" onkeypress="return dirreccion(event);" maxlength="150"></div></div>
                             <div class="form-group row"><label for="email" class="col-md-4 col-form-label text-md-right">Email:</label><div class="col-md-6"><input  type="email" name="email" id="email" value="" required class="form-control" onkeypress="return correo(event);" maxlength="30"></div></div>
                              <div class="form-group row"><label for="rol" class="col-md-4 col-form-label text-md-right">Rol:</label><div class="col-md-6">
                                              <select class="custom-select" name="rol" id="rol" onchange ="labores()">
@@ -70,11 +70,11 @@
                         <div class="card-footer">
                            <div class="form-group row" style="text-align:center">
                                <div class="col-md-4">
-                                    <button type="submit" class="btn btn-info" name="registrar">
-                                        <span class="glyphicon glyphicon-log-in"></span> registrar
+                                    <button type="submit" class="btn btn-outline-primary" name="registrar">
+                                        <span class="glyphicon glyphicon-log-in"></span> Registrar
                                     </button>
                                 </div>
-                                <div class ="col-md-4"><button type="reset" class="btn btn-info">
+                                <div class ="col-md-4"><button type="reset" class="btn btn-dark">
                                         <span class="glyphicon glyphicon-pencil"></span>Limpiar
                                     </button>
                                 </div>
