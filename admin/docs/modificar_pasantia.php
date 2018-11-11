@@ -1,4 +1,6 @@
-<?php include_once "menu.php";
+<?php
+    include_once "menu.php";
+    $_GET['id_pasantia'];
 ?>
 <main class="app-content">
     <div class="app-title">

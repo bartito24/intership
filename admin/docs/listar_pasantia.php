@@ -30,7 +30,7 @@ $datos=$objeto->listar();
                             <th>Carrera</th>
                             <th>Modalidad</th>
                             <th>Area</th>
-                            <th>Pasantia</th>
+                            <th>Pasantía</th>
                             <th>Opciones</th>
                         </tr>
                         </thead>
@@ -47,9 +47,8 @@ $datos=$objeto->listar();
                             echo "<td>".$row['area']."</td>";
                             echo "<td>".$row['nombreasignatura']." ".$row['nivel']."</td>";
                             $id_pasantia=$row['id_pasantia'];
-                            $numpasantia=$row['id_pasantia'];
-                            echo "<td><a class='btn btn-info col-md-6' href='../../enrutador/enr_pasantia.php?id_pasantia=".$id_pasantia."'>Detalle</a>
-                            <a class=' btn btn-success col-md-5' href='modificar_pasantia.php?id_pasantia=".$id_pasantia."&numpasantia=".$numpasantia."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
+                            echo "<td><a class='btn btn-info col-md-6' href='ver_pasantia.php?id_pasantia=".$id_pasantia."'>Detalle</a>
+                            <a class=' btn btn-success col-md-5' href='modificar_pasantia.php?id_pasantia=".$id_pasantia."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                             $num+=1;
                         }?>
