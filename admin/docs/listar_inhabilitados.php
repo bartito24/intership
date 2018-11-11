@@ -8,7 +8,7 @@ $datos=$objeto->listar_inhabilitados();
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-th-list"></i>Usuarios</h1>
+            <h1><i class="fa fa-th-list"></i> Usuarios</h1>
             <p>Listado de Usuarios inhabilitados</p>
         </div>
         <ul class="app-breadcrumb breadcrumb side">
@@ -22,12 +22,12 @@ $datos=$objeto->listar_inhabilitados();
             <div class="tile">
                 <div class="tile-body">
                     <table class="table table-hover table-bordered" id="sampleTable">
-                        <thead class="thead-light">
+                        <thead class="thead-dark">
                         <tr>
                             <!-- <th><b>Id Usuario</th>-->
                             <th>Nombre</th>
-                            <th>pApellido</th>
-                            <th>sApellido</th>
+                            <th>Apellido</th>
+                            <th>Apellido</th>
                             <th>Correo</th>
                             <th>Habilitar</th>
                         </tr>

@@ -42,6 +42,28 @@ function dni(e)
 
 }
 
+function login1(e)
+{
+    var key=e.keyCode || e.which;
+    var teclado= String.fromCharCode(key).toLowerCase();
+    var letras="abcdefghijklmnñopqrstuvwxyz1234567890";
+    var especiales = "8-13-37-38-46-164";
+    var teclado_especiales=false;
+    for (var i in especiales)
+    {
+        if (key==especiales[i])
+        {
+            tecla_especiales=true;
+            break;
+        }
+    }
+    if (letras.indexOf(teclado)== -1 && !teclado_especiales)
+    {
+        return false;
+    }
+
+}
+
 function letras(e)
 {
     var key=e.keyCode || e.which;
@@ -85,6 +107,29 @@ function correo(e)
     }
 
 }
+
+function login(e)
+{
+    var key=e.keyCode || e.which;
+    var teclado= String.fromCharCode(key).toLowerCase();
+    var letras="abcdefghijklmnñopqrstuvwxyz@.1234567890";
+    var especiales = "8-13-37-38-46-164";
+    var teclado_especiales=false;
+    for (var i in especiales)
+    {
+        if (key==especiales[i])
+        {
+            tecla_especiales=true;
+            break;
+        }
+    }
+    if (letras.indexOf(teclado)== -1 && !teclado_especiales)
+    {
+        return false;
+    }
+
+}
+
 
 function dirreccion(e)
 {

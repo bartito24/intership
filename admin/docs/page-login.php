@@ -32,12 +32,11 @@
                 <div class="form-group">
                     <label class="control-label" for="nick">NOMBRE DE USUARIO</label>
                     <input class="form-control" type="email" id="nick" name="nick" placeholder="Email" required
-                           autofocus autocomplete="off" onkeypress="return correo(event)" maxlength="35">
+                           autofocus autocomplete="off" maxlength="35">
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="clave">CLAVE</label>
-                    <input class="form-control" type="password" id="clave" name="clave" placeholder="Password" required
-                           autofocus onkeypress="return dni(event);" maxlength="12">
+                    <input class="form-control" type="password" id="clave" name="clave" placeholder="Password" required autofocus maxlength="12">
                 </div>
                 <div class="form-group">
                     <div class="utility">
