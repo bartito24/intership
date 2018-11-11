@@ -5,7 +5,7 @@ require("conexion.php");
 if (isset($_GET['id_persona']))
 {
     $con= new conexion();
-    $sql="update usuario set activousuario =0 where id_usuario='$_GET[id_persona]'";
+    $sql="update usuario set activousuario =0 where persona_id_persona='$_GET[id_persona]'";
     $con->sin_retorno($sql);
     $sql="update persona set activo=0 where id_persona =$_GET[id_persona]";
     $con->sin_retorno($sql);

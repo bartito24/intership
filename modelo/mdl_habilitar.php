@@ -5,7 +5,7 @@ $obj= new conexion();
 if (isset($_GET['id_persona']))
 {
     $id=$_GET['id_persona'];
-    $sql="UPDATE persona SET activo=1";
+    $sql="UPDATE persona SET activo=1 where id_persona=$id";
     $obj->con_retorno($sql);
     $sql="select * from persona where id_persona=$id";
     $datos=$obj->con_retorno($sql);
@@ -16,7 +16,7 @@ if (isset($_GET['id_persona']))
 
     if( $ro['usuario'])
     {
-        $sql="update usuario set activousuario=1";
+        $sql="update usuario set activousuario=1 where persona_id_persona=$_GET[id_persona]";
         $obj->sin_retorno($sql);
         $sql="insert into cuenta (usuario_id_usuario ,usuario_id_usuario, rol_id_rol) values 
         ($ro[id_usuario],$row[id_persona],3)";
