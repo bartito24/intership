@@ -38,7 +38,6 @@ $datos=$objeto->listar();
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
                             echo "<td>$num</td>";
-                            echo "<td hidden>".$row['id_carrera']."</td>";
                             echo "<td>".$row['nombrecarrera']."</td>";
                             echo "<td>".$row['modalidad']."</td>";
                             echo "<td>".$row['version']."</td>";

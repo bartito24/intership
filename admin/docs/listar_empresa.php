@@ -40,7 +40,6 @@ $datos=$objeto->listar();
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
                             echo "<td>$num</td>";
-                            echo "<td hidden>".$row['id_empresa']."</td>";
                             echo "<td>".$row['nombreempresa']."</td>";
                             echo "<td>".$row['direccionempresa']."</td>";
                             echo "<td>".$row['telefono']."</td>";

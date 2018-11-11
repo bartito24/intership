@@ -72,7 +72,9 @@ class mdl_pasantia
 
     public function listar()
     {
-        $sql = "SELECT * FROM pasantia where activopasantia=1";
+        $sql = "SELECT * FROM pasantia join estudiante e on pasantia.estudiante_id_estudiante = e.id_estudiante join persona p on e.persona_id_persona = p.id_persona 
+        join asignatura a on pasantia.asignatura_id_asignatura = a.id_asignatura join estudia e2 on e.id_estudiante = e2.estudiante_id_estudiante and e.persona_id_persona = e2.estudiante_persona_id_persona 
+        join carrera c on e2.carrera_id_carrera = c.id_carrera where activopasantia=1";
         return $this->obj_con->con_retorno($sql);
     }
     public function Eliminar($id)

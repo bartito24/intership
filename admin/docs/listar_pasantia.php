@@ -27,8 +27,10 @@ $datos=$objeto->listar();
                             <th>Num</th>
                             <th>Fecha Inicio</th>
                             <th>Estudiante</th>
-                            <th>Tutor</th>
-                            <th>Empresa</th>
+                            <th>Carrera</th>
+                            <th>Modalidad</th>
+                            <th>Area</th>
+                            <th>Pasantia</th>
                             <th>Opciones</th>
                         </tr>
                         </thead>
@@ -38,14 +40,15 @@ $datos=$objeto->listar();
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
                             echo "<td>$num</td>";
-                            echo "<td hidden>".$row['id_pasantia']."</td>";
                             echo "<td>".$row['fechainicio']."</td>";
-                            echo "<td>".$row['estudiante_id_estudiante']."</td>";
-                            echo "<td>".$row['empleado_id_empleado']."</td>";
-                            echo "<td>".$row['empresa_id_empresa']."</td>";
+                            echo "<td>".$row['nombre']."</td>";
+                            echo "<td>".$row['nombrecarrera']."</td>";
+                            echo "<td>".$row['modalidad']."</td>";
+                            echo "<td>".$row['area']."</td>";
+                            echo "<td>".$row['nombreasignatura']." ".$row['nivel']."</td>";
                             $id_pasantia=$row['id_pasantia'];
                             $numpasantia=$row['id_pasantia'];
-                            echo "<td><a class='btn btn-danger col-md-5' href='../../enrutador/enr_pasantia.php?id_pasantia=".$id_pasantia."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                            echo "<td><a class='btn btn-info col-md-6' href='../../enrutador/enr_pasantia.php?id_pasantia=".$id_pasantia."'>Detalle</a>
                             <a class=' btn btn-success col-md-5' href='modificar_pasantia.php?id_pasantia=".$id_pasantia."&numpasantia=".$numpasantia."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                             $num+=1;
