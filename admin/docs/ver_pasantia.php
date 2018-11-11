@@ -1,9 +1,41 @@
 <?php include_once('menu.php');
     include_once ('../../modelo/conexion.php');
     $id_pasantia= $_GET['id_pasantia'];
+    $id_empleado= $_GET['id_empleado'];
     $obj=new conexion();
-    $sql= "select * from ";
-    $datos_asignatura=$obj->con_retorno($sql);
+    $sql= "select * from pasantia join estudiante e on pasantia.estudiante_id_estudiante = e.id_estudiante join persona p on e.persona_id_persona = p.id_persona 
+  join empresa e2 on pasantia.empresa_id_empresa = e2.id_empresa join asignatura a on pasantia.asignatura_id_asignatura = a.id_asignatura 
+  join estudia e3 on e.id_estudiante = e3.estudiante_id_estudiante and e.persona_id_persona = e3.estudiante_persona_id_persona 
+  join carrera c on e3.carrera_id_carrera = c.id_carrera where activopasantia=1 and id_pasantia=$id_pasantia";
+    $datos_pasantia=$obj->con_retorno($sql);
+    while ($row=mysqli_fetch_assoc($datos_pasantia)){
+        $empresa=$row['nombreempresa'];
+        $direccion=$row['direccionempresa'];
+        $are=$row['area'];
+        $estudiante=$row['nombre'];
+        $papellido=$row['papellido'];
+        $sapellido=$row['sapellido'];
+        $ci=$row['ci'];
+        $funciones=$row['funciones'];
+        $carrera=$row['nombrecarrera'];
+        $regimen=$row['modalidad'];
+        $estado=$row['estadopasantia'];
+        $observacionvisita=$row['observacionvisita'];
+        $latitud=$row['latitud'];
+        $longitud=$row['longitud'];
+        $asignatura=$row['nombreasignatura'];
+        $nivel=$row['nivel'];
+    }
+
+    $sql2= "select * from pasantia join empleado e on pasantia.empleado_id_empleado = e.id_empleado join persona p on e.persona_id_persona = p.id_persona where id_empleado=$id_empleado and id_pasantia=$id_pasantia and activopasantia=1";
+    $datos_empleado=$obj->con_retorno($sql2);
+    while ($row2=mysqli_fetch_assoc($datos_empleado))
+    {
+        $totur=$row2['nombre'];
+        $tapellido=$row2['papellido'];
+        $tapellido2=$row2['sapellido'];
+        $cargo=$row2['cargo'];
+    }
     $ao = date("Y" );
     ?>
 <main class="app-content">
@@ -23,72 +55,19 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="tile">
-                    <center><h3 class="tile-title">Crear Nueva Pasantía</h3></center>
+                    <center><h3 class="tile-title">Datos Pasantía</h3></center>
                     <hr>
                     <div class="tile-body">
-                        <form name="f1" action="../../enrutador/enr_pasantia.php" method="post" autocomplete="off" required>
-                            <div class="form-group row"><label for="empresa" class="col-md-4 col-form-label text-md-right">Empresa:</label>
-                                <div class="col-md-6">
-                                    <select class="custom-select" name="empresa" required>
-                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
-                                        <?php
-                                        while ($row=mysqli_fetch_assoc($datos_empresa)){
-                                            echo "<option value='$row[id_empresa]'>".$row['nombreempresa']."</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row"><label for="areas" class="col-md-4 col-form-label text-md-right">Area:</label><div class="col-md-6"><input type="text" name="area" id="area" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
-                            <div class="form-group row"><label for="funciones" class="col-md-4 col-form-label text-md-right">Descripción:</label><div class="col-md-6">
-                                    <textarea name="funciones" id="funciones" cols="36" rows="4" required onkeypress="return sololetras(event)"></textarea></div></div>
-                            <div class="form-group row"><label for="asignatura" class="col-md-4 col-form-label text-md-right">Asignatura:</label>
-                                <div class="col-md-6">
-                                    <select class="custom-select" name="asignatura" required>
-                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
-                                        <?php
-                                        while ($row2=mysqli_fetch_assoc($datos_asignatura)){
-                                            echo "<option value='$row2[id_asignatura]'>".$row2['nombreasignatura']." ".$row2['nivel']."</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row"><label for="estudiante" class="col-md-4 col-form-label text-md-right">Estudiante:</label>
-                                <div class="col-md-6">
-                                    <select class="custom-select" name="estudiante" required>
-                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
-                                        <?php
-                                        while ($row3=mysqli_fetch_assoc($datos_estudiante)){
-                                            echo "<option value='$row3[id_estudiante]'>".$row3['nombre']." ".$row3['papellido']." ".$row3['sapellido']."</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row"><label for="empleado" class="col-md-4 col-form-label text-md-right">Empleado:</label>
-                                <div class="col-md-6">
-                                    <select class="custom-select" name="empleado" required>
-                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
-                                        <?php
-                                        while ($row4=mysqli_fetch_assoc($datos_empleado)){
-                                            echo "<option value='$row4[id_empleado]'>".$row4['nombre']." ".$row4['papellido']." ".$row4['sapellido']."</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row"><label for="fechainicio" class="col-md-4 col-form-label text-md-right">Fecha Inicio:</label><div class="col-md-6"><input type="date" name="fechainicio" id="fechainicio" class="form-control" value="" required autofocus></div></div>
-                            <div class="form-group row"><label for="gestion" class="col-md-4 col-form-label text-md-right">Gestion:</label>
-                                <div class="col-md-6">
-                                    <select class="custom-select" name="gestion" required>
-                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
-                                        <option VALUE="1">Gestion 1 de <?php echo $ao ?></option>
-                                        <option VALUE="2">Gestion 2 de <?php echo $ao ?></option>
-                                        <option VALUE="3">Gestion Anualizado de <?php echo $ao ?></option>
-                                    </select>
-                                </div>
-                            </div>
+                        <form name="f1" action="#" method="post" autocomplete="off" required>
+                            <div class="form-group row"><label for="empresa" class="col-md-4 col-form-label text-md-right">Empresa:</label><div class="col-md-6"><p class="form-control"><?php echo $empresa; ?></p></div></div>
+                            <div class="form-group row"><label for="areas" class="col-md-4 col-form-label text-md-right">Area:</label><div class="col-md-6"><p class="form-control"><?php echo $are; ?></p></div></div>
+                            <div class="form-group row"><label for="funciones" class="col-md-4 col-form-label text-md-right">Descripción:</label><div class="col-md-6"><textarea readonly name="funciones" id="funciones" cols="36" rows="4"><?php echo $funciones ?></textarea></div></div>
+                            <div class="form-group row"><label for="ci" class="col-md-4 col-form-label text-md-right">Ci:</label><div class="col-md-6"><p class="form-control"><?php echo $ci; ?></p></div></div>
+                            <div class="form-group row"><label for="estudiante" class="col-md-4 col-form-label text-md-right">Estudiante:</label><div class="col-md-6"><p class="form-control"><?php echo $estudiante." ".$papellido." ".$sapellido ?></p></div></div>
+                            <div class="form-group row"><label for="carrera" class="col-md-4 col-form-label text-md-right">Carrera:</label><div class="col-md-6"><p class="form-control"><?php echo $carrera; ?></p></div></div>
+                            <div class="form-group row"><label for="regimen" class="col-md-4 col-form-label text-md-right">Regimen:</label><div class="col-md-6"><p class="form-control"><?php echo $regimen; ?></p></div></div>
+                            <div class="form-group row"><label for="tutor" class="col-md-4 col-form-label text-md-right">Tutor:</label><div class="col-md-6"><p class="form-control"><?php echo $totur." ".$tapellido." ".$tapellido2; ?></p></div></div>
+                            <div class="form-group row"><label for="cargo" class="col-md-4 col-form-label text-md-right">Cargo:</label><div class="col-md-6"><p class="form-control"><?php echo $cargo; ?></p></div></div>
                             <hr>
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
@@ -98,7 +77,7 @@
                                 <div class ="col-md-4"><button type="reset" class="btn btn-dark">
                                         <span class="glyphicon glyphicon-pencil"></span>Limpiar
                                     </button></div>
-                                <div class ="col-md-4"><a class="btn btn-danger" href="listar_pasantia.php">Cancelar
+                                <div class ="col-md-4"><a class="btn btn-danger" href="listar_pasantia.php">Volver
                                     </a></div>
                             </div>
                         </form>

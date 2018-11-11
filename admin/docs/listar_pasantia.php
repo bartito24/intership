@@ -47,7 +47,8 @@ $datos=$objeto->listar();
                             echo "<td>".$row['area']."</td>";
                             echo "<td>".$row['nombreasignatura']." ".$row['nivel']."</td>";
                             $id_pasantia=$row['id_pasantia'];
-                            echo "<td><a class='btn btn-info col-md-6' href='ver_pasantia.php?id_pasantia=".$id_pasantia."'>Detalle</a>
+                            $id_empleado=$row['id_empleado'];
+                            echo "<td><a class='btn btn-info col-md-6' href='ver_pasantia.php?id_pasantia=".$id_pasantia."&id_empleado=".$id_empleado."'>Detalle</a>
                             <a class=' btn btn-success col-md-5' href='modificar_pasantia.php?id_pasantia=".$id_pasantia."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                             $num+=1;
