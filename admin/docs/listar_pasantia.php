@@ -38,7 +38,6 @@ $datos=$objeto->listar();
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
                             echo "<td>$num</td>";
-                            echo "<td hidden>".$row['id_pasantia']."</td>";
                             echo "<td>".$row['fechainicio']."</td>";
                             echo "<td>".$row['estudiante_id_estudiante']."</td>";
                             echo "<td>".$row['empleado_id_empleado']."</td>";

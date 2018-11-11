@@ -27,7 +27,7 @@ $datos=$objeto->listar();
                             <th>Num</th>
                             <th>Nombre</th>
                             <th>Nivel</th>
-                            <th>Descripcion</th>
+                            <th>Descripción</th>
                             <th>Opciones</th>
                         </tr>
                         </thead>
@@ -37,7 +37,6 @@ $datos=$objeto->listar();
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
                             echo "<td>$num</td>";
-                            echo "<td hidden>".$row['id_asignatura']."</td>";
                             echo "<td>".$row['nombreasignatura']."</td>";
                             echo "<td>".$row['nivel']."</td>";
                             echo "<td>".$row['descripcionasig']."</td>";
