@@ -88,7 +88,7 @@ class mdlusuario
                 $sql1 = "select * from persona where ci='$this->ci'";
                 $numeropersona = $this->obj_con->con_retorno($sql1);
                 $num = mysqli_fetch_assoc($numeropersona);
-                $sql2 = "insert into estudiante (activoestudiante,persona_id_persona) values('1','$num[id_persona]')";
+                $sql2 = "insert into estudiante (activoestudiante,enpasantia,persona_id_persona) values('1',0,'$num[id_persona]')";
                 $this->obj_con->sin_retorno($sql2);
                echo "<script> window.location.href='../admin/docs/imprimir_cuenta.php?c=$num[id_persona]';</script>";
             }

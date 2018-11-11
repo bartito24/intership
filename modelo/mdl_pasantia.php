@@ -32,7 +32,7 @@ class mdl_pasantia
         $this->gestion = "";
         $this->docs = "";
         $this->estadopasantia = 0;
-        $this->id_empleado = 0;
+        $this->empleado = 0;
         $this->empresa = 0;
         $this->asignatura = 0;
         $this->area = "";
@@ -61,8 +61,10 @@ class mdl_pasantia
         $hora= strftime("%H:%M:%S");
 
         $sql = "INSERT INTO pasantia (empresa_id_empresa,area,funciones,asignatura_id_asignatura,estudiante_id_estudiante,fechainicio,empleado_id_empleado,gestion,estadopasantia, activopasantia)
-   VALUE ($this->empresa,'$this->area','$this->funciones',$this->asignatura,$this->estudiante,'$fecha',$this->empleado,$this->gestion,1,1)";
-    $this->obj_con->sin_retorno($sql);
+        VALUE ($this->empresa,'$this->area','$this->funciones',$this->asignatura,$this->estudiante,'$fecha',$this->empleado,$this->gestion,1,1)";
+        $this->obj_con->sin_retorno($sql);
+        $sql2 = "update estudiante set enpasantia=1";
+        $this->obj_con->sin_retorno($sql2);
     }
     public function modificar()
     {
