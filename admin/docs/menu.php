@@ -73,7 +73,7 @@ if($_SESSION['usuario']==""){
               </ul>
           </li-->
           <!-- User Menu-->
-          <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i> &nbsp;<?php echo $_SESSION['rol']?></a>
+          <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu" style='text-transform: capitalize'><i class="fa fa-user fa-lg"></i> &nbsp;<?php echo $_SESSION['rol']?></a>
               <ul class="dropdown-menu settings-menu dropdown-menu-right">
                   <li><a class="dropdown-item" href="perfil.php"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
                   <li><a class="dropdown-item" href="../../enrutador/enr_login.php?salir=true"><i class="fa fa-sign-out fa-lg"></i> Salir</a></li>
@@ -86,8 +86,8 @@ if($_SESSION['usuario']==""){
   <aside class="app-sidebar">
       <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../../imagenes/userc.png" alt="User Image">
           <div>
-              <p class="app-sidebar__user-name"><?php echo $_SESSION['nombre']?></p>
-              <p class="app-sidebar__user-designation"><?php echo $_SESSION['papellido']?></p>
+              <p class="app-sidebar__user-name" style='text-transform: capitalize'><?php echo $_SESSION['nombre']?></p>
+              <p class="app-sidebar__user-designation" style='text-transform: capitalize'><?php echo $_SESSION['papellido']?></p>
           </div>
       </div>
       <ul class="app-menu">
@@ -97,7 +97,7 @@ if($_SESSION['usuario']==""){
               <ul class="treeview-menu" >
                   <li ><a class="treeview-item" href = "agregar-empleado.php" ><i class="icon fa fa-user-plus" ></i > Registrar Persona</a ></li >
                   <li ><a class="treeview-item" href = "table-personas.php" ><i class="icon fa fa-list" ></i > Listar Personas</a ></li >
-                  <li ><a class="treeview-item" href = "listar_usuario.php" ><i class="icon fa fa-list" ></i > Listar Usuarios </a ></li >
+                  <!-- <li ><a class="treeview-item" href = "listar_usuario.php" ><i class="icon fa fa-list" ></i > Listar Usuarios </a ></li > -->
                   <li ><a class="treeview-item" href = "listar_inhabilitados.php" ><i class="icon fa fa-list" ></i > Listar inhabilitados </a ></li >
               </ul >
           </li>
