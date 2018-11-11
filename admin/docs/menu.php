@@ -98,6 +98,7 @@ if($_SESSION['usuario']==""){
                   <li ><a class="treeview-item" href = "agregar-empleado.php" ><i class="icon fa fa-user-plus" ></i > Registrar Persona</a ></li >
                   <li ><a class="treeview-item" href = "table-personas.php" ><i class="icon fa fa-list" ></i > Listar Personas</a ></li >
                   <li ><a class="treeview-item" href = "listar_usuario.php" ><i class="icon fa fa-list" ></i > Listar Usuarios </a ></li >
+                  <li ><a class="treeview-item" href = "listar_inhabilitados.php" ><i class="icon fa fa-list" ></i > Listar inhabilitados </a ></li >
               </ul >
           </li>
           <?php  }?>
