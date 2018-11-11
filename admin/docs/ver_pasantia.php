@@ -63,12 +63,10 @@
                             <div class="form-group row"><label for="areas" class="col-md-4 col-form-label text-md-right">Area:</label><div class="col-md-6"><p class="form-control"><?php echo $are; ?></p></div></div>
                             <div class="form-group row"><label for="funciones" class="col-md-4 col-form-label text-md-right">Descripción:</label><div class="col-md-6"><textarea readonly name="funciones" id="funciones" cols="36" rows="4"><?php echo $funciones ?></textarea></div></div>
                             <div class="form-group row"><label for="ci" class="col-md-4 col-form-label text-md-right">Ci:</label><div class="col-md-6"><p class="form-control"><?php echo $ci; ?></p></div></div>
-                            <div class="form-group row"><label for="estudiante" class="col-md-4 col-form-label text-md-right">Estudiante:</label><div class="col-md-6"><p class="form-control"><?php echo $estudiante; ?></p></div></div>
-                            <div class="form-group row"><label for="papellido" class="col-md-4 col-form-label text-md-right">Apellido Paterno:</label><div class="col-md-6"><p class="form-control"><?php echo $papellido; ?></p></div></div>
-                            <div class="form-group row"><label for="sapellido" class="col-md-4 col-form-label text-md-right">Apellido Materno:</label><div class="col-md-6"><p class="form-control"><?php echo $sapellido; ?></p></div></div>
+                            <div class="form-group row"><label for="estudiante" class="col-md-4 col-form-label text-md-right">Estudiante:</label><div class="col-md-6"><p class="form-control"><?php echo $estudiante." ".$papellido." ".$sapellido ?></p></div></div>
                             <div class="form-group row"><label for="carrera" class="col-md-4 col-form-label text-md-right">Carrera:</label><div class="col-md-6"><p class="form-control"><?php echo $carrera; ?></p></div></div>
                             <div class="form-group row"><label for="regimen" class="col-md-4 col-form-label text-md-right">Regimen:</label><div class="col-md-6"><p class="form-control"><?php echo $regimen; ?></p></div></div>
-                            <div class="form-group row"><label for="tutor" class="col-md-4 col-form-label text-md-right">Tutor:</label><div class="col-md-6"><p class="form-control"><?php echo $totur; ?></p></div></div>
+                            <div class="form-group row"><label for="tutor" class="col-md-4 col-form-label text-md-right">Tutor:</label><div class="col-md-6"><p class="form-control"><?php echo $totur." ".$tapellido." ".$tapellido2; ?></p></div></div>
                             <div class="form-group row"><label for="cargo" class="col-md-4 col-form-label text-md-right">Cargo:</label><div class="col-md-6"><p class="form-control"><?php echo $cargo; ?></p></div></div>
                             <hr>
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
