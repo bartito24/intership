@@ -18,29 +18,25 @@ $datos=$objeto->listar_requisito();
         </ul>
     </div>
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-7">
             <div class="tile">
                 <div class="tile-body">
-                    <a class="btn btn-secondary" href="crear_requisito.php">Crear Requisito</a>
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
-
                             <th>Nombre</th>
                             <th>Opciones</th>
-
                         </tr>
                         </thead>
                         <tbody>
                         <?php
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
-                            echo "<td hidden>".$row['id_requisitos']."</td>";
                             echo "<td>".$row['nombrerequsito']."</td>";
                             $id_requisitos=$row['id_requisitos'];
                             $nombrerequisito=$row['nombrerequsito'];
                             echo "<td><a class='btn btn-danger col-md-3' href='../../enrutador/enr_requisito.php?id_requisitos=".$id_requisitos."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
-                              <a class=' btn btn-success col-md-5' href='modificar_requisitos.php?id_requisitos=".$id_requisitos."&nombrerequisito=".$nombrerequisito."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
+                              <a class=' btn btn-success col-md-3' href='modificar_requisitos.php?id_requisitos=".$id_requisitos."&nombrerequisito=".$nombrerequisito."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                             echo "</tr>";
                         }?>
