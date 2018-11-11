@@ -70,6 +70,7 @@ $datos=$con->con_retorno($sql);
                 <div class="col-md-6">
                 <div class="tile">
                     <center><h3 class="tile-title">Empresas Disponibles</h3></center>
+                    <hr>
                     <div class="tile-body">
                         <?php 
                         while ($row=mysqli_fetch_assoc($datos)) {
