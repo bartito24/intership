@@ -3,11 +3,14 @@
     $latitud=$_GET['latitud'];
     $longitud=$_GET['longitud'];
 ?>
+<style>
+
+</style>
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-edit"></i> Visitas</h1>
-            <p>Registro de visitas</p>
+            <h1><i class="fa fa-edit"></i>Ver Visitas</h1>
+            <p>Ver visita</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -21,23 +24,23 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <center><h3>Visitas</h3></center>
+                        <center><h3>Ver Visitas</h3></center>
                     </div>
-                    <div class="form-group-lg">
-                        <div class="col-md-4"><p id="demo">Click en el bottom para mostrar su ubicación</p></div>
-                        <div class="col-md-2"><button class="btn btn-primary" onclick="getLocation()">Ubicar</button></div>
+                    <div class="form-group-row">
                         <br>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-12"><div id="mapholder"></div></div>
+                        <div class="col-md-2"><button class="btn btn-primary" onclick="getLocation()">Mostrar Visita</button></div>
+                        <br>
                     </div>
                     <div class="form-group row" hidden>
                         <div class="col-md-2"><label class="col-form-label text-md-right" for="latitud">Latitud:</label></div>
-                        <div class="col-md-4"><input class="form-control" type="text" name="latitud" id="latitud" required></div>
+                        <div class="col-md-4"><input class="form-control" type="text" value="<?php echo $latitud ?>" name="latitud" id="latitud" required></div>
                     </div>
                     <div class="form-group row" hidden>
                         <div class="col-md-2"><label class="col-form-label text-md-right" for="longitud">Longitud:</label></div>
-                        <div class="col-md-4"><input class="form-control" type="text" name="longitud" id="longitud" required></div>
+                        <div class="col-md-4"><input class="form-control" type="text" value="<?php echo $longitud ?>" name="longitud" id="longitud" required></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4"><div id="mapholder"></div></div>
                     </div>
                 </div>
             </div>
@@ -60,14 +63,16 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
     }
 
     function showPosition(position) {
-        var lat = position.coords.latitude;
-        var lon = position.coords.longitude;
+        var valor = document.getElementById("latitud").value;
+        var valor1 = document.getElementById("longitud").value;
+        var lat = valor;
+        var lon = valor1;
         var latlon = new google.maps.LatLng(lat, lon)
         var mapholder = document.getElementById('mapholder')
         var lat1 = document.getElementById('latitud')
         var lon1 = document.getElementById('longitud')
-        mapholder.style.height= '15em';
-        mapholder.style.width = '20em';
+        mapholder.style.height= '20em';
+        mapholder.style.width = '40em';
 
         lat1.setAttribute("value", lat);
         lon1.setAttribute("value", lon);
