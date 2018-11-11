@@ -22,5 +22,5 @@ if (isset($_GET['id_persona']))
         ($ro[id_usuario],$row[id_persona],3)";
         $obj->sin_retorno($sql);
     }
-    echo "<script> window.location.href='../admin/docs/listar_usuario.php';</script>";
+    echo "<script> window.location.href='../admin/docs/table-personas.php';</script>";
 }

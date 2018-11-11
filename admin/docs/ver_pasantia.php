@@ -69,14 +69,22 @@
                             <div class="form-group row"><label for="tutor" class="col-md-4 col-form-label text-md-right">Tutor:</label><div class="col-md-6"><p class="form-control"><?php echo $totur." ".$tapellido." ".$tapellido2; ?></p></div></div>
                             <div class="form-group row"><label for="cargo" class="col-md-4 col-form-label text-md-right">Cargo:</label><div class="col-md-6"><p class="form-control"><?php echo $cargo; ?></p></div></div>
                             <hr>
-                            <div class="form-group row" style="text-align:center"><div class="col-md-4">
+                            <div class="form-group row">
+                                <div class="col-md-4"><div id="mapholder"></div></div>
+                            </div>
+                            <div class="form-group row" style="text-align:center">
+                                <!-- <div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
                                         <span class="glyphicon glyphicon-log-in"></span> Registrar
                                     </button>
-                                </div>
-                                <div class ="col-md-4"><button type="reset" class="btn btn-dark">
-                                        <span class="glyphicon glyphicon-pencil"></span>Limpiar
-                                    </button></div>
+                                </div>-->
+                                <?php
+                                    if ($estado=2)
+                                    {
+                                        echo "<div class ='col-md-6'><a class='btn btn-info col-md-4' href='ver_visita.php?latitud=".$latitud."&longitud=".$longitud."'>Ver Visita</a></div>";
+                                    }
+                                ?>
+
                                 <div class ="col-md-4"><a class="btn btn-danger" href="listar_pasantia.php">Volver
                                     </a></div>
                             </div>
@@ -87,3 +95,60 @@
         </div>
     </div>
 </main>
+
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyAUIE4qNC1oK13FQyhTP5NVzBIcrN7WMas"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+<script>
+    var x = document.getElementById("demo");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            x.innerHTML = "Generalización no soportada por el navegador.";
+        }
+    }
+
+    function showPosition(position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        var latlon = new google.maps.LatLng(lat, lon)
+        var mapholder = document.getElementById('mapholder')
+        var lat1 = document.getElementById('latitud')
+        var lon1 = document.getElementById('longitud')
+        mapholder.style.height= '15em';
+        mapholder.style.width = '20em';
+
+        lat1.setAttribute("value", lat);
+        lon1.setAttribute("value", lon);
+
+        var myOptions = {
+            center:latlon,zoom:14,
+            mapTypeId:google.maps.MapTypeId.ROADMAP,
+            mapTypeControl:false,
+            navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+        }
+
+        var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+        var marker = new google.maps.Marker({position:latlon,map:map,title:"Estas aquí!"});
+    }
+
+    function showError(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                x.innerHTML = "Usuario denegó la solicitud de geolocalización."
+                break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML = "La información de ubicación no está disponible."
+                break;
+            case error.TIMEOUT:
+                x.innerHTML = "La solicitud para agotar el tiempo de espera de la ubicación del usuario."
+                break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML = "Un error desconocido ocurrió."
+                break;
+        }
+    }
+</script>

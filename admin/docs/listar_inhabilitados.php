@@ -24,7 +24,6 @@ $datos=$objeto->listar_inhabilitados();
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
-                            <!-- <th><b>Id Usuario</th>-->
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Apellido</th>
@@ -45,7 +44,7 @@ $datos=$objeto->listar_inhabilitados();
                             $paterno=$row['papellido'];
                             $materno=$row['sapellido'];
                             $email=$row['email'];
-                            echo "<td><a class='btn btn-success col-md-4'  href='../../modelo/mdl_habilitar.php?id_persona=".$id_persona."'><i class='fa fa-check-circle' aria-hidden='true'></i></a>
+                            echo "<td><a class='btn btn-success col-md-5'  href='../../modelo/mdl_habilitar.php?id_persona=".$id_persona."'><i class='fa fa-check-circle' aria-hidden='true'></i></a>
                             </td>";
                             echo "</tr>";
                         }?>
