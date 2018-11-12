@@ -30,7 +30,9 @@ $pdf->Header();
 $pdf->Cell(0,10,"Internship Sistema de Control",0,1,"C");
 $pdf->Ln(20);
 $pdf->SetFont('Arial','I',2);
+$pdf->SetFillColor(200,71,71);
 $pdf->Cell(0,2,"hh",0,1,"C",true);
+$pdf->SetFillColor(200,71,71);
 $tutor=$_POST['tutor'];
 $sql1="SELECT * FROM persona AS p, empleado AS e
 WHERE p.id_persona=e.persona_id_persona AND e.id_empleado='$tutor' ";
@@ -39,16 +41,19 @@ $dato=mysqli_fetch_assoc($res);
 $nomtutor=$dato['nombre']." ".$dato['papellido']." ".$dato['sapellido'];
 
 $pdf->SetFont('Arial','I',11);
-$pdf->Cell(0,10,"Pasantias Asignadas por Tutor ".$nomtutor,0,1,"C");
-$pdf->Ln(20);
-$pdf->SetFillColor(232,232,232);
+$pdf->Cell(0,10,"PASANTIAS ASIGNADAS POR TUTOR ",0,1,"C");
+
+$pdf->Ln(8);
+$pdf->Cell(0,10,"TUTOR:  ".strtoupper($nomtutor),0,1,"L");
+$pdf->Ln(5);
+$pdf->SetFillColor(200,71,71);
 $pdf->SetX(10);
-$pdf->Cell(60,10,"Estudiante",1,0,"C",true);
+$pdf->Cell(60,10,"Estudiante",0,0,"C",true);
 $pdf->SetX(70);
 
-$pdf->Cell(60,10,"Carrera",1,0,"C", true);
+$pdf->Cell(60,10,"Carrera",0,0,"C", true);
 $pdf->SetX(130);
-$pdf->Cell(60,10,"Pasantia",1,1,"C" ,true);
+$pdf->Cell(60,10,"Pasantia",0,1,"C" ,true);
 
 
 
@@ -66,7 +71,7 @@ $i=1;
 while ($row=mysqli_fetch_assoc($resultado)){
 
     if(($i%2)==0){
-        $pdf->SetFillColor(255,0,0);
+        $pdf->SetFillColor(253,221,221);
     }else{
         $pdf->SetFillColor(255,255,255);
     }
@@ -74,12 +79,12 @@ while ($row=mysqli_fetch_assoc($resultado)){
     $nombre=$row['nombre']." ".$row['papellido']." ".$row['sapellido'];
     $pasantia=$row['nombreasignatura']." ".$row['nivel'];
     $carrera=$row['nombrecarrera'];
-    $pdf->Cell(60,10,$nombre,1,0,"C",true);
+    $pdf->Cell(60,10,$nombre,0,0,"C",true);
     $pdf->SetX(70);
 
-    $pdf->Cell(60,10,$carrera,1,0,"C", true);
+    $pdf->Cell(60,10,$carrera,0,0,"C", true);
     $pdf->SetX(130);
-    $pdf->Cell(60,10,$pasantia,1,1,"C" ,true);
+    $pdf->Cell(60,10,$pasantia,0,1,"C" ,true);
 $i++;
 }
 

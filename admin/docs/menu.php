@@ -191,6 +191,19 @@ if($_SESSION['usuario']==""){
 
               <ul class="treeview-menu" >
                   <li ><a class="treeview-item" href = "reorte_tutor.php" ><i class="icon fa fa-list-alt" ></i > Pasantias por tutor</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Registraron Pasantia</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantia Visitas</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantia Finalizadas</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Todas las Pasantias Desactivadas</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Aprobadas</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Reprobados</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Por Asignaturas</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Carreras Por Version</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Por Fecha</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias con Visitas</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias por Empresa</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias por Carrera</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Observadas</a ></li >
               </ul >
           </li>
       <?php  }?>
