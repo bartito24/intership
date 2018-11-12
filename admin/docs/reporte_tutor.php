@@ -39,7 +39,7 @@ $datos_empleado=$con->con_retorno($sql);
                     <center><h3 class="tile-title">Nueva Carrera</h3></center>
                     <hr>
                     <div class="tile-body">
-                        <form name="f1" action="rep_tutor.php" method="post" autocomplete="off" required>
+                        <form name="f1" action="conexion/rep_tutor.php" method="post" autocomplete="off" required>
                             <div class="form-group row"><label for="empresa" class="col-md-4 col-form-label text-md-right">Tutor:</label>
                                 <div class="col-md-7">
                                     <select class="custom-select" name="tutor" required>

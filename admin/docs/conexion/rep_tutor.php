@@ -1,6 +1,6 @@
 <?php
-include_once ("../../fpdf/fpdf.php");
-include_once ("conexion/conexion2.php");
+include_once("../../../fpdf/fpdf.php");
+include_once("conexion2.php");
 
 class reporte extends FPDF {
     function Header()
