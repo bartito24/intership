@@ -25,6 +25,7 @@ $requisito=$con->con_retorno($sql1);
             <div class="col-md-6">
                 <div class="tile">
                     <center><h3 class="tile-title">Nueva Asignaturas</h3></center>
+                    <hr>
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/agregar_asignatura.php" method="post" autocomplete="off" required>
                             <div class="form-group row">
@@ -57,7 +58,7 @@ $requisito=$con->con_retorno($sql1);
                                         }?>
                                     </select></div>
                             </div>
-
+                            <hr>
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
                                         <span class="glyphicon glyphicon-log-in"></span> Registrar
@@ -66,7 +67,7 @@ $requisito=$con->con_retorno($sql1);
                                 <div class ="col-md-4"><button type="reset" class="btn btn-dark">
                                         <span class="glyphicon glyphicon-pencil"></span>Limpiar
                                     </button></div>
-                                <div class ="col-md-4"><a class="btn btn-danger" href="menu.php">Cancelar
+                                <div class ="col-md-4"><a class="btn btn-danger" href="index.php">Cancelar
                                     </a></div>
                             </div>
                         </form>
@@ -78,12 +79,13 @@ $requisito=$con->con_retorno($sql1);
             <div class="col-md-6">
                 <div class="tile">
                     <center><h3 class="tile-title">Asiganturas Creadas</h3></center>
+                    <hr>
                     <div class="tile-body">
                         <?php 
                         while ($row=mysqli_fetch_assoc($datos)) {
                             echo "<div class='form-group'>
                             <div class='col-md-12'>
-                                <center><p class='form-control'>$row[nombreasignatura]$row[nivel]</p><center>
+                                <center><p class='form-control' style='text-transform: capitalize'>$row[nombreasignatura] $row[nivel]</p><center>
                             </div>
                             </div>";
                         }

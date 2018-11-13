@@ -50,7 +50,6 @@
                                                  <option>Tutor</option>
                                                  <option>Jefe de Carrera</option>
                                                  <option>Jefe de Registros Inscripciones</option>
-                                                 <option>Encargado Empresa</option>
                                              </select>
                                          </div>
                                </div>

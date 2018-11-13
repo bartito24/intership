@@ -111,7 +111,7 @@ else {
 
         public function listar()
         {
-            $sql = "select * from persona where activo=1;";
+            $sql = "select * from persona join rol r on persona.rol_id_rol = r.id_rol where activo=1 order by nombre asc;";
             return $this->obj_con->con_retorno($sql);
         }
 

@@ -155,6 +155,7 @@ if($_SESSION['usuario']==""){
                 <?php } ?>
                 <?php if( $_SESSION['rol']=="estudiante"){ ?>
                 <li><a class="treeview-item" href="llenar_cuadernillo.php"><i class="icon fa fa-list"></i>Llenar Cuadernillo</a></li>
+                <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-list"></i>Requisito</a></li>
                 <?php } ?>
             </ul>
           </li>
@@ -190,9 +191,8 @@ if($_SESSION['usuario']==""){
           <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-newspaper-o"></i><span class="app-menu__label">Reportes</span><i class="treeview-indicator fa fa-angle-right"></i></a>
 
               <ul class="treeview-menu" >
-                  <li ><a class="treeview-item" href = "reporte_tutor.php" ><i class="icon fa fa-list-alt" ></i > Pasantias por tutor</a ></li >
-                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Registraron Pasantia</a ></li >
-                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantia Visitas</a ></li >
+                  <li ><a class="treeview-item" href = "reportes_tutor.php" ><i class="icon fa fa-list-alt" ></i > Pasantias por tutor</a ></li >
+                  <li ><a class="treeview-item" href = "reportes_visitas.php" ><i class="icon fa fa-list-alt" ></i > Pasantias Visitas</a ></li >
                   <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantia Finalizadas</a ></li >
                   <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Todas las Pasantias Desactivadas</a ></li >
                   <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Aprobadas</a ></li >

@@ -75,8 +75,8 @@ $tra=$ob->con_retorno($sql);
                                 <div class="col-md-2">
                                     <button class="btn btn-outline-primary" name="registrar" type="submit">Registrar</button>
                                 </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-secondary" type="reset">Cancelar</button>
+                                <div class ="col-md-4"><a class="btn btn-danger" href="index.php">Cancelar
+                                    </a>
                                 </div>
                             </div>
                         </div>
