@@ -41,11 +41,23 @@ $requisito=$con->con_retorno($sql1);
                                     <input type="text" name="descripcionasig" id="descripcionasig" class="form-control" value="" required>
                                 </div>
                             </div>
-
+                            <!--
                             <div class="form-group row">
                                 <label for="nivel" class="col-md-4 col-form-label text-md-right">Nivel:</label>
                                 <div class="col-md-6">
                                     <input type="number" name="nivel" id="nivel" class="form-control" value="" required min="1">
+                                </div>
+                            </div>
+                            -->
+
+                            <div  class="form-group row"><label for="nivel" class="col-md-4 col-form-label text-md-right">Nivel:</label>
+                                <div class="col-md-6">
+                                    <select class="custom-select" name="nivel"  id="nivel">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
                                 </div>
                             </div>
 

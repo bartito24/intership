@@ -11,7 +11,7 @@ $datos_empleado=$con->con_retorno($sql);
      <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Empresa</title>
+    <title>Reportes</title>
     <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="../../js/validacion.js"></script>
     <?php
@@ -45,7 +45,7 @@ $datos_empleado=$con->con_retorno($sql);
                                         <option value="" disabled selected hidden>Nada Seleccionado</option>
                                         <?php
                                         while ($row=mysqli_fetch_assoc($datos_empleado)){
-                                            echo "<option value='$row[id_empleado]'>".$row['nombre']." ".$row['papellido']." ".$row['papellido']."</option>";
+                                            echo "<option value='$row[id_empleado]' style='text-transform: capitalize'>".$row['nombre']." ".$row['papellido']." ".$row['papellido']."</option>";
                                         }
                                         ?>
                                     </select>

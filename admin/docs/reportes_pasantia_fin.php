@@ -1,11 +1,11 @@
 <?php
 include_once ('../../modelo/conexion.php');
 $con=new conexion();
-$sql="select * from empleado join persona p on empleado.persona_id_persona = p.id_persona where activo=1 and cargo='Tutor' or cargo='Jefe de carrera'";
-$datos_empleado=$con->con_retorno($sql);
+$sql="select * from asignatura where activoasignatura=1";
+$datos_asignatura=$con->con_retorno($sql);
 
-$sql2="select * from asignatura where activoasignatura=1";
-$datos_asignatura=$con->con_retorno($sql2);
+$sql2="select * from carrera where activocarrera=1";
+$datos_carrera=$con->con_retorno($sql2);
  ?>
 <head>
     <meta charset="UTF-8">
@@ -23,12 +23,12 @@ $datos_asignatura=$con->con_retorno($sql2);
     <div class="app-title">
         <div>
             <h1><i class="fa fa-edit"></i> Reportes</h1>
-            <p>Reportes de Asignaturas</p>
+            <p>Reportes de Pasantias</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
             <li class="breadcrumb-item">Reportes</li>
-            <li class="breadcrumb-item"><a href="#">Reportes Asignaturas</a></li>
+            <li class="breadcrumb-item"><a href="#">Reportes Pasantia</a></li>
         </ul>
     </div>
     <div class="container">
@@ -36,10 +36,22 @@ $datos_asignatura=$con->con_retorno($sql2);
         <div class="row">
             <div class="col-md-6">
                 <div class="tile">
-                    <center><h3 class="tile-title">Generar Reporte por Asignaturas</h3></center>
+                    <center><h3 class="tile-title">Generar Reporte Pasantes</h3></center>
                     <hr>
                     <div class="tile-body">
-                        <form name="f1" action="conexion/rep_visitas.php" method="post" autocomplete="off" required>
+                        <form name="f1" action="conexion/rep_pasafin.php" method="post" autocomplete="off" required>
+                            <div class="form-group row"><label for="carrera" class="col-md-3 col-form-label text-md-right">Carrera:</label>
+                                <div class="col-md-7">
+                                    <select class="custom-select" name="carrera" required>
+                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
+                                        <?php
+                                        while ($row2=mysqli_fetch_assoc($datos_carrera)){
+                                            echo "<option value='$row2[id_carrera]' style='text-transform: capitalize'>".$row2['nombrecarrera']." ".$row2['modalidad']." ".$row2['version']."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="form-group row"><label for="asignatura" class="col-md-3 col-form-label text-md-right">Asignaturas:</label>
                                 <div class="col-md-7">
                                     <select class="custom-select" name="asignatura" required>
@@ -47,18 +59,6 @@ $datos_asignatura=$con->con_retorno($sql2);
                                         <?php
                                         while ($row=mysqli_fetch_assoc($datos_asignatura)){
                                             echo "<option value='$row[id_asignatura]' style='text-transform: capitalize'>".$row['nombreasignatura']." ".$row['nivel']."</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row"><label for="tutor" class="col-md-3 col-form-label text-md-right">Tutor:</label>
-                                <div class="col-md-7">
-                                    <select class="custom-select" name="tutor" required>
-                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
-                                        <?php
-                                        while ($row2=mysqli_fetch_assoc($datos_empleado)){
-                                            echo "<option value='$row2[id_empleado]' style='text-transform: capitalize'>".$row2['nombre']." ".$row2['papellido']." ".$row2['papellido']."</option>";
                                         }
                                         ?>
                                     </select>

@@ -20,7 +20,7 @@
                     <form action="../../enrutador/enr_asignatura.php" method="post">
                         <div class="form-group row">
                             <div class="col-md-2"><label class="col-form-label text-md-right" for="nombreasignatura">Nombre:</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="nombreasignatura" id="nombreasignatura" value="<?php echo $_GET['nombreasignatura'];?>"></div>
+                            <div class="col-md-10"><input class="form-control" type="text" name="nombreasignatura" id="nombreasignatura" readonly value="<?php echo $_GET['nombreasignatura'];?>"></div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-2"><label class="col-form-label text-md-right" for="nivel">Nivel:</label></div>
