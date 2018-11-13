@@ -91,7 +91,7 @@ if($_SESSION['usuario']==""){
           </div>
       </div>
       <ul class="app-menu">
-          <?php if ($_SESSION['rol']=='administrador') {?>
+          <?php if ($_SESSION['rol']=='administrador' || $_SESSION['cargo']=="Jefe de Registros Inscripciones") {?>
           <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
 
               <ul class="treeview-menu" >
@@ -103,7 +103,7 @@ if($_SESSION['usuario']==""){
           </li>
           <?php  }?>
           <!--    Carreras      -->
-          <?php if ($_SESSION['rol']=='administrador') {?>
+          <?php if ($_SESSION['rol']=='administrador' || $_SESSION['cargo']=="Jefe de Registros Inscripciones") {?>
           <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-window-maximize"></i><span class="app-menu__label">Carreras</span><i class="treeview-indicator fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                   <li><a class="treeview-item" href="crear_carrera.php"><i class="icon fa fa-plus-square"></i>Crear Carrera</a></li>
@@ -115,7 +115,7 @@ if($_SESSION['usuario']==""){
               </ul>
               <?php  }?>
               <!--    Empresas   -->
-              <?php if ($_SESSION['rol']=='administrador') {?>
+              <?php if ($_SESSION['rol']=='administrador' || $_SESSION['cargo']=="Jefe de Registros Inscripciones") {?>
           <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-industry"></i><span class="app-menu__label">Empresas</span><i class="treeview-indicator fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
 
@@ -130,7 +130,7 @@ if($_SESSION['usuario']==""){
           <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-database"></i><span class="app-menu__label">Pasantías</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
                 <!--    Jefe de registros   -->
-                <?php if( $_SESSION['cargo']=="Jefe de Registros Inscripciones" || $_SESSION['rol']=="administrador"){ ?>
+                <?php if( $_SESSION['cargo']=="Jefe de Registros Inscripciones" || $_SESSION['cargo']=="Jefe de Carrera" || $_SESSION['cargo']=="Tutor" || $_SESSION['rol']=="administrador"){ ?>
                 <li><a class="treeview-item" href="crear_pasantia.php"><i class="icon fa fa-plus-square"></i>Crear Pasantía</a></li>
                 <li><a class="treeview-item" href="listar_pasantia.php"><i class="icon fa fa-list"></i>Listar Pasantía</a></li>
                 <!-- <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificación de Pasantía</a></li> -->
@@ -149,7 +149,7 @@ if($_SESSION['usuario']==""){
 
                 <?php } ?>
                 <!--    tutor   -->
-                <?php if( $_SESSION['cargo']=="Tutor" || $_SESSION['rol']=="administrador"){ ?>
+                <?php if( $_SESSION['cargo']=="Tutor" || $_SESSION['cargo']=="Jefe de Carrera" || $_SESSION['rol']=="administrador"){ ?>
                     <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-list"></i>Registrar Visita</a></li>
                     <li><a class="treeview-item" href="subir_nota.php"><i class="icon fa fa-list"></i>Subir Nota</a></li>
                 <?php } ?>
@@ -163,7 +163,7 @@ if($_SESSION['usuario']==""){
             <!--li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Requsitos Pasantia</span><i class="treeview-indicator fa fa-angle-right"></i></a-->
           <ul class="treeview-menu">
           <!--li><a class="treeview-item" href="requisitos.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li-->
-            <?php if ($_SESSION['rol']=='administrador') {?>
+            <?php if ($_SESSION['rol']=='administrador' || $_SESSION['cargo']=="Jefe de Carrera" || $_SESSION['cargo']=="Jefe de Registros Inscripciones") {?>
             
             <!--<li><a class="treeview-item" href="form-samples.html"><i class="icon fa fa-circle-o"></i> Form Samples</a></li>
             <li><a class="treeview-item" href="form-notifications.html"><i class="icon fa fa-circle-o"></i> Form Notifications</a></li>-->
@@ -193,14 +193,14 @@ if($_SESSION['usuario']==""){
               <ul class="treeview-menu" >
                   <li ><a class="treeview-item" href = "reportes_tutor.php" ><i class="icon fa fa-list-alt" ></i > Pasantias por tutor</a ></li >
                   <li ><a class="treeview-item" href = "reportes_pasantia_fin.php" ><i class="icon fa fa-list-alt" ></i > Pasantia Finalizadas</a ></li >
-                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Aprobadas</a ></li >
+                  <!-- <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Aprobadas</a ></li >
                   <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Reprobados</a ></li >
                   <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Por Asignaturas</a ></li >
-                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Por Fecha</a ></li >
+                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Por Fecha</a ></li > -->
                   <li ><a class="treeview-item" href = "reportes_visitas.php" ><i class="icon fa fa-list-alt" ></i > Pasantias con Visitas</a ></li >
-                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias por Empresa</a ></li >
+                  <!-- <li ><a class="treeview-item" href = "reorte_visitas.php" ><i class="icon fa fa-list-alt" ></i > Pasantias por Empresa</a ></li >
                   <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias por Carrera</a ></li >
-                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Observadas</a ></li >
+                 <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Observadas</a ></li > -->
               </ul >
           </li>
       <?php  }?>

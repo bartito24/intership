@@ -20,6 +20,7 @@
         $carrera=$row['nombrecarrera'];
         $regimen=$row['modalidad'];
         $estado=$row['estadopasantia'];
+        $notafinal=$row['notafinal'];
         $observacionvisita=$row['observacionvisita'];
         $latitud=$row['latitud'];
         $longitud=$row['longitud'];
@@ -66,6 +67,14 @@
                             <div class="form-group row"><label for="estudiante" class="col-md-4 col-form-label text-md-right">Estudiante:</label><div class="col-md-6"><p class="form-control"><?php echo $estudiante." ".$papellido." ".$sapellido ?></p></div></div>
                             <div class="form-group row"><label for="carrera" class="col-md-4 col-form-label text-md-right">Carrera:</label><div class="col-md-6"><p class="form-control"><?php echo $carrera; ?></p></div></div>
                             <div class="form-group row"><label for="regimen" class="col-md-4 col-form-label text-md-right">Regimen:</label><div class="col-md-6"><p class="form-control"><?php echo $regimen; ?></p></div></div>
+                            <?php
+                                if ($estado==3)
+                                {?>
+
+                                    <div class="form-group row"><label for="notafinal" class="col-md-4 col-form-label text-md-right">Nota Final:</label><div class="col-md-6"><p class="form-control"><?php echo $notafinal; ?></p></div></div>
+                                  <?php
+                                }
+                            ?>
                             <div class="form-group row"><label for="tutor" class="col-md-4 col-form-label text-md-right">Tutor:</label><div class="col-md-6"><p class="form-control"><?php echo $totur." ".$tapellido." ".$tapellido2; ?></p></div></div>
                             <div class="form-group row"><label for="cargo" class="col-md-4 col-form-label text-md-right">Cargo:</label><div class="col-md-6"><p class="form-control"><?php echo $cargo; ?></p></div></div>
                             <hr>
@@ -79,11 +88,12 @@
                                     </button>
                                 </div>-->
                                 <?php
-                                    if ($estado==2)
-                                    {
-                                        echo "<div class ='col-md-6'><a class='btn btn-info col-md-4' href='ver_visita.php?latitud=".$latitud."&longitud=".$longitud."'>Ver Visita</a></div>";
-                                    }
+                                if ($estado==2)
+                                {
+                                    echo "<div class ='col-md-6'><a class='btn btn-info col-md-4' href='ver_visita.php?latitud=".$latitud."&longitud=".$longitud."'>Ver Visita</a></div>";
+                                }
                                 ?>
+
 
                                 <div class ="col-md-4"><a class="btn btn-danger" href="listar_pasantia.php">Volver
                                     </a></div>
