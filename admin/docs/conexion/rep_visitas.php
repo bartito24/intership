@@ -42,7 +42,7 @@ $dato=mysqli_fetch_assoc($res);
 $nomtutor=$dato['nombre']." ".$dato['papellido']." ".$dato['sapellido'];
 
 $pdf->SetFont('Arial','I',11);
-$pdf->Cell(0,10,"VISITAS POR NUMERO DE ASIGNADAS A UN TUTOR ",0,1,"C");
+$pdf->Cell(0,10,"VISITAS REALIZADAS POR NUMERO DE ASIGNADAS",0,1,"C");
 
 $pdf->Ln(2);
 $pdf->Cell(0,10,"TUTOR:  ".strtoupper($nomtutor),0,1,"L");
