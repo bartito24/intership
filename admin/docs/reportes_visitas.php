@@ -40,13 +40,25 @@ $datos_asignatura=$con->con_retorno($sql2);
                     <hr>
                     <div class="tile-body">
                         <form name="f1" action="conexion/rep_visitas.php" method="post" autocomplete="off" required>
-                            <div class="form-group row"><label for="empresa" class="col-md-3 col-form-label text-md-right">Asignaturas:</label>
+                            <div class="form-group row"><label for="asignatura" class="col-md-3 col-form-label text-md-right">Asignaturas:</label>
                                 <div class="col-md-7">
-                                    <select class="custom-select" name="asignaturas" required>
+                                    <select class="custom-select" name="asignatura" required>
                                         <option value="" disabled selected hidden>Nada Seleccionado</option>
                                         <?php
                                         while ($row=mysqli_fetch_assoc($datos_asignatura)){
                                             echo "<option value='$row[id_asignatura]' style='text-transform: capitalize'>".$row['nombreasignatura']." ".$row['nivel']."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row"><label for="tutor" class="col-md-3 col-form-label text-md-right">Tutor:</label>
+                                <div class="col-md-7">
+                                    <select class="custom-select" name="tutor" required>
+                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
+                                        <?php
+                                        while ($row2=mysqli_fetch_assoc($datos_empleado)){
+                                            echo "<option value='$row2[id_empleado]'>".$row2['nombre']." ".$row2['papellido']." ".$row2['papellido']."</option>";
                                         }
                                         ?>
                                     </select>
