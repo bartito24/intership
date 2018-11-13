@@ -24,9 +24,7 @@ $datos=$objeto->listar();
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead class="thead-dark">
                   <tr>
-                    <th><b>Nombres</th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
+                    <th><b>Nombre Completo</th>
                     <th>Ci</th>
                     <th>Telefono</th>
                     <th>Direccion</th>
@@ -39,14 +37,12 @@ $datos=$objeto->listar();
                 <?php
                 while($row=mysqli_fetch_assoc($datos)){
                 echo "<tr>";
-                echo "<td>".$row['nombre']."</td>";
-                    echo "<td>".$row['papellido']."</td>";
-                    echo "<td>".$row['sapellido']."</td>";
+                echo "<td>".$row['nombre']." ".$row['papellido']." ".$row['sapellido']."</td>";
                     echo "<td>".$row['ci']."</td>";
                     echo "<td>".$row['telefono']."</td>";
                     echo "<td>".$row['direccion']."</td>";
                     echo "<td>".$row['email']."</td>";
-                    echo "<td>".$row['rol_id_rol']."</td>";
+                    echo "<td>".$row['nombrerol']."</td>";
                     $id_persona=$row['id_persona'];
                     $nombre=$row['nombre'];
                     $papellido=$row['papellido'];
@@ -56,8 +52,7 @@ $datos=$objeto->listar();
                     $direccion=$row['direccion'];
                     $email=$row['email'];
                     echo "<td>
-                      <a class='btn btn-danger col-md-5' href='../../modelo/mdl_agregarusuario.php?id_persona=".$id_persona."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>                           
-                      <a class=' btn btn-success col-md-5' href='modificar_persona.php?id_persona=".$id_persona."&nombre=".$nombre."&papellido=".$papellido."&sapellido=".$sapellido."&ci=".$ci."&telefono=".$telefono."&direccion=".$direccion."&email=".$email."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
+                      <a class='btn btn-danger col-md-12' href='../../modelo/mdl_agregarusuario.php?id_persona=".$id_persona."'>Eliminar</a></td>";
                 echo "</tr>";
                 }?>
                 </tbody>

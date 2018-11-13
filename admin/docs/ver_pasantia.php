@@ -79,7 +79,7 @@
                                     </button>
                                 </div>-->
                                 <?php
-                                    if ($estado=2)
+                                    if ($estado==2)
                                     {
                                         echo "<div class ='col-md-6'><a class='btn btn-info col-md-4' href='ver_visita.php?latitud=".$latitud."&longitud=".$longitud."'>Ver Visita</a></div>";
                                     }

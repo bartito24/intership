@@ -28,8 +28,7 @@ $datos=$objeto->listar();
                             <th>Nombre</th>
                             <th>Direccion</th>
                             <th>Telefono</th>
-                            <th>Nombre Sup</th>
-                            <th>Apellidos</th>
+                            <th>Nombre Supervisor</th>
                             <th>Celular</th>
                             <th>Opciones</th>
                         </tr>
@@ -43,8 +42,7 @@ $datos=$objeto->listar();
                             echo "<td>".$row['nombreempresa']."</td>";
                             echo "<td>".$row['direccionempresa']."</td>";
                             echo "<td>".$row['telefono']."</td>";
-                            echo "<td>".$row['nombrerep']."</td>";
-                            echo "<td>".$row['apellidorep']."</td>";
+                            echo "<td>".$row['nombrerep']." ".$row['apellidorep']."</td>";
                             echo "<td>".$row['celular']."</td>";
                             
                             

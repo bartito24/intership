@@ -41,15 +41,15 @@ $datos=$objeto->listar();
                             echo "<tr>";
                             echo "<td>$num</td>";
                             echo "<td>".$row['fechainicio']."</td>";
-                            echo "<td>".$row['nombre']."</td>";
-                            echo "<td>".$row['nombrecarrera']."</td>";
-                            echo "<td>".$row['modalidad']."</td>";
-                            echo "<td>".$row['area']."</td>";
-                            echo "<td>".$row['nombreasignatura']." ".$row['nivel']."</td>";
+                            echo "<td style='text-transform: capitalize'>".$row['nombre']."</td>";
+                            echo "<td style='text-transform: capitalize'>".$row['nombrecarrera']."</td>";
+                            echo "<td style='text-transform: capitalize'>".$row['modalidad']."</td>";
+                            echo "<td style='text-transform: capitalize'>".$row['area']."</td>";
+                            echo "<td style='text-transform: capitalize'>".$row['nombreasignatura']." ".$row['nivel']."</td>";
                             $id_pasantia=$row['id_pasantia'];
                             $id_empleado=$row['id_empleado'];
-                            echo "<td><a class='btn btn-info col-md-6' href='ver_pasantia.php?id_pasantia=".$id_pasantia."&id_empleado=".$id_empleado."'>Detalle</a>
-                            <a class=' btn btn-success col-md-5' href='modificar_pasantia.php?id_pasantia=".$id_pasantia."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
+                            $nombre=$row['nombre'];
+                            echo "<td><a class='btn btn-info col-md-12' href='ver_pasantia.php?id_pasantia=".$id_pasantia."&id_empleado=".$id_empleado."'>Detalle</a></td>";
                             echo "</tr>";
                             $num+=1;
                         }?>

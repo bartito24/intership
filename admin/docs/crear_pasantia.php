@@ -114,7 +114,7 @@
                                 <div class ="col-md-4"><button type="reset" class="btn btn-dark">
                                         <span class="glyphicon glyphicon-pencil"></span>Limpiar
                                     </button></div>
-                                <div class ="col-md-4"><a class="btn btn-danger" href="listar_pasantia.php">Cancelar
+                                <div class ="col-md-4"><a class="btn btn-danger" href="index.php">Cancelar
                                     </a></div>
                             </div>
                         </form>

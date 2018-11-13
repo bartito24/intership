@@ -4,7 +4,6 @@ $con=new conexion();
 $sql="select * from requisitos where activorequisito=1";
 $datos=$con->con_retorno($sql);
 
-
  ?>
 <?php include_once('menu.php');
 ?>
@@ -44,18 +43,13 @@ $datos=$con->con_retorno($sql);
                                 <div class ="col-md-4"><button type="reset" class="btn btn-dark">
                                         <span class="glyphicon glyphicon-pencil"></span>Limpiar
                                     </button></div>
-                                <div class ="col-md-4"><a class="btn btn-danger" href="menu.php">Cancelar
+                                <div class ="col-md-4"><a class="btn btn-outline-dark" href="index.php">Cancelar
                                     </a></div>
                             </div>
                         </form>
                     </div>
 
                 </div>
-
-             
-
-
-                 
             </div>
 
             <div class="col-md-6">

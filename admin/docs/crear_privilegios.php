@@ -21,7 +21,7 @@
         <ul class="app-breadcrumb breadcrumb side">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
             <li class="breadcrumb-item">Usuarios</li>
-            <li class="breadcrumb-item"><a href="#">Registo Privilegio</a></li>
+            <li class="breadcrumb-item"><a href="#">Registro Privilegio</a></li>
         </ul>
     </div>
     <div class="container">
