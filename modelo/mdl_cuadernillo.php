@@ -1,4 +1,5 @@
 <?php
+@session_start();
 require("conexion.php");
 class mdl_cuadernillo
 {
@@ -34,7 +35,6 @@ class mdl_cuadernillo
         $re=mysqli_fetch_assoc($dat);
         $sql = "INSERT INTO cuadernillo (fecha_registro,fecha,decripcion,pasantia_id_pasantia) VALUE ('$fecha','$this->fecha','$this->descripcion',$re[id_pasantia]);";
         $this->obj_con->sin_retorno($sql);
-        echo $sql;
 
     }
 }

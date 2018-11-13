@@ -1,7 +1,6 @@
 <?php
 include_once('menu.php');
 include_once ('../../modelo/conexion.php');
-
 ?>
 
 <main class="app-content">
@@ -18,23 +17,23 @@ include_once ('../../modelo/conexion.php');
     </div>
 
         <div class="form-group row">
-            <div class="col-md-10">
+            <div class="col-md-5">
                 <div class="tile">
                     <center><h3 class="tile-title">CUADERNILLO</h3></center>
                     <hr>
-                    <div class="tile-body">
-                        <div class="form-group row">
+
+                        <div class="form-group ">
                             <form name="f1" action="../../enrutador/enr_cuadernillo.php" method="post" autocomplete="off" required>
                                 <div class="form-group row">
                                     <label for="fecha" class="col-md-4 col-form-label text-md-right">Fecha:</label>
-                                    <div class="col-md-6">
+                                    <div class="col-md-8">
                                         <input type="date" name="fecha" id="fecha" class="form-control" value="" maxlength="12" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="descripcion" class="col-md-4 col-form-label text-md-right">Descripcion:</label>
-                                    <div class="col-md-6">
+                                        <label for="descripcion" class="col-md-4 col-form-label text-md-right">Descripcion:</label>
+                                    <div class="col-md-8">
                                         <textarea type="text" name="descripcion" id="descripcion" class="form-control"  required autofocus onkeypress="return sololetras(event);"></textarea>
                                     </div>
                                 </div>
@@ -51,15 +50,19 @@ include_once ('../../modelo/conexion.php');
                                         </a></div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <div class="col-md-4">
-                                        <div id="calendar"></div>
-                                    </div>
-                                </div>
                             </form>
-                        </div>
+                                </div>
                     </div>
                 </div>
+            <div class="col-md-7">
+                <div class="tile">
+                    <div class="tile-title"><center><h3>Fechas Registradas</h3></center></div>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div id="calendar"></div>
+                        </div>
+                </div>
+            </div>
             </div>
         </div>
 </main>
