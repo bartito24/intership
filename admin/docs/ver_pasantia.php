@@ -78,9 +78,6 @@
                             <div class="form-group row"><label for="tutor" class="col-md-4 col-form-label text-md-right">Tutor:</label><div class="col-md-6"><p class="form-control"><?php echo $totur." ".$tapellido." ".$tapellido2; ?></p></div></div>
                             <div class="form-group row"><label for="cargo" class="col-md-4 col-form-label text-md-right">Cargo:</label><div class="col-md-6"><p class="form-control"><?php echo $cargo; ?></p></div></div>
                             <hr>
-                            <div class="form-group row">
-                                <div class="col-md-4"><div id="mapholder"></div></div>
-                            </div>
                             <div class="form-group row" style="text-align:center">
                                 <!-- <div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
@@ -88,14 +85,21 @@
                                     </button>
                                 </div>-->
                                 <?php
-                                if ($estado==2)
+                                if ($estado==2 || $estado==3)
                                 {
-                                    echo "<div class ='col-md-6'><a class='btn btn-info col-md-4' href='ver_visita.php?latitud=".$latitud."&longitud=".$longitud."'>Ver Visita</a></div>";
+                                    echo "<div class ='col-md-2'><a class='btn btn-info' href='ver_visita.php?latitud=".$latitud."&longitud=".$longitud."'>Ver Visita</a></div>";
                                 }
                                 ?>
-
-
-                                <div class ="col-md-4"><a class="btn btn-danger" href="listar_pasantia.php">Volver
+                                <?php
+                                if ($estado==2 || $estado==3)
+                                {
+                                    echo "<div class ='col-md-3'><a class='btn btn-success' href='ver_visita.php?latitud=".$latitud."&longitud=".$longitud."'>Modificar Nota</a></div>";
+                                }
+                                ?>
+                                <div class ="col-md-3"><button type="submit" class="btn btn-dark" name="modificar">
+                                        <span class="glyphicon glyphicon-pencil"></span>Modificar Datos
+                                    </button></div>
+                                <div class ="col-md-2"><a class="btn btn-danger" href="listar_pasantia.php">Volver
                                     </a></div>
                             </div>
                         </form>

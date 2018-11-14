@@ -154,8 +154,9 @@ if($_SESSION['usuario']==""){
                     <li><a class="treeview-item" href="subir_nota.php"><i class="icon fa fa-list"></i>Subir Nota</a></li>
                 <?php } ?>
                 <?php if( $_SESSION['rol']=="estudiante"){ ?>
-                <li><a class="treeview-item" href="llenar_cuadernillo.php"><i class="icon fa fa-list"></i>Llenar Cuadernillo</a></li>
-                <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-list"></i>Requisito</a></li>
+                <li><a class="treeview-item" href="llenar_cuadernillo.php"><i class="icon fa fa-file-text-o"></i>Llenar Cuadernillo</a></li>
+                <li><a class="treeview-item" href="generar_cuadernillo.php"><i class="icon fa fa-book"></i>Generar Cuadernillo</a></li>
+                <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-list-ol"></i>Requisito</a></li>
                 <?php } ?>
             </ul>
           </li>
@@ -201,6 +202,13 @@ if($_SESSION['usuario']==""){
                   <!-- <li ><a class="treeview-item" href = "reorte_visitas.php" ><i class="icon fa fa-list-alt" ></i > Pasantias por Empresa</a ></li >
                   <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias por Carrera</a ></li >
                  <li ><a class="treeview-item" href = "#" ><i class="icon fa fa-list-alt" ></i > Pasantias Observadas</a ></li > -->
+              </ul >
+          </li>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-newspaper-o"></i><span class="app-menu__label">Reportes 2</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+
+              <ul class="treeview-menu" >
+                  <li ><a class="treeview-item" href = "reportes/registraron_pasantia.php" ><i class="icon fa fa-list-alt" ></i > Pasantias por tutor</a ></li >
+                  <li ><a class="treeview-item" href = "reportes_pasantia_fin.php" ><i class="icon fa fa-list-alt" ></i > Pasantia Finalizadas</a ></li >
               </ul >
           </li>
       <?php  }?>

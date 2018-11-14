@@ -24,11 +24,13 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <center><h3>Ver Visitas</h3></center>
+                        <center><h3>Ver Visitas de Una Pasantia</h3></center>
                     </div>
                     <div class="form-group-row">
                         <br>
-                        <div class="col-md-2"><button class="btn btn-primary" onclick="getLocation()">Mostrar Visita</button></div>
+                        <center>
+                            <div class="col-md-4"><button class="btn btn-primary" onclick="getLocation()">Mostrar Visita</button></div>
+                        </center>
                         <br>
                     </div>
                     <div class="form-group row" hidden>
@@ -40,8 +42,11 @@
                         <div class="col-md-4"><input class="form-control" type="text" value="<?php echo $longitud ?>" name="longitud" id="longitud" required></div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-4"><div id="mapholder"></div></div>
+                        <center>
+                            <div class="col-md-4"><div id="mapholder"></div></div>
+                        </center>
                     </div>
+                    <hr>
                 </div>
             </div>
         </div>

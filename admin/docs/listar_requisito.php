@@ -18,7 +18,7 @@ $datos=$objeto->listar_requisito();
         </ul>
     </div>
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-6">
             <div class="tile">
                 <div class="tile-body">
                     <table class="table table-hover table-bordered" id="sampleTable">
@@ -38,8 +38,8 @@ $datos=$objeto->listar_requisito();
                             echo "<td>".$row['nombrerequsito']."</td>";
                             $id_requisitos=$row['id_requisitos'];
                             $nombrerequisito=$row['nombrerequsito'];
-                            echo "<td><a class='btn btn-danger col-md-3' href='../../enrutador/enr_requisito.php?id_requisitos=".$id_requisitos."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
-                             <a class=' btn btn-success col-md-3' href='modificar_requisitos.php?id_requisitos=".$id_requisitos."&nombrerequisito=".$nombrerequisito."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
+                            echo "<td><a class='btn btn-danger col-md-4' href='../../enrutador/enr_requisito.php?id_requisitos=".$id_requisitos."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                             <a class=' btn btn-success col-md-4' href='modificar_requisitos.php?id_requisitos=".$id_requisitos."&nombrerequisito=".$nombrerequisito."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             $num+=1;
                             echo "</tr>";
                             echo "</tr>";

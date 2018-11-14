@@ -33,9 +33,11 @@ class mdl_nota
     else{
             $condicion="Reprobado";
     }
-        $sql = "update  pasantia set  notasupervisor=$this->notasupervisor,notatutor=$this->notatutor,estadopasantia=3, notafinal=$notafinal, observacionp='$condicion' where estudiante_id_estudiante=$this->id_estudiante";
+        date_default_timezone_set('America/Boa_Vista');
+        $fecha= strftime("%Y-%m-%d");
+        $sql = "update  pasantia set  notasupervisor=$this->notasupervisor,notatutor=$this->notatutor,estadopasantia=3, notafinal=$notafinal, observacionp='$condicion', fechafin='$fecha' where estudiante_id_estudiante=$this->id_estudiante";
         $this->obj_con->sin_retorno($sql);
-        echo "<script> window.location.href='../admin/docs/listar_carrera.php';</script>";
+        echo "<script> window.location.href='../admin/docs/listar_pasantia.php';</script>";
     }
 
 }

@@ -28,12 +28,12 @@ $tra=$ob->con_retorno($sql);
                         <center><h3>Visitas</h3></center>
                     </div>
                     <div class="form-group-lg">
-                        <div class="col-md-4"><p id="demo">Click en el bottom para mostrar su ubicación</p></div>
+                        <div class="col-md-4"><p id="demo"><b>Click en ubicar para registrar su ubicación</b></p></div>
                         <div class="col-md-2"><button class="btn btn-primary" onclick="getLocation()">Ubicar</button></div>
                         <br>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-12"><div id="mapholder"></div></div>
+                        <div class="col-md-4"><div id="mapholder"></div></div>
                     </div>
                     <form action="../../enrutador/enr_visita.php" method="post">
                         <div class="card-body">
@@ -75,7 +75,10 @@ $tra=$ob->con_retorno($sql);
                                 <div class="col-md-2">
                                     <button class="btn btn-outline-primary" name="registrar" type="submit">Registrar</button>
                                 </div>
-                                <div class ="col-md-4"><a class="btn btn-danger" href="index.php">Cancelar
+                                <div class="col-md-2">
+                                    <button class="btn btn-dark" name="limpiar" type="reset">Limpiar</button>
+                                </div>
+                                <div class ="col-md-2"><a class="btn btn-danger" href="index.php">Cancelar
                                     </a>
                                 </div>
                             </div>

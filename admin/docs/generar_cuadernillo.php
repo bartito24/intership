@@ -29,27 +29,9 @@ include_once ('../../modelo/conexion.php');
 
                         <div class="form-group ">
                             <form name="f1" action="../../enrutador/enr_cuadernillo.php" method="post" autocomplete="off" required>
-                                <div class="form-group row">
-                                    <label for="fecha" class="col-md-4 col-form-label text-md-right">Fecha:</label>
-                                    <div class="col-md-8">
-                                        <input type="date" name="fecha" id="fecha" class="form-control" required value="" maxlength="12">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                        <label for="descripcion" class="col-md-4 col-form-label text-md-right">Descripcion:</label>
-                                    <div class="col-md-8">
-                                        <textarea type="text" name="descripcion" id="descripcion" class="form-control" required autofocus onkeypress="return sololetras(event);"></textarea>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="form-group row" style="text-align:center"><div class="col-md-4">
-                                        <button type="submit" class="btn btn-outline-primary" name="registrar">
-                                            <span class="glyphicon glyphicon-log-in"></span> Registrar
-                                        </button>
-                                    </div>
-                                    <div class ="col-md-4"><button type="reset" class="btn btn-dark" name="limpiar">
-                                            <span class="glyphicon glyphicon-pencil"></span>Limpiar
+                                <div class="form-group row" style="text-align:center">
+                                    <div class ="col-md-6"><button type="submit" class="btn btn-outline-primary" name="generar">
+                                            <span class="glyphicon glyphicon-pencil"></span>Generar Cuaderno
                                         </button></div>
                                     <div class ="col-md-4"><a class="btn btn-danger" href="index.php">Cancelar
                                         </a></div>
