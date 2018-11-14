@@ -35,56 +35,8 @@ include_once('menu.php');
                 </ul>
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <div class="tab-content">
-                <div class="tab-pane active" id="user-timeline">
-                    <div class="tile user-settings">
-                        <h4 class="line-head">Modificar Perfil</h4>
-                        <form>
-                            <div class="row mb-4">
-                                <div class="col-md-4">
-                                    <label>Nombre:</label>
-                                    <input class="form-control" type="text" value="<?php echo $_SESSION['nombre']?>">
-                                </div>
-                                <div class="col-md-4">
-                                    <label>Apellidos:</label>
-                                    <input class="form-control" type="text" value="<?php echo $_SESSION['papellido']." ".$_SESSION['sapellido']; ?>">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 mb-4">
-                                    <label>C.I:</label>
-                                    <input class="form-control" type="text" value="<?php echo $_SESSION['ci']?>">
-                                </div>
-
-                                <div class="col-md-8 mb-4">
-                                    <label>Correo:</label>
-                                    <input class="form-control" type="text" value="<?php echo $_SESSION['email']?>">
-                                </div>
-
-                                <div class="col-md-8 mb-4">
-                                    <label>Teléfono:</label>
-                                    <input class="form-control" type="text" value="<?php echo $_SESSION['telefono']?>"
-                                </div>
-
-                                <div class="col-md-8 mb-4">
-                                    <label>Dirección:</label>
-                                    <input class="form-control" type="text" value="<?php echo $_SESSION['direccion']?>">
-                                </div>
-
-                                <div class="col-md-8 mb-4">
-                                    <label>Home Phone</label>
-                                    <input class="form-control" type="text">
-                                </div>
-                            </div>
-                            <div class="row mb-12">
-                                <div class="col-md-12">
-                                    <button class="btn btn-primary" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i> Guardar</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
                 <div class="tab-pane fade" id="user-settings">
                     <div class="tile user-settings">
                         <h4 class="line-head">Modificar Perfil</h4>
