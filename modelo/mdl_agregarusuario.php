@@ -136,9 +136,11 @@ else {
 
         public function modificar()
         {
-            $sql = "UPDATE persona SET nombre='$this->nombre', papellido='$this->papellido', sapellido='$this->sapellido', ci='$this->ci',telefono='$this->telefono',direccion='$this->direccion', rol='$this->rol' where id_persona='$this->id_persona';";
+            $sql = "UPDATE persona SET nombre='$this->nombre', papellido='$this->papellido', sapellido='$this->sapellido', ci='$this->ci',telefono='$this->telefono',direccion='$this->direccion', email='$this->email' where id_persona='$this->id_persona';";
             //print_r($sql);
-            return $this->obj_con->con_retorno($sql);
+            $this->obj_con->sin_retorno($sql);
+            $sql2="update usuario set usuario='$this->email' where id_usuario=$this->id_persona;";
+            $this->obj_con->sin_retorno($sql2);
         }
 
         public function eliminar($v)

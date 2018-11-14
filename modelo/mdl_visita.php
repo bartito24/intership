@@ -3,7 +3,7 @@ require("conexion.php");
 class mdl_visita
 {
     private $id_visita;
-    private $pasantia;
+    private $id_pasantia;
     public $fecha;
     public $observaciones;
     public $latitud;
@@ -15,7 +15,7 @@ class mdl_visita
     {
         $this->id_visita = 0;
         $this->id_estudiante = 0;
-        $this->pasantia = 0;
+        $this->id_pasantia = 0;
         $this->fecha = "";
         $this->observaciones = "";
         $this->latitud = 0;
@@ -40,6 +40,21 @@ where estudiante_id_estudiante = $this->id_estudiante;";
     {
         $sql = "SELECT * FROM visita ORDER BY id_visita ;";
         return $this->obj_con->con_retorno($sql);
+    }
+    public function modificar()
+    {
+        $sql="UPDATE pasantia SET latitud='$this->latitud', longitud='$this->longitud', observacionvisita='$this->observaciones' where id_pasantia=$this->id_pasantia;";
+        //print_r($sql);
+        $this->obj_con->sin_retorno($sql);
+
+    }
+
+    public function eliminar($id)
+    {
+        $condicion="";
+        $sql = "UPDATE pasantia SET latitud=(NULL), longitud=(NULL),observacionvisita=(NULL), estadopasantia=1 WHERE id_pasantia=$id";
+        print_r($sql);
+        $this->obj_con->sin_retorno($sql);
     }
 }
 ?>

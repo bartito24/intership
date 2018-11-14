@@ -32,7 +32,7 @@ class ctrl_pasantia{
         $this->obj_mod->set("id_pasantia" ,$p['id_pasantia']);
         $this->obj_mod->modificar();
     }
-public function eliminar($id){
-    $this->obj_mod->Eliminar($id);
-}
+    public function eliminar($id){
+        $this->obj_mod->Eliminar($id);
+    }
 }

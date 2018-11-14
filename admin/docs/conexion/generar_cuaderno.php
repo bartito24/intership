@@ -82,7 +82,8 @@ $pdf->SetX(50);
 $pdf->Cell(150,10,"Descripcion",0,1,"C" ,true);
 
 $pdf->SetFont('Arial','',11);
-$sql3="select * from cuadernillo where pasantia_id_pasantia=$re[id_pasantia];";
+$sql3="select * from cuadernillo where pasantia_id_pasantia=$re[id_pasantia]";
+//print_r($sql3);
 $resultado=$mysqli->query($sql3);
 $i=1;
 while ($row4=mysqli_fetch_assoc($resultado)){

@@ -81,7 +81,7 @@ class mdl_pasantia
     }
     public function Eliminar($id)
     {
-        $sql = "UPDATE empresa SET activoempresa=0 WHERE id_empresa=$id ";
+        $sql = "UPDATE pasantia SET activopasantia=0 WHERE id_pasantia=$id;";
         $this->obj_con->sin_retorno($sql);
     }
 }

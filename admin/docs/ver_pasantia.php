@@ -70,7 +70,6 @@
                             <?php
                                 if ($estado==3)
                                 {?>
-
                                     <div class="form-group row"><label for="notafinal" class="col-md-4 col-form-label text-md-right">Nota Final:</label><div class="col-md-6"><p class="form-control"><?php echo $notafinal; ?></p></div></div>
                                   <?php
                                 }
@@ -87,18 +86,18 @@
                                 <?php
                                 if ($estado==2 || $estado==3)
                                 {
-                                    echo "<div class ='col-md-2'><a class='btn btn-info' href='ver_visita.php?latitud=".$latitud."&longitud=".$longitud."'>Ver Visita</a></div>";
+                                    echo "<div class ='col-md-2'><a class='btn btn-info' href='ver_visita.php?id_pasantia=".$id_pasantia."&longitud=".$longitud."&latitud=".$latitud."'>Ver Visita</a></div>";
                                 }
                                 ?>
                                 <?php
-                                if ($estado==2 || $estado==3)
+                                if ($estado==3)
                                 {
-                                    echo "<div class ='col-md-3'><a class='btn btn-success' href='ver_visita.php?latitud=".$latitud."&longitud=".$longitud."'>Modificar Nota</a></div>";
+                                    echo "<div class ='col-md-3'><a class='btn btn-success' href='modificar_nota.php?id_pasantia=".$id_pasantia."'>Modificar Nota</a></div>";
                                 }
                                 ?>
-                                <div class ="col-md-3"><button type="submit" class="btn btn-dark" name="modificar">
-                                        <span class="glyphicon glyphicon-pencil"></span>Modificar Datos
-                                    </button></div>
+                                <?php
+                                    echo "<div class ='col-md-3'><a class='btn btn-dark' href='modificar_datos.php?id_pasantia=".$id_pasantia."'>Modificar Datos</a></div>";
+                                ?>
                                 <div class ="col-md-2"><a class="btn btn-danger" href="listar_pasantia.php">Volver
                                     </a></div>
                             </div>

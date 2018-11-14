@@ -37,22 +37,16 @@ $datos=$objeto->listar();
                 <?php
                 while($row=mysqli_fetch_assoc($datos)){
                 echo "<tr>";
-                echo "<td>".$row['nombre']." ".$row['papellido']." ".$row['sapellido']."</td>";
+                echo "<td style='text-transform: capitalize'>".$row['nombre']." ".$row['papellido']." ".$row['sapellido']."</td>";
                     echo "<td>".$row['ci']."</td>";
                     echo "<td>".$row['telefono']."</td>";
-                    echo "<td>".$row['direccion']."</td>";
+                    echo "<td style='text-transform: capitalize'>".$row['direccion']."</td>";
                     echo "<td>".$row['email']."</td>";
-                    echo "<td>".$row['nombrerol']."</td>";
+                    echo "<td style='text-transform: capitalize'>".$row['nombrerol']."</td>";
                     $id_persona=$row['id_persona'];
-                    $nombre=$row['nombre'];
-                    $papellido=$row['papellido'];
-                    $sapellido=$row['sapellido'];
-                    $ci=$row['ci'];
-                    $telefono=$row['telefono'];
-                    $direccion=$row['direccion'];
-                    $email=$row['email'];
                     echo "<td>
-                      <a class='btn btn-danger col-md-12' href='../../modelo/mdl_agregarusuario.php?id_persona=".$id_persona."'>Eliminar</a></td>";
+                      <a class='btn btn-danger col-md-7' href='../../modelo/mdl_agregarusuario.php?id_persona=".$id_persona."'>Eliminar</a>
+                      <a class=' btn btn-success col-md-4' href='modificar_persona.php?id_persona=".$id_persona."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                 echo "</tr>";
                 }?>
                 </tbody>

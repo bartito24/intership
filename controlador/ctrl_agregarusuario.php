@@ -79,15 +79,15 @@ public function eliminar ($v){
 }
 	public function modificar($p)
 	{
-	$this->obj_mod->set("id_persona", $p["id_persona"]);
-	$this->obj_mod->set("nombre", $p["nombre"]);
-	$this->obj_mod->set("papellido", $p["papellido"]);
-	$this->obj_mod->set("sapellido", $p["sapellido"]);
-	$this->obj_mod->set("ci", $p["ci"]);
-	$this->obj_mod->set("telefono", $p["telefono"]);
-	$this->obj_mod->set("direccion", $p["direccion"]);
-	$this->obj_mod->set("rol", $p["rol"]);
-	return $this->obj_mod->modificar();
-	        echo "<script> window.location.href='../admin/docs/index.php';</script>";
+        $this->obj_mod->set("id_persona", $p["id_persona"]);
+        $this->obj_mod->set("nombre", $p["nombre"]);
+        $this->obj_mod->set("papellido", $p["papellido"]);
+        $this->obj_mod->set("sapellido", $p["sapellido"]);
+        $this->obj_mod->set("ci", $p["ci"]);
+        $this->obj_mod->set("telefono", $p["telefono"]);
+        $this->obj_mod->set("direccion", $p["direccion"]);
+        $this->obj_mod->set("email", $p["email"]);
+        return $this->obj_mod->modificar();
+        echo "<script> window.location.href='../admin/docs/index.php';</script>";
 	}
 }

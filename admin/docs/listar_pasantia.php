@@ -49,7 +49,8 @@ $datos=$objeto->listar();
                             $id_pasantia=$row['id_pasantia'];
                             $id_empleado=$row['id_empleado'];
                             $nombre=$row['nombre'];
-                            echo "<td><a class='btn btn-info col-md-12' href='ver_pasantia.php?id_pasantia=".$id_pasantia."&id_empleado=".$id_empleado."'>Detalle</a></td>";
+                            echo "<td><a class='btn btn-info col-md-7' href='ver_pasantia.php?id_pasantia=".$id_pasantia."&id_empleado=".$id_empleado."'>Detalle</a>
+                                  <a class='btn btn-danger col-md-4' href='../../enrutador/enr_pasantia.php?id_pasantia=".$id_pasantia."'><i class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                             $num+=1;
                         }?>

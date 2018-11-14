@@ -25,7 +25,7 @@ class ctrl_asignatura{
         $this->obj_mod->modificar();
         
     }
-public function eliminar($id){
-    $this->obj_mod->Eliminar($id);
-}
+    public function eliminar($id){
+        $this->obj_mod->Eliminar($id);
+    }
 }

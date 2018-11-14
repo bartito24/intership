@@ -1,5 +1,6 @@
 <?php
     include_once("menu.php");
+    $id_pasantia=$_GET['id_pasantia'];
     $latitud=$_GET['latitud'];
     $longitud=$_GET['longitud'];
 ?>
@@ -24,7 +25,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <center><h3>Ver Visitas de Una Pasantia</h3></center>
+                        <center><h3>Ver Visita</h3></center>
                     </div>
                     <div class="form-group-row">
                         <br>
@@ -47,6 +48,16 @@
                         </center>
                     </div>
                     <hr>
+                    <div class="form-group row" style="text-align:center">
+                        <?php
+                        echo "<div class ='col-md-4'><a class='btn btn-outline-success' href='modificar_visitas.php?id_pasantia=".$id_pasantia."'>Modificar Visita</a></div>";
+                        ?>
+                        <?php
+                        echo "<div class ='col-md-4'><a class='btn btn-danger' href='../../enrutador/enr_visita.php?id_pasantia=".$id_pasantia."'>Eliminar</a></div>";
+                        ?>
+                        <div class ="col-md-4"><a class="btn btn-dark" href="listar_pasantia.php">Cancelar
+                            </a></div>
+                    </div>
                 </div>
             </div>
         </div>

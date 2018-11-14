@@ -29,10 +29,10 @@ class mdl_nota
         $notafinal=($this->notasupervisor+$this->notatutor)/2;
         if($notafinal>=61){
             $condicion="Aprobado";
-    }
-    else{
+        }
+        else{
             $condicion="Reprobado";
-    }
+        }
         date_default_timezone_set('America/Boa_Vista');
         $fecha= strftime("%Y-%m-%d");
         $sql = "update  pasantia set  notasupervisor=$this->notasupervisor,notatutor=$this->notatutor,estadopasantia=3, notafinal=$notafinal, observacionp='$condicion', fechafin='$fecha' where estudiante_id_estudiante=$this->id_estudiante";
@@ -40,4 +40,27 @@ class mdl_nota
         echo "<script> window.location.href='../admin/docs/listar_pasantia.php';</script>";
     }
 
+    public function modificar()
+    {
+        $condicion="";
+        $notafinal=0;
+        $notafinal=($this->notasupervisor+$this->notatutor)/2;
+        if($notafinal>=61){
+            $condicion="Aprobado";
+        }
+        else{
+            $condicion="Reprobado";
+        }
+        $sql="UPDATE pasantia SET notasupervisor='$this->notasupervisor', notatutor='$this->notatutor', notafinal=$notafinal,observacionp='$condicion' where id_pasantia=$this->id_pasantia;";
+        //print_r($sql);
+        $this->obj_con->sin_retorno($sql);
+
+    }
+
+    public function eliminar($id)
+    {
+        $sql = "UPDATE pasantia SET notatutor=(NULL), notasupervisor=(NULL),notafinal=(NULL), observacionp=(NULL), estadopasantia=2 WHERE id_pasantia=$id";
+        print_r($sql);
+        $this->obj_con->sin_retorno($sql);
+    }
 }

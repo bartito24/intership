@@ -38,7 +38,7 @@
                                                  <option value="" disabled selected hidden>Nada Seleccionado</option>
                                                  <?php
                                                  while ($row=mysqli_fetch_assoc($datos)){
-                                                     echo "<option value='$row[id_rol]'>".$row['nombrerol']."</option>";
+                                                     echo "<option value='$row[id_rol]' style='text-transform: capitalize'>".$row['nombrerol']."</option>";
                                                   }
                                                  ?>
                                              </select>
@@ -59,7 +59,7 @@
                                             <option value="" disabled selected hidden>Nada Seleccionado</option>
                                             <?php
                                             while ($row=mysqli_fetch_assoc($datos_carrera)){
-                                                echo "<option value='$row[id_carrera]'>".$row['nombrecarrera']."</option>";
+                                                echo "<option value='$row[id_carrera]' style='text-transform: capitalize'>".$row['nombrecarrera']." ".$row['version']."</option>";
                                             }
                                             ?>
                                         </select>
