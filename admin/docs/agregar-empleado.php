@@ -77,7 +77,7 @@
                                         <span class="glyphicon glyphicon-pencil"></span>Limpiar
                                     </button>
                                 </div>
-                                <div class ="col-md-4"><a class="btn btn-danger" href="menu.php">Cancelar
+                                <div class ="col-md-4"><a class="btn btn-danger" href="index.php">Cancelar
                                     </a>
                                 </div>
                             </div>
