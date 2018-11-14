@@ -109,8 +109,11 @@
 </script>
 <?php
 if(@$_SESSION['error']=="emailduplicado"){
-    echo "<script>iziToast.show({
-    theme: 'dark',
+    echo "<script>iziToast.error({
+
+    messageColor: 'black',
+     titleColor: 'black',
+ 
     icon: 'icon-person',
     title: 'Error de Registro',
     message: 'Email o DNI ya existe!',
