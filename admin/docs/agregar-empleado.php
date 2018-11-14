@@ -34,7 +34,7 @@
                             <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion:</label><div class="col-md-6"><input type="text" name="direccion" id="direccion" value="" required class="form-control" onkeypress="return dirreccion(event);" maxlength="150"></div></div>
                             <div class="form-group row"><label for="email" class="col-md-4 col-form-label text-md-right">Email:</label><div class="col-md-6"><input  type="email" name="email" id="email" value="" required class="form-control" onkeypress="return correo(event);" maxlength="30"></div></div>
                              <div class="form-group row"><label for="rol" class="col-md-4 col-form-label text-md-right">Rol:</label><div class="col-md-6">
-                                             <select class="custom-select" name="rol" id="rol" onchange ="labores()">
+                                             <select class="custom-select" name="rol" id="rol" required onchange ="labores()">
                                                  <option value="" disabled selected hidden>Nada Seleccionado</option>
                                                  <?php
                                                  while ($row=mysqli_fetch_assoc($datos)){

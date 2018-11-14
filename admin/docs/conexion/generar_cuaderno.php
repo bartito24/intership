@@ -64,7 +64,7 @@ $resp=$mysqli->query($sql1);
 $est=mysqli_fetch_assoc($resp);
 $nomest=$est['nombre']." ".$est['papellido']." ".$est['sapellido'];
 
-$pdf->SetFont('Arial','I',11);
+$pdf->SetFont('Arial','B',11);
 $pdf->Cell(0,10,"PASANTIAS ASIGNADAS A UN TUTOR ",0,1,"C");
 
 $pdf->Ln(2);
@@ -75,13 +75,13 @@ $pdf->Ln(2);
 $pdf->SetFillColor(200,71,71);
 $pdf->SetX(10);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(60,10,"Num",0,0,"C",true);
-$pdf->SetX(70);
-$pdf->Cell(60,10,"Fecha",0,0,"C", true);
-$pdf->SetX(130);
-$pdf->Cell(60,10,"Descripcion",0,1,"C" ,true);
+$pdf->Cell(20,10,"Num",0,0,"C",true);
+$pdf->SetX(30);
+$pdf->Cell(20,10,"Fecha",0,0,"C", true);
+$pdf->SetX(50);
+$pdf->Cell(150,10,"Descripcion",0,1,"C" ,true);
 
-
+$pdf->SetFont('Arial','',11);
 $sql3="select * from cuadernillo where pasantia_id_pasantia=$re[id_pasantia];";
 $resultado=$mysqli->query($sql3);
 $i=1;
@@ -97,11 +97,11 @@ while ($row4=mysqli_fetch_assoc($resultado)){
     $descripcion=$row4['decripcion'];
 
     $pdf->SetTextColor(0,0,0);
-    $pdf->Cell(60,10,$i,0,0,"C",true);
-    $pdf->SetX(70);
-    $pdf->Cell(60,10,$fecha,0,0,"C", true);
-    $pdf->SetX(130);
-    $pdf->Cell(60,10,$descripcion,0,1,"C" ,true);
+    $pdf->Cell(20,10,$i,0,0,"C",true);
+    $pdf->SetX(30);
+    $pdf->Cell(20,10,$fechas.'  ',0,0,"C", true);
+    $pdf->SetX(50);
+    $pdf->Cell(150,10,'  '.$descripcion,0,1,"L" ,true);
 $i++;
 }
 
