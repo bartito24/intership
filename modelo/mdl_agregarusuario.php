@@ -91,9 +91,9 @@ else {
 
         public function insertar_estudiante()
         {
-            $sql = "select * from persona where email='$this->email'";
+            $sql = "select * from persona where email= '$this->email'";
             $resp = $this->obj_con->con_retorno($sql);
-            if ($resp == "") {
+            if ($resp) {
                 $_SESSION['error'] = "emailduplicado";
                 echo "<script> window.location.href='../admin/docs/agregar-empleado.php';</script>";
             } else {
